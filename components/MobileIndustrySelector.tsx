@@ -90,10 +90,14 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
 
               {/* Description */}
               <p
-                className="text-sm font-light text-gray-600 dark:text-gray-300 italic relative z-10 leading-relaxed"
-                style={{ fontFamily: 'Lato, sans-serif' }}
+                className="text-sm font-light italic relative z-10 leading-relaxed"
+                style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}
               >
-                "{sector.subtitle}"
+                "
+                <span style={{ color: 'rgba(255, 255, 255, 1)' }}>
+                  {sector.subtitle}
+                </span>
+                "
               </p>
 
               {/* Arrow */}
