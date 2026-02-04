@@ -76,12 +76,9 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
 
                 {/* Title and Badge */}
                 <div className="flex-1">
-                  <span className="text-[9px] uppercase tracking-[0.3em] font-bold block mb-1" style={{ fontFamily: 'Lato, sans-serif', color: 'var(--color-accent)' }}>
-                    {sector.ref}
-                  </span>
                   <h4
-                    className="text-xl text-dark dark:text-cream transition-colors duration-500 group-hover:text-accent"
-                    style={{ fontFamily: 'var(--font-serif)', fontWeight: '600' }}
+                    className="text-xl transition-colors duration-500 group-hover:text-accent"
+                    style={{ fontFamily: 'var(--font-serif)', fontWeight: '600', color: '#19abe4' }}
                   >
                     {sector.title}
                   </h4>
