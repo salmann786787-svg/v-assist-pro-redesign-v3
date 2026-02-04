@@ -82,16 +82,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
               <ArrowRight className="relative z-10 w-5 h-5 text-white group-hover:translate-x-2 transition-transform duration-300" />
             </button>
 
-            <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-                <ShieldCheck size={14} className="text-accent" />
-                <span className="text-[9px] uppercase tracking-wider text-white/80" style={{ fontFamily: 'Lato, sans-serif' }}>Discretion Protocol: Active</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-                <Lock size={14} className="text-accent" />
-                <span className="text-[9px] uppercase tracking-wider text-white/80" style={{ fontFamily: 'Lato, sans-serif' }}>Private Partner Status</span>
-              </div>
-            </div>
+            <div />
           </div>
         </div>
 
