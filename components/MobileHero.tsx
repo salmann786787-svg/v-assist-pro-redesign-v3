@@ -92,8 +92,8 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
             </div>
           </div>
 
-          {/* Waitlist status with Join Now button */}
-          <div className="flex flex-col items-center gap-2 py-1">
+          {/* Bottom row - Waitlist status with Join Now button */}
+          <div className="flex flex-col items-center gap-1 py-1">
             <div className="flex items-center justify-center gap-2 text-dark/70 dark:text-white/70 text-[8px]" style={{ fontFamily: 'Lato, sans-serif' }}>
               <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" />
               <span className="uppercase tracking-wider">Waitlist Active</span>
