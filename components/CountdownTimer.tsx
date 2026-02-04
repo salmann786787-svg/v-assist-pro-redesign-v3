@@ -20,8 +20,8 @@ const CountdownTimer: React.FC = () => {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Q1 2024 ends on March 31, 2024 at 11:59 PM EST
-      const targetDate = new Date('2024-03-31T23:59:59-05:00').getTime();
+      // Q1 2026 ends on March 31, 2026 at 11:59 PM EST
+      const targetDate = new Date('2026-03-31T23:59:59-05:00').getTime();
       const now = new Date().getTime();
       const difference = targetDate - now;
 
