@@ -43,6 +43,7 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="text-base font-light leading-relaxed text-gray-700 dark:text-white/90"
+          style={{ fontSize: '17px', lineHeight: '22px' }}
         >
           From customer communication outsourcing to executive operations management, we provide specialized support tailored to your industry.
         </motion.p>
