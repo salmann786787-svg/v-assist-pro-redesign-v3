@@ -143,7 +143,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8 max-w-sm"
+          className="mb-5 max-w-sm"
         >
           <div
             className="text-gray-700 dark:text-white/90 text-center"
