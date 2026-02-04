@@ -168,7 +168,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           onClick={onOpenProtocol}
-          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-12"
+          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-6"
           style={{
             backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
           }}
