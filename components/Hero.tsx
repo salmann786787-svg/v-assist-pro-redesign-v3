@@ -405,6 +405,9 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
           </div>
         </div>
       </div>
+
+      {/* Lead Magnet Modal */}
+      <LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
     </section>
   );
 };
