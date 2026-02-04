@@ -80,7 +80,7 @@ const MobileProcessHorizontal: React.FC = () => {
       </div>
 
       {/* Steps */}
-      <div className="space-y-6 max-w-2xl mx-auto pb-8">
+      <div className="space-y-6 max-w-2xl mx-auto pb-8 relative z-10">
         {PROCESS_STEPS.map((step, index) => {
           const IconComponent = icons[step.number as keyof typeof icons];
 
@@ -91,14 +91,37 @@ const MobileProcessHorizontal: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white dark:bg-charcoal border border-dark/10 dark:border-white/5 rounded-lg p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+              className="bg-white dark:bg-charcoal border border-dark/10 dark:border-white/5 rounded-lg p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.3)] group hover:border-accent/30 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="flex items-start gap-4">
-                {/* Icon Circle */}
+              {/* Hover Background Gradient */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_var(--tw-gradient-stops))] from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+              <div className="flex items-start gap-4 relative z-10">
+                {/* Icon Circle with Animated Rings */}
                 <div className="flex-shrink-0 relative">
-                  <div className="w-16 h-16 bg-cream dark:bg-dark border border-dark/10 dark:border-white/10 rounded-2xl flex items-center justify-center text-accent">
+                  <motion.div
+                    className="absolute inset-0 border border-accent/30 rounded-2xl"
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  />
+                  <motion.div
+                    className="absolute inset-2 border border-dashed border-accent/20 rounded-2xl"
+                    animate={{ scale: [1.1, 1, 1.1] }}
+                    transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+                  />
+
+                  <div className="w-16 h-16 bg-cream dark:bg-dark border border-dark/10 dark:border-white/10 rounded-2xl flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-500">
                     <IconComponent strokeWidth={1.5} size={28} />
                   </div>
+
+                  {/* Pulsing Dots */}
+                  <motion.div
+                    className="absolute top-0 right-0 w-2 h-2 bg-accent rounded-full"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                  <div className="absolute bottom-0 right-0 w-1.5 h-1.5 bg-white/20 rounded-full" />
+
                   {/* Step Number Badge */}
                   <div
                     className="absolute -top-2 -right-2 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-xs font-bold"
@@ -111,7 +134,7 @@ const MobileProcessHorizontal: React.FC = () => {
                 {/* Content */}
                 <div className="flex-1">
                   <h3
-                    className="text-xl md:text-2xl font-serif mb-2 tracking-tight"
+                    className="text-xl md:text-2xl font-serif mb-2 tracking-tight group-hover:text-accent transition-colors duration-500"
                     style={{ fontFamily: '"Playfair Display", serif', color: '#19abe4' }}
                   >
                     {step.title}
@@ -122,6 +145,23 @@ const MobileProcessHorizontal: React.FC = () => {
                   >
                     {step.description}
                   </p>
+
+                  {/* Engine Synchronizing message on hover */}
+                  <motion.div
+                    className="mt-4 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                  >
+                    {[1, 2, 3].map(i => (
+                      <motion.div
+                        key={i}
+                        className="w-1 h-1 bg-accent rounded-full"
+                        animate={{ scale: [1, 1.5, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
+                      />
+                    ))}
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-accent ml-2">Engine Synchronizing...</span>
+                  </motion.div>
                 </div>
               </div>
 
