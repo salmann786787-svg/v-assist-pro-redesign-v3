@@ -35,8 +35,15 @@ const MobileProcessHorizontal: React.FC = () => {
 
   return (
     <section ref={targetRef} id="methodology" className="relative bg-cream dark:bg-dark text-dark dark:text-cream py-16 px-4">
+      {/* Animated Progress Line */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-dark/10 dark:bg-white/10 z-0" />
+      <motion.div
+        style={{ height: lineHeight }}
+        className="absolute left-1/2 top-0 w-[1px] bg-accent shadow-[0_0_15px_rgba(25,171,228,0.6)] z-0 pointer-events-none"
+      />
+
       {/* Header */}
-      <div className="mb-16 max-w-2xl mx-auto">
+      <div className="mb-16 max-w-2xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
