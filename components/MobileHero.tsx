@@ -145,17 +145,21 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8 max-w-sm"
         >
-          <p
+          <div
             className="text-gray-700 dark:text-white/90 text-center"
             style={{
               fontFamily: 'Lato, sans-serif',
-              fontSize: '16px',
               fontWeight: '300',
-              lineHeight: '24px',
+              fontSize: '13px',
+              marginTop: '-5px',
             }}
           >
-            We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
-          </p>
+            <p>
+              <span style={{ fontSize: '20px' }}>
+                Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: operational noise drowns out what matters. We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+              </span>
+            </p>
+          </div>
         </motion.div>
 
         {/* CTA Button */}
