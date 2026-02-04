@@ -48,12 +48,12 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
         />
       </div>
 
-      {/* Scarcity Banner */}
+      {/* Scarcity Banner - Sticky at top */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-20 px-4 py-3 mb-6 mx-4 rounded-lg cursor-pointer group overflow-hidden border border-dark/5 dark:border-white/5 backdrop-blur-3xl bg-cream/70 dark:bg-dark/80"
+        className="fixed top-0 left-0 right-0 z-40 px-4 py-2 cursor-pointer group overflow-hidden border-b border-dark/5 dark:border-white/5 backdrop-blur-md bg-cream/70 dark:bg-dark/80"
       >
         <div className="flex flex-col gap-4">
           {/* Logo Section */}
