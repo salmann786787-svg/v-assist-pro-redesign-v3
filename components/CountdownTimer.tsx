@@ -70,37 +70,37 @@ const CountdownTimer: React.FC = () => {
       {/* Countdown Display */}
       <div className="flex items-center gap-1 md:gap-2">
         <div className="text-center">
-          <div className="font-bold text-lg md:text-2xl font-serif" style={{ color: 'rgba(25, 171, 228, 1)' }}>
+          <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.days).padStart(2, '0')}
           </div>
-          <div className="text-xs uppercase tracking-wider opacity-70">Days</div>
+          <div className="text-[10px] uppercase tracking-wider opacity-70">Days</div>
         </div>
 
-        <span className="font-serif opacity-50">:</span>
+        <span className="font-serif opacity-50 text-sm">:</span>
 
         <div className="text-center">
-          <div className="font-bold text-lg md:text-2xl font-serif" style={{ color: 'rgba(25, 171, 228, 1)' }}>
+          <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.hours).padStart(2, '0')}
           </div>
-          <div className="text-xs uppercase tracking-wider opacity-70">Hrs</div>
+          <div className="text-[10px] uppercase tracking-wider opacity-70">Hrs</div>
         </div>
 
-        <span className="font-serif opacity-50">:</span>
+        <span className="font-serif opacity-50 text-sm">:</span>
 
         <div className="text-center">
-          <div className="font-bold text-lg md:text-2xl font-serif" style={{ color: 'rgba(25, 171, 228, 1)' }}>
+          <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.minutes).padStart(2, '0')}
           </div>
-          <div className="text-xs uppercase tracking-wider opacity-70">Min</div>
+          <div className="text-[10px] uppercase tracking-wider opacity-70">Min</div>
         </div>
 
-        <span className="font-serif opacity-50">:</span>
+        <span className="font-serif opacity-50 text-sm">:</span>
 
         <div className="text-center">
-          <div className="font-bold text-lg md:text-2xl font-serif" style={{ color: 'rgba(25, 171, 228, 1)' }}>
+          <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.seconds).padStart(2, '0')}
           </div>
-          <div className="text-xs uppercase tracking-wider opacity-70">Sec</div>
+          <div className="text-[10px] uppercase tracking-wider opacity-70">Sec</div>
         </div>
       </div>
     </motion.div>
