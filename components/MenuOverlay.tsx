@@ -101,9 +101,8 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
                 className="mt-12 md:mt-16 grid grid-cols-1 gap-6 md:gap-8"
               >
                 <div style={{ fontFamily: 'Lato, sans-serif' }} className="space-y-1">
-                  <p className="text-[10px] font-bold tracking-[0.4em] text-accent uppercase mb-2">Institutional Communications</p>
                   <p className="text-lg md:text-xl font-medium">(941) 623-4590</p>
-                  <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 hover:text-accent cursor-pointer transition-colors">ghost@vassistpro.com</p>
+                  <p className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors" style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '500' }}><p>info@vassistproinc.com</p></p>
                 </div>
 
                 <div>
