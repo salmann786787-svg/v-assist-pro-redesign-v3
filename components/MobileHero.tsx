@@ -96,12 +96,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                 </span>
               </div>
 
-              {/* Slot countdown */}
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-red-500 text-[9px] uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
-                  1 Slot Left — Q1 Closes Soon
-                </span>
+              {/* Slot countdown - Compact mobile version */}
+              <div className="text-[8px] uppercase tracking-wider text-red-500 font-semibold">
+                <span className="block">Q1 Closes</span>
+                <span className="block">Soon</span>
               </div>
             </div>
           </div>
