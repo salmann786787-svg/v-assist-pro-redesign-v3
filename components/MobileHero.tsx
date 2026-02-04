@@ -150,7 +150,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
             style={{
               fontFamily: 'Lato, sans-serif',
               fontWeight: '300',
-              fontSize: '15px',
+              fontSize: '17px',
               lineHeight: '22px',
               marginTop: '-5px',
             }}
