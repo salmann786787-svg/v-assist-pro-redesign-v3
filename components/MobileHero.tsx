@@ -60,8 +60,8 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
         <div className="flex flex-col gap-2">
           {/* Top row - Logo and Scarcity Info */}
           <div className="flex items-center justify-between px-1 py-1 gap-2">
-            {/* Logo Section - compact */}
-            <div className="flex flex-col items-center">
+            {/* Logo and Menu Section - left */}
+            <div className="flex flex-col items-center gap-1">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F489119e2c69c42a5b0f1e2f32846041e%2F78a40fb43aba42628517ae101ff5d72e"
                 alt="V Assist Pro"
@@ -72,6 +72,14 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                 alt="V Assist Pro"
                 className="h-6 w-auto object-contain block dark:hidden"
               />
+              {/* Menu button under logo */}
+              <button
+                className="flex items-center justify-center w-6 h-6 rounded hover:bg-dark/5 dark:hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                onClick={() => setIsMenuOpen?.(true)}
+                aria-label="Toggle menu"
+              >
+                <Menu size={16} className="text-accent dark:text-accent-light" />
+              </button>
             </div>
 
             {/* Right side - Exclusive Onboarding and Slot countdown */}
@@ -92,20 +100,6 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                 </span>
               </div>
             </div>
-          </div>
-
-          {/* Bottom row - Waitlist status with Join Now button */}
-          <div className="flex flex-col items-center gap-1 py-1">
-            <div className="flex items-center justify-center gap-2 text-dark/70 dark:text-white/70 text-[8px]" style={{ fontFamily: 'Lato, sans-serif' }}>
-              <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" />
-              <span className="uppercase tracking-wider">Waitlist Active</span>
-            </div>
-            <button
-              onClick={onOpenProtocol}
-              className="px-2 py-1 bg-accent/20 hover:bg-accent/30 text-accent uppercase tracking-wider text-[8px] font-semibold rounded-sm transition-all duration-300 border border-accent/50 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-            >
-              Join Now
-            </button>
           </div>
         </div>
       </motion.div>
