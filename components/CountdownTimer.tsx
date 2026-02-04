@@ -100,13 +100,6 @@ const CountdownTimer: React.FC = () => {
           <div className="text-xs uppercase tracking-wider opacity-70">Sec</div>
         </div>
       </div>
-
-      {/* Warning pulse indicator */}
-      <motion.div
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0"
-      />
     </motion.div>
   );
 };
