@@ -140,15 +140,42 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Private Comms</h4>
             <div className="space-y-4">
-              <p className="text-gray-700 dark:text-white text-2xl font-light">(941) 623-4590</p>
-              <div className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer" style={{ fontFamily: 'Lato, sans-serif', marginTop: '16px' }}>
-                <p>info@vassistproinc.com</p>
-              </div>
-              <div className="pt-8">
-                <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm">
+              <a
+                href="tel:+19416234590"
+                className="text-gray-700 dark:text-white text-2xl font-light block hover:text-accent transition-colors"
+                aria-label="Call (941) 623-4590"
+              >
+                (941) 623-4590
+              </a>
+              <a
+                href="mailto:info@vassistproinc.com"
+                className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer block text-sm"
+                style={{ fontFamily: 'Lato, sans-serif' }}
+              >
+                info@vassistproinc.com
+              </a>
+
+              <div className="flex flex-col gap-3 pt-4">
+                <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm w-fit">
                   <Activity className="w-4 h-4 text-accent animate-pulse" />
                   <span className="text-[10px] uppercase tracking-widest text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Boutique Capacity: Stable</span>
                 </div>
+
+                <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
+                  <ShieldCheck size={12} className="text-accent/50" />
+                  <span>US-Based • 100% Confidential</span>
+                </div>
+              </div>
+
+              {/* Mobile Mobile Quick Call Button */}
+              <div className="md:hidden pt-6">
+                <a
+                  href="tel:+19416234590"
+                  className="w-full py-4 bg-accent/20 border border-accent/40 rounded-lg flex items-center justify-center gap-3 text-accent font-bold uppercase tracking-widest text-xs"
+                >
+                  <Globe size={16} />
+                  Call Now
+                </a>
               </div>
             </div>
           </div>

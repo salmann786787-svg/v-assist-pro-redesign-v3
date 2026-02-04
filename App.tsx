@@ -16,6 +16,8 @@ import ProtocolOverlay from './components/ProtocolOverlay';
 import { SECTORS } from './constants';
 import { AnimatePresence } from 'framer-motion';
 import { useDeviceDetection } from './hooks/useDeviceDetection';
+import ExitIntentPopup from './components/ExitIntentPopup';
+import LogoCarousel from './components/LogoCarousel';
 
 const App: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -81,6 +83,7 @@ const App: React.FC = () => {
               {isMobile ? <MobileHero onOpenProtocol={handleOpenProtocol} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> : <Hero onOpenProtocol={handleOpenProtocol} />}
               <Architects />
               {isMobile ? <MobileIndustrySelector onSelectSector={setSelectedSectorId} /> : <IndustrySelector onSelectSector={setSelectedSectorId} />}
+              <LogoCarousel />
               <Integrations />
               {isMobile ? <MobileProcessHorizontal /> : <ProcessHorizontal />}
               <FAQ />
@@ -90,6 +93,8 @@ const App: React.FC = () => {
       </main>
 
       <Footer onOpenProtocol={handleOpenProtocol} onSelectSector={setSelectedSectorId} />
+
+      {!isMobile && <ExitIntentPopup onOpenProtocol={handleOpenProtocol} />}
     </div>
   );
 };

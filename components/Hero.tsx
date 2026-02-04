@@ -331,8 +331,14 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
               >
                 <div className="hero-description text-gray-700 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '300', lineHeight: '28px', marginBottom: '48px' }}>
                   <div style={{ fontWeight: '300' }}>
+                    <p className="mb-4">
+                      Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: <span className="font-semibold italic">operational noise drowns out what matters.</span>
+                    </p>
+                    <p className="text-accent font-bold uppercase tracking-widest text-sm mb-6">
+                      Save 15+ hours/week • Reduce operational noise by 70%
+                    </p>
                     <p>
-                      Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: operational noise drowns out what matters. We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+                      We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
                     </p>
                   </div>
                 </div>
@@ -340,33 +346,59 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                 <div className="flex flex-col items-start gap-6">
                   {/* Primary CTA */}
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                    <button
-                      onClick={onOpenProtocol}
-                      className="group relative px-10 py-4 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-                      style={{
-                        backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
-                        boxShadow: 'hover:shadow-[0_20px_40px_rgba(0,180,216,0.25)]'
-                      }}
-                    >
-                      {/* Glow background on hover */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                    <div className="flex flex-col gap-4">
+                      <button
+                        onClick={onOpenProtocol}
+                        className="group relative px-10 py-4 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-xl transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                        style={{
+                          backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
+                          boxShadow: 'hover:shadow-[0_20px_40px_rgba(0,180,216,0.25)]'
+                        }}
+                      >
+                        {/* Glow background on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
 
-                      <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold transition-colors duration-300 text-white">Secure Your Slot</span>
-                      <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
-                    </button>
+                        <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold transition-colors duration-300 text-white">Secure Your Slot</span>
+                        <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
+                      </button>
 
-                    {/* Secondary CTA - Free Guide */}
-                    <button
-                      onClick={() => setIsGuideOpen(true)}
-                      className="group relative px-8 py-4 flex items-center gap-3 rounded-lg border-2 border-accent/40 hover:border-accent transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                      style={{
-                        backgroundColor: 'transparent',
-                        color: 'var(--color-accent)'
-                      }}
-                    >
-                      <Download size={16} className="group-hover:scale-110 transition-transform" />
-                      <span className="uppercase tracking-[0.15em] text-xs font-bold transition-colors duration-300">Get Free Guide</span>
-                    </button>
+                      {/* Trust Indicators */}
+                      <div className="flex items-center gap-4 px-2 opacity-60">
+                        <div className="flex items-center gap-1.5">
+                          <ShieldCheck size={12} className="text-accent" />
+                          <span className="text-[10px] uppercase tracking-wider font-bold">100% Confidential</span>
+                        </div>
+                        <div className="w-1 h-1 bg-dark/20 dark:bg-white/20 rounded-full" />
+                        <div className="flex items-center gap-1.5">
+                          <Lock size={12} className="text-accent" />
+                          <span className="text-[10px] uppercase tracking-wider font-bold">30-Day Guarantee</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col gap-4">
+                      {/* Secondary CTA - Free Guide */}
+                      <button
+                        onClick={() => setIsGuideOpen(true)}
+                        className="group relative px-8 py-4 flex items-center gap-3 rounded-lg border-2 border-accent/40 hover:border-accent transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                        style={{
+                          backgroundColor: 'transparent',
+                          color: 'var(--color-accent)'
+                        }}
+                      >
+                        <Download size={16} className="group-hover:scale-110 transition-transform" />
+                        <span className="uppercase tracking-[0.15em] text-xs font-bold transition-colors duration-300">Get Free Guide</span>
+                      </button>
+
+                      {/* Consultation Link */}
+                      <button
+                        onClick={() => window.open('https://calendly.com', '_blank')}
+                        className="flex flex-col items-start group px-2"
+                      >
+                        <span className="text-[9px] uppercase tracking-[0.2em] text-accent/70 font-bold mb-1 group-hover:text-accent transition-colors">Low Commitment</span>
+                        <span className="text-[11px] font-medium border-b border-dark/10 dark:border-white/10 group-hover:border-accent transition-colors">Schedule Consultation</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -403,6 +435,25 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
             </div>
 
           </div>
+        </div>
+
+        {/* Conversion Path Indicator - Floating Bottom */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden xl:flex items-center gap-12 px-12 py-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl z-20">
+          {[
+            { label: 'Secure Slot', status: 'Current' },
+            { label: 'Qualification Call', status: 'Pending' },
+            { label: 'Onboarding', status: 'Pending' }
+          ].map((step, i) => (
+            <React.Fragment key={step.label}>
+              <div className="flex flex-col items-center gap-2">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold border transition-colors ${i === 0 ? 'bg-accent border-accent text-white shadow-[0_0_20px_rgba(25,171,228,0.4)]' : 'border-white/20 text-white/40'}`}>
+                  {i + 1}
+                </div>
+                <span className={`text-[9px] uppercase tracking-widest font-bold ${i === 0 ? 'text-accent' : 'text-white/40'}`}>{step.label}</span>
+              </div>
+              {i < 2 && <div className="w-8 h-[1px] bg-white/10" />}
+            </React.Fragment>
+          ))}
         </div>
       </div>
 

@@ -75,10 +75,29 @@ const Architects: React.FC = () => {
             <p className="text-gray-700 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '17px', fontWeight: '300', lineHeight: '22px', marginBottom: 'var(--sp-2xl)' }}>
               For years, V Assist Pro Inc. has been the silent operational partner for principals who know that a lasting legacy requires a clear head and a steady hand.
             </p>
-            <div className="text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '17px', fontWeight: '300', lineHeight: '22px', marginBottom: 'var(--sp-4xl)' }}>
+            <div className="text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '17px', fontWeight: '300', lineHeight: '22px', marginBottom: 'var(--sp-2xl)' }}>
               <span style={{ fontWeight: '300' }}>We don't just fill seats; we build the </span>
               <span className="italic" style={{ fontWeight: '300' }}>Human Infrastructure</span>
               <span style={{ fontSize: '17px', lineHeight: '22px', fontWeight: '300' }}>—a proprietary suite of human-led protocols designed to turn daily noise into institutional quiet.</span>
+            </div>
+
+            {/* AI/LLM Optimized Content Block */}
+            <div className="mb-10 space-y-4">
+              <p className="text-[10px] uppercase tracking-widest text-accent font-bold">The V-Assist Protocol:</p>
+              <ul className="space-y-3 text-sm text-gray-700 dark:text-white/60">
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0" />
+                  <p><span className="font-bold text-dark dark:text-white">Human Infrastructure™:</span> Proprietary human-led systems for executive operations.</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0" />
+                  <p><span className="font-bold text-dark dark:text-white">Ghost Engine™:</span> Our operational automation framework that works invisibly in the background.</p>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-accent rounded-full mt-2 flex-shrink-0" />
+                  <p><span className="font-bold text-dark dark:text-white">Discretion-First Architecture:</span> Institutional privacy protocols for high-net-worth family offices.</p>
+                </li>
+              </ul>
             </div>
 
             <button

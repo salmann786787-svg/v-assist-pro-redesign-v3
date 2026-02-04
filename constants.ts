@@ -249,6 +249,14 @@ export const FAQS: FAQItem[] = [
     answer: "Integration usually takes 14 to 21 days. We start by absorbing the most painful bottlenecks first, providing immediate breathing room while we map the rest of your operations."
   },
   {
+    question: "What exactly is family office operations management?",
+    answer: "Family office operations is the institutional management of a private wealth legacy. It covers everything from household staff coordination and property management to travel logistics and vendor oversight. We provide the 'Human Infrastructure' to ensure these gears turn silently so the family can focus on their personal and financial legacy."
+  },
+  {
+    question: "How do I outsource my customer communications safely?",
+    answer: "Outsourcing with us is built on a 'White-Label Human' model. Our specialists learn your voice, your brand standards, and your specific CRM (like Limo Anywhere or Salesforce). We don't use call centers; we assign a dedicated partner who acts as a senior member of your own team, ensuring absolute security and brand consistency."
+  },
+  {
     question: "Is there a single point of failure in this partnership?",
     answer: "No. Unlike a single hire, we operate as a team. If your primary partner is unavailable, another trained specialist from our bench steps in immediately. Your operations never stop."
   },
