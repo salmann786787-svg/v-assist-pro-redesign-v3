@@ -48,7 +48,7 @@ const MobileProcessHorizontal: React.FC = () => {
                 <span style={{ color: 'rgba(255, 255, 255, 1)' }}>Talent is a variable. </span>
                 <span className="text-dark dark:text-white italic font-medium" style={{ color: 'rgba(25, 171, 228, 1)' }}>Infrastructure is a constant.</span>
               </p>
-              <p className="text-base font-light leading-relaxed text-gray-600 dark:text-white/80 mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <p className="text-base font-light leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}>
                 We replace hero-dependency with the <span className="text-dark dark:text-white font-medium">Ghost Engine</span>—a custom-engineered system of elite personnel and human-led protocols.
               </p>
             </div>
