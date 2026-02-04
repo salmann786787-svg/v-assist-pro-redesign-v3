@@ -58,11 +58,6 @@ const IndustrySelector: React.FC<IndustrySelectorProps> = ({ onSelectSector }) =
                   </div>
 
                   <div className="flex-grow relative z-10">
-                    <div className="flex items-center gap-6 mb-6">
-                      <span className="text-[10px] uppercase tracking-[0.4em] font-bold" style={{ fontFamily: 'Lato, sans-serif', color: 'var(--color-accent)' }}>Case File: {sector.ref}</span>
-                      <div className="h-[1px] w-16" style={{ backgroundColor: 'rgba(var(--color-accent-rgb), 0.3)' }}></div>
-                    </div>
-
                     <h4 className="text-4xl md:text-5xl text-dark dark:text-cream mb-8 tracking-tighter transition-colors duration-500" style={{ fontFamily: 'var(--font-serif)' }}>
                       <span style={{ transition: 'color var(--transition-normal) ease' }} className="group-hover/card:text-accent">{sector.title}</span>
                     </h4>

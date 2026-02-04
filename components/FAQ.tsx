@@ -16,7 +16,7 @@ const FAQ: React.FC = () => {
         <div className="text-left mb-20">
           <h4 className="text-xs uppercase tracking-[0.3em] mb-4 text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Operational Intelligence</h4>
           <h2 className="text-5xl md:text-7xl font-serif text-dark dark:text-cream leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
-            Institutional <span className="italic text-gray-500 dark:text-white/60">clarity.</span>
+            Institutional <span className="text-gray-500 dark:text-white" style={{ color: 'rgba(255, 255, 255, 1)' }}>clarity.</span>
           </h2>
           <p className="mt-6 text-lg text-gray-900 dark:text-white font-medium max-w-2xl" style={{ fontFamily: 'Lato, sans-serif' }}>
             We operate with radical transparency. If your question isn't addressed here, our principals are available for direct inquiry.
