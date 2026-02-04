@@ -381,7 +381,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                     <h4 className="text-gray-800 dark:text-white" style={{ marginBottom: '12px', font: 'italic 400 20px/28px Lato, sans-serif' }}>Human Intelligence</h4>
                     <div className="text-gray-600 dark:text-white" style={{ font: '400 17px/19.5px Lato, sans-serif' }}>
                       <p style={{ fontWeight: '300', lineHeight: '20.5px', fontSize: '18px' }}>
-                        We are a boutique firm of people, not software. Your partner is a real human who learns your voice and the rhythm of your business.
+                        We are a boutique firm of people, not software. We learn your voice and preferences, and the rhythm of your business.
                       </p>
                     </div>
                   </div>
