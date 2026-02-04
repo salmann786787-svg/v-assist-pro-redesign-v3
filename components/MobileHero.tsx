@@ -48,56 +48,32 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
         />
       </div>
 
-      {/* Scarcity Banner */}
+      {/* Scarcity Banner - Compact */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-20 px-4 py-3 mb-6 mx-4 rounded-lg cursor-pointer group overflow-hidden border border-dark/5 dark:border-white/5 backdrop-blur-3xl bg-cream/70 dark:bg-dark/80"
+        className="relative z-20 px-4 py-2 mb-4 mx-4 rounded-lg cursor-pointer group overflow-hidden border border-dark/5 dark:border-white/5 backdrop-blur-3xl bg-cream/70 dark:bg-dark/80"
       >
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 items-center">
           {/* Logo Section */}
-          <div className="flex flex-col items-center pt-2">
-            <img
-              src="/logo-dark.png"
-              alt="V Assist Pro"
-              className="h-8 w-auto object-contain hidden dark:block"
-            />
-            <img
-              src="/logo-light.png"
-              alt="V Assist Pro"
-              className="h-8 w-auto object-contain block dark:hidden"
-            />
-          </div>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c"
+            alt="V Assist Pro"
+            className="h-6 w-auto object-contain"
+          />
 
-          {/* Top row - Exclusive Onboarding */}
-          <div className="flex items-center gap-3 justify-center">
-            <Lock size={11} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-dark dark:text-white text-[10px] uppercase tracking-[0.12em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
+          {/* Compact info line */}
+          <div className="flex items-center gap-2 justify-center text-[9px]">
+            <Lock size={10} style={{ color: 'rgba(208, 2, 27, 1)' }} />
+            <span className="text-dark dark:text-white uppercase tracking-[0.08em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
               Exclusive Onboarding
             </span>
-          </div>
-
-          {/* Bottom row - Slot countdown */}
-          <div className="flex items-center gap-2 justify-center">
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-red-500 text-[10px] uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
-              1 Slot Left — Q1 Closes Soon
+            <span className="w-1 h-1 bg-dark/20 dark:bg-white/20 rounded-full" />
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+            <span className="text-red-500 uppercase tracking-[0.08em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
+              1 Slot Left
             </span>
-          </div>
-
-          {/* Waitlist status with Join Now button */}
-          <div className="flex flex-col items-center gap-3 pt-2">
-            <div className="flex items-center justify-center gap-2 text-dark/70 dark:text-white/70 text-[9px]" style={{ fontFamily: 'Lato, sans-serif' }}>
-              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
-              <span className="uppercase tracking-wider">Waitlist Active</span>
-            </div>
-            <button
-              onClick={onOpenProtocol}
-              className="px-3 py-1.5 bg-accent/20 hover:bg-accent/30 text-accent uppercase tracking-wider text-[9px] font-semibold rounded-md transition-all duration-300 border border-accent/50 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-            >
-              Join Now
-            </button>
           </div>
         </div>
       </motion.div>
