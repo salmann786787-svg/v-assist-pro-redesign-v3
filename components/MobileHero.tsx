@@ -238,6 +238,9 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
             </div>
           </div>
         </motion.div>
+
+        {/* Lead Magnet Modal */}
+        <LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
       </div>
     </section>
   );
