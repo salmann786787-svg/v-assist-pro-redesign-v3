@@ -111,7 +111,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-3 mb-8"
+          className="flex items-center gap-3 mb-3"
         >
           <Sparkles size={14} className="animate-pulse" style={{ color: 'var(--color-accent)' }} />
           <span style={{ letterSpacing: '2px', fontSize: '10px', fontWeight: '700', color: '#17aee7', fontFamily: 'Lato, sans-serif', textTransform: 'uppercase' }}>
