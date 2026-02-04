@@ -167,7 +167,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           onClick={onOpenProtocol}
-          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-6"
+          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-4"
           style={{
             backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
           }}
@@ -180,6 +180,23 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
             Secure Your Slot
           </span>
           <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-1 transition-all duration-500 text-white" />
+        </motion.button>
+
+        {/* Free Guide CTA */}
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          onClick={() => setIsGuideOpen(true)}
+          className="w-full px-6 py-3 flex items-center justify-center gap-2 border-2 border-accent/40 hover:border-accent text-accent dark:text-accent-light rounded-lg transition-all duration-500 bg-transparent hover:bg-accent/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent mb-6"
+        >
+          <Download size={16} />
+          <span
+            className="uppercase tracking-[0.1em] text-xs font-semibold"
+            style={{ fontFamily: 'Lato, sans-serif' }}
+          >
+            Get Free Operations Guide
+          </span>
         </motion.button>
 
         {/* Feature Card */}
