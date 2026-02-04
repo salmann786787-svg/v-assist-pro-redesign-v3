@@ -78,7 +78,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                 onClick={() => setIsMenuOpen?.(true)}
                 aria-label="Toggle menu"
               >
-                <Menu size={16} className="text-accent dark:text-accent-light" />
+                <Menu size={16} className="text-accent dark:text-accent-light" style={{ marginRight: 'auto' }} />
               </button>
             </div>
 
