@@ -70,6 +70,7 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
+  const [isGuideOpen, setIsGuideOpen] = React.useState(false);
   React.useEffect(() => {
     const styleTag = document.createElement('style');
     styleTag.innerHTML = heroStyles;
