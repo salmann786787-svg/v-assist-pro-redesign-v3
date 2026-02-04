@@ -4,9 +4,11 @@ import { ArrowRight, Sparkles, ShieldCheck, Lock, Menu } from 'lucide-react';
 
 interface MobileHeroProps {
   onOpenProtocol?: () => void;
+  isMenuOpen?: boolean;
+  setIsMenuOpen?: (isOpen: boolean) => void;
 }
 
-const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
+const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = false, setIsMenuOpen }) => {
   return (
     <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-24 pt-24">
       {/* Simplified Background */}
