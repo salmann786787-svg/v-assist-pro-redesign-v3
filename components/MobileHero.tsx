@@ -205,7 +205,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                 Human Intelligence
               </h4>
               <p
-                className="text-gray-600 dark:text-white/80 text-sm"
+                className="text-gray-600 dark:text-white text-sm"
                 style={{
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: '300',
