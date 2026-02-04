@@ -11,6 +11,8 @@ interface MobileHeroProps {
 }
 
 const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = false, setIsMenuOpen }) => {
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-24 pt-24">
       {/* Simplified Background */}
