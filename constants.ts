@@ -222,7 +222,7 @@ export const PROCESS_STEPS: Step[] = [
   },
   {
     number: "04",
-    title: "Focus, Unbound",
+    title: "Your Focus, Uninterrupted.",
     description: "The noise stops. Your legacy resumes. You are now free to be the visionary again."
   }
 ];
