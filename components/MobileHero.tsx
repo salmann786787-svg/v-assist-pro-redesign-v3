@@ -56,35 +56,40 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
         className="fixed top-0 left-0 right-0 z-40 px-4 py-2 cursor-pointer group overflow-hidden border-b border-dark/5 dark:border-white/5 backdrop-blur-md bg-cream/70 dark:bg-dark/80"
       >
         <div className="flex flex-col gap-2">
-          {/* Logo Section - compact */}
-          <div className="flex flex-col items-center py-1">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F489119e2c69c42a5b0f1e2f32846041e%2F78a40fb43aba42628517ae101ff5d72e"
-              alt="V Assist Pro"
-              className="h-6 w-auto object-contain hidden dark:block"
-              style={{ marginRight: 'auto' }}
-            />
-            <img
-              src="/logo-light.png"
-              alt="V Assist Pro"
-              className="h-6 w-auto object-contain block dark:hidden"
-            />
-          </div>
+          {/* Top row - Logo and Scarcity Info */}
+          <div className="flex items-center justify-between px-1 py-1 gap-2">
+            {/* Logo Section - compact */}
+            <div className="flex flex-col items-center">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F489119e2c69c42a5b0f1e2f32846041e%2F78a40fb43aba42628517ae101ff5d72e"
+                alt="V Assist Pro"
+                className="h-6 w-auto object-contain hidden dark:block"
+              />
+              <img
+                src="/logo-light.png"
+                alt="V Assist Pro"
+                className="h-6 w-auto object-contain block dark:hidden"
+              />
+            </div>
 
-          {/* Top row - Exclusive Onboarding */}
-          <div className="flex items-center gap-2 justify-center">
-            <Lock size={10} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-dark dark:text-white text-[9px] uppercase tracking-[0.1em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
-              Exclusive Onboarding
-            </span>
-          </div>
+            {/* Right side - Exclusive Onboarding and Slot countdown */}
+            <div className="flex flex-col items-end gap-1">
+              {/* Exclusive Onboarding */}
+              <div className="flex items-center gap-2">
+                <Lock size={10} style={{ color: 'rgba(208, 2, 27, 1)' }} />
+                <span className="text-dark dark:text-white text-[9px] uppercase tracking-[0.1em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
+                  Exclusive Onboarding
+                </span>
+              </div>
 
-          {/* Bottom row - Slot countdown */}
-          <div className="flex items-center gap-2 justify-center">
-            <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-red-500 text-[9px] uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
-              1 Slot Left — Q1 Closes Soon
-            </span>
+              {/* Slot countdown */}
+              <div className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+                <span className="text-red-500 text-[9px] uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
+                  1 Slot Left — Q1 Closes Soon
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Waitlist status with Join Now button */}
