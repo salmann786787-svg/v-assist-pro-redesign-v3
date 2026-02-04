@@ -91,7 +91,9 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
           <div className="space-y-8">
             <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
             <p className="text-gray-600 dark:text-white leading-relaxed max-w-xs font-light" style={{ fontFamily: 'Lato, sans-serif' }}>
-              We handle your customer communications and operational coordination so you can focus on growth and strategy.
+              <p>
+                We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+              </p>
             </p>
           </div>
 
