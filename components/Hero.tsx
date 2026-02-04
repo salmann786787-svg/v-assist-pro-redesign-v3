@@ -104,7 +104,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
         </div>
 
         {/* Center content */}
-        <div className="flex-1 flex items-center justify-center gap-6">
+        <div className="flex-1 flex flex-col items-center justify-center gap-4">
           {/* Exclusive Onboarding */}
           <div className="flex items-center gap-2">
             <Lock size={12} style={{ color: 'rgba(208, 2, 27, 1)' }} />
@@ -113,13 +113,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
             </span>
           </div>
 
-          {/* Slot countdown - center */}
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-red-500 text-xs uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
-              1 Slot Left — Q1 Closes Soon
-            </span>
-          </div>
+          {/* Countdown Timer */}
+          <CountdownTimer />
         </div>
 
         {/* Right side - Waitlist status with Join Now button */}
