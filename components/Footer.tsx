@@ -141,7 +141,9 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Private Comms</h4>
             <div className="space-y-4">
               <p className="text-gray-700 dark:text-white text-2xl font-light">(941) 623-4590</p>
-              <p className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer" style={{ fontFamily: 'Lato, sans-serif' }}>partners@vassistpro.com</p>
+              <div className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer" style={{ fontFamily: 'Lato, sans-serif', marginTop: '16px' }}>
+                <p>info@vassistproinc.com</p>
+              </div>
               <div className="pt-8">
                 <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm">
                   <Activity className="w-4 h-4 text-accent animate-pulse" />
