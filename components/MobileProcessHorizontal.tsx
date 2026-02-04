@@ -28,7 +28,7 @@ const MobileProcessHorizontal: React.FC = () => {
           className="mb-8"
         >
           <h2 className="text-4xl font-serif text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>
-            The <span className="italic text-gray-500 dark:text-white/60">Methodology</span>
+            The <span className="text-white" style={{ color: 'rgba(255, 255, 255, 1)' }}>Methodology</span>
           </h2>
         </motion.div>
 
