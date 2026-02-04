@@ -126,7 +126,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-8"
         >
-          <h1 className="font-serif text-dark dark:text-cream">
+          <h1 className="font-serif text-dark dark:text-cream" style={{ marginBottom: '-1px' }}>
             <p style={{ font: '600 48px/48px Playfair Display, serif', letterSpacing: '-2px', marginBottom: '8px' }}>
               Your focus,
             </p>
