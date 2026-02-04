@@ -17,13 +17,6 @@ const icons = {
   "04": ShieldCheck
 };
 
-const icons = {
-  "01": Telescope,
-  "02": DraftingCompass,
-  "03": Cpu,
-  "04": ShieldCheck
-};
-
 const MobileProcessHorizontal: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
