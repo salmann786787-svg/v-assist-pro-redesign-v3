@@ -94,8 +94,8 @@ const MobileProcessHorizontal: React.FC = () => {
                     {step.title}
                   </h3>
                   <p
-                    className="text-sm md:text-base font-light text-gray-600 dark:text-gray-300 leading-relaxed"
-                    style={{ fontFamily: 'Lato, sans-serif' }}
+                    className="text-sm md:text-base font-light leading-relaxed"
+                    style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}
                   >
                     {step.description}
                   </p>
