@@ -88,8 +88,8 @@ const MobileProcessHorizontal: React.FC = () => {
                 {/* Content */}
                 <div className="flex-1">
                   <h3
-                    className="text-xl md:text-2xl font-serif text-dark dark:text-cream mb-2 tracking-tight"
-                    style={{ fontFamily: '"Playfair Display", serif' }}
+                    className="text-xl md:text-2xl font-serif mb-2 tracking-tight"
+                    style={{ fontFamily: '"Playfair Display", serif', color: '#19abe4' }}
                   >
                     {step.title}
                   </h3>
