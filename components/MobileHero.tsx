@@ -204,7 +204,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
               >
                 Human Intelligence
               </h4>
-              <p
+              <div
                 className="text-gray-600 dark:text-white text-sm"
                 style={{
                   fontFamily: 'Lato, sans-serif',
@@ -212,8 +212,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
                   lineHeight: '18px',
                 }}
               >
-                We are a boutique firm of people, not software. Your partner is a real human who learns your voice.
-              </p>
+                <p>
+                  We are a boutique firm of people, not software. We learn your voice and preferences, and the rhythm of your business.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
