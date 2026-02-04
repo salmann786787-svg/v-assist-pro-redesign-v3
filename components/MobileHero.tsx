@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Lock } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Lock, Menu, Download } from 'lucide-react';
+import CountdownTimer from './CountdownTimer';
+import LeadMagnetGuide from './LeadMagnetGuide';
 
 interface MobileHeroProps {
   onOpenProtocol?: () => void;
+  isMenuOpen?: boolean;
+  setIsMenuOpen?: (isOpen: boolean) => void;
 }
 
-const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
+const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = false, setIsMenuOpen }) => {
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
+
   return (
-    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-24 pt-8">
+    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-24 pt-24">
       {/* Simplified Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-cream dark:from-dark dark:via-charcoal dark:to-dark" />
@@ -48,56 +54,54 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
         />
       </div>
 
-      {/* Scarcity Banner */}
+      {/* Scarcity Banner - Sticky at top */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-20 px-4 py-3 mb-6 mx-4 rounded-lg cursor-pointer group overflow-hidden border border-dark/5 dark:border-white/5 backdrop-blur-3xl bg-cream/70 dark:bg-dark/80"
+        className="fixed top-0 left-0 right-0 z-40 px-4 py-2 cursor-pointer group overflow-hidden border-b border-dark/5 dark:border-white/5 backdrop-blur-md bg-cream/70 dark:bg-dark/80"
       >
-        <div className="flex flex-col gap-4">
-          {/* Logo Section */}
-          <div className="flex flex-col items-center pt-2">
-            <img
-              src="/logo-dark.png"
-              alt="V Assist Pro"
-              className="h-8 w-auto object-contain hidden dark:block"
-            />
-            <img
-              src="/logo-light.png"
-              alt="V Assist Pro"
-              className="h-8 w-auto object-contain block dark:hidden"
-            />
-          </div>
-
-          {/* Top row - Exclusive Onboarding */}
-          <div className="flex items-center gap-3 justify-center">
-            <Lock size={11} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-dark dark:text-white text-[10px] uppercase tracking-[0.12em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
-              Exclusive Onboarding
-            </span>
-          </div>
-
-          {/* Bottom row - Slot countdown */}
-          <div className="flex items-center gap-2 justify-center">
-            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-            <span className="text-red-500 text-[10px] uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '600' }}>
-              1 Slot Left — Q1 Closes Soon
-            </span>
-          </div>
-
-          {/* Waitlist status with Join Now button */}
-          <div className="flex flex-col items-center gap-3 pt-2">
-            <div className="flex items-center justify-center gap-2 text-dark/70 dark:text-white/70 text-[9px]" style={{ fontFamily: 'Lato, sans-serif' }}>
-              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse" />
-              <span className="uppercase tracking-wider">Waitlist Active</span>
+        <div className="flex flex-col gap-2">
+          {/* Top row - Logo and Scarcity Info */}
+          <div className="flex items-center justify-between px-1 py-1 gap-2">
+            {/* Logo and Menu Section - left */}
+            <div className="flex flex-col items-center gap-1">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F489119e2c69c42a5b0f1e2f32846041e%2F78a40fb43aba42628517ae101ff5d72e"
+                alt="V Assist Pro"
+                className="h-6 w-auto object-contain hidden dark:block"
+              />
+              <img
+                src="/logo-light.png"
+                alt="V Assist Pro"
+                className="h-6 w-auto object-contain block dark:hidden"
+              />
+              {/* Menu button under logo */}
+              <button
+                className="flex items-center justify-center w-6 h-6 rounded hover:bg-dark/5 dark:hover:bg-white/10 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                onClick={() => setIsMenuOpen?.(true)}
+                aria-label="Toggle menu"
+              >
+                <Menu size={16} className="text-accent dark:text-accent-light" style={{ marginRight: 'auto' }} />
+              </button>
             </div>
-            <button
-              onClick={onOpenProtocol}
-              className="px-3 py-1.5 bg-accent/20 hover:bg-accent/30 text-accent uppercase tracking-wider text-[9px] font-semibold rounded-md transition-all duration-300 border border-accent/50 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-            >
-              Join Now
-            </button>
+
+            {/* Right side - Exclusive Onboarding and Slot countdown */}
+            <div className="flex flex-col items-end gap-1">
+              {/* Exclusive Onboarding */}
+              <div className="flex items-center gap-2">
+                <Lock size={10} style={{ color: 'rgba(208, 2, 27, 1)' }} />
+                <span className="text-dark dark:text-white text-[9px] uppercase tracking-[0.1em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
+                  Exclusive Onboarding
+                </span>
+              </div>
+
+              {/* Slot countdown - Compact mobile version */}
+              <div className="text-[8px] uppercase tracking-wider text-red-500 font-semibold">
+                <span className="block">Q1 Closes</span>
+                <span className="block">Soon</span>
+              </div>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -109,7 +113,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex items-center gap-3 mb-8"
+          className="flex items-center gap-3 mb-3"
         >
           <Sparkles size={14} className="animate-pulse" style={{ color: 'var(--color-accent)' }} />
           <span style={{ letterSpacing: '2px', fontSize: '10px', fontWeight: '700', color: '#17aee7', fontFamily: 'Lato, sans-serif', textTransform: 'uppercase' }}>
@@ -122,9 +126,9 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-8"
+          className="text-center mb-4"
         >
-          <h1 className="font-serif text-dark dark:text-cream">
+          <h1 className="font-serif text-dark dark:text-cream" style={{ marginBottom: '-1px' }}>
             <p style={{ font: '600 48px/48px Playfair Display, serif', letterSpacing: '-2px', marginBottom: '8px' }}>
               Your focus,
             </p>
@@ -141,18 +145,19 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8 max-w-sm"
+          className="mb-5 max-w-sm"
         >
           <p
             className="text-gray-700 dark:text-white/90 text-center"
             style={{
               fontFamily: 'Lato, sans-serif',
-              fontSize: '16px',
               fontWeight: '300',
-              lineHeight: '24px',
+              fontSize: '17px',
+              lineHeight: '22px',
+              marginTop: '-5px',
             }}
           >
-            We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+            Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: operational noise drowns out what matters. We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
           </p>
         </motion.div>
 
@@ -162,7 +167,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           onClick={onOpenProtocol}
-          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-12"
+          className="group relative px-8 py-3 flex items-center gap-3 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] mb-4"
           style={{
             backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
           }}
@@ -175,6 +180,23 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
             Secure Your Slot
           </span>
           <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-1 transition-all duration-500 text-white" />
+        </motion.button>
+
+        {/* Free Guide CTA */}
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          onClick={() => setIsGuideOpen(true)}
+          className="w-full px-6 py-3 flex items-center justify-center gap-2 border-2 border-accent/40 hover:border-accent text-accent dark:text-accent-light rounded-lg transition-all duration-500 bg-transparent hover:bg-accent/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent mb-6"
+        >
+          <Download size={16} />
+          <span
+            className="uppercase tracking-[0.1em] text-xs font-semibold"
+            style={{ fontFamily: 'Lato, sans-serif' }}
+          >
+            Get Free Operations Guide
+          </span>
         </motion.button>
 
         {/* Feature Card */}
@@ -201,19 +223,24 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
               >
                 Human Intelligence
               </h4>
-              <p
-                className="text-gray-600 dark:text-white/80 text-sm"
+              <div
+                className="text-gray-600 dark:text-white text-sm"
                 style={{
                   fontFamily: 'Lato, sans-serif',
                   fontWeight: '300',
                   lineHeight: '18px',
                 }}
               >
-                We are a boutique firm of people, not software. Your partner is a real human who learns your voice.
-              </p>
+                <p>
+                  We are a boutique firm of people, not software. We learn your voice and preferences, and the rhythm of your business.
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
+
+        {/* Lead Magnet Modal */}
+        <LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
       </div>
     </section>
   );

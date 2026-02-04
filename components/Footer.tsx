@@ -82,16 +82,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
               <ArrowRight className="relative z-10 w-5 h-5 text-white group-hover:translate-x-2 transition-transform duration-300" />
             </button>
 
-            <div className="flex flex-wrap gap-3">
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-                <ShieldCheck size={14} className="text-accent" />
-                <span className="text-[9px] uppercase tracking-wider text-white/80" style={{ fontFamily: 'Lato, sans-serif' }}>Discretion Protocol: Active</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full">
-                <Lock size={14} className="text-accent" />
-                <span className="text-[9px] uppercase tracking-wider text-white/80" style={{ fontFamily: 'Lato, sans-serif' }}>Private Partner Status</span>
-              </div>
-            </div>
+            <div />
           </div>
         </div>
 
@@ -100,7 +91,9 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
           <div className="space-y-8">
             <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
             <p className="text-gray-600 dark:text-white leading-relaxed max-w-xs font-light" style={{ fontFamily: 'Lato, sans-serif' }}>
-              We handle your customer communications and operational coordination so you can focus on growth and strategy.
+              <p>
+                We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+              </p>
             </p>
           </div>
 
@@ -148,7 +141,9 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Private Comms</h4>
             <div className="space-y-4">
               <p className="text-gray-700 dark:text-white text-2xl font-light">(941) 623-4590</p>
-              <p className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer" style={{ fontFamily: 'Lato, sans-serif' }}>partners@vassistpro.com</p>
+              <div className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer" style={{ fontFamily: 'Lato, sans-serif', marginTop: '16px' }}>
+                <p>info@vassistproinc.com</p>
+              </div>
               <div className="pt-8">
                 <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm">
                   <Activity className="w-4 h-4 text-accent animate-pulse" />

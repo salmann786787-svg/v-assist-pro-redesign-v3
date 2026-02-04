@@ -78,7 +78,7 @@ const App: React.FC = () => {
             />
           ) : (
             <div key="home">
-              {isMobile ? <MobileHero onOpenProtocol={handleOpenProtocol} /> : <Hero onOpenProtocol={handleOpenProtocol} />}
+              {isMobile ? <MobileHero onOpenProtocol={handleOpenProtocol} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> : <Hero onOpenProtocol={handleOpenProtocol} />}
               <Architects />
               {isMobile ? <MobileIndustrySelector onSelectSector={setSelectedSectorId} /> : <IndustrySelector onSelectSector={setSelectedSectorId} />}
               <Integrations />

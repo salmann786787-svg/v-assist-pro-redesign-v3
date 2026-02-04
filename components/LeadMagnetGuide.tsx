@@ -1,0 +1,241 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Download, Mail, CheckCircle } from 'lucide-react';
+
+interface LeadMagnetGuideProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Simulate API call to send email/store lead
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      // In production, this would send to your email service
+      console.log('Lead captured:', { name, email });
+
+      setIsSuccess(true);
+
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        setEmail('');
+        setName('');
+        setIsSuccess(false);
+        onClose();
+      }, 2000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 z-[60] bg-black/60 backdrop-blur-md"
+          />
+
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            className="fixed inset-0 z-[70] flex items-center justify-center p-4"
+          >
+            <div className="bg-white dark:bg-charcoal rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+              {/* Close Button */}
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 p-2 hover:bg-dark/5 dark:hover:bg-white/10 rounded-lg transition-colors z-10"
+              >
+                <X size={20} className="text-dark dark:text-cream" />
+              </button>
+
+              {!isSuccess ? (
+                <div className="p-8 md:p-10">
+                  {/* Header */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="mb-6"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <Download
+                        size={24}
+                        className="text-accent"
+                        style={{ color: 'rgba(25, 171, 228, 1)' }}
+                      />
+                      <h2 className="text-2xl font-serif text-dark dark:text-cream">
+                        Free Guide
+                      </h2>
+                    </div>
+                    <p className="text-lg font-semibold text-dark dark:text-cream mb-2">
+                      Family Office Operations Excellence
+                    </p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Learn how to reduce operational noise and reclaim 15+ hours per week
+                    </p>
+                  </motion.div>
+
+                  {/* Benefits */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="mb-8 space-y-2"
+                  >
+                    <div className="flex items-start gap-3">
+                      <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        Industry best practices for operational efficiency
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        Metrics and benchmarking for family offices
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        Proven frameworks to eliminate operational bottlenecks
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-gray-700 dark:text-gray-300">
+                        Implementation checklists and templates
+                      </span>
+                    </div>
+                  </motion.div>
+
+                  {/* Form */}
+                  <motion.form
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    onSubmit={handleSubmit}
+                    className="space-y-4"
+                  >
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-dark dark:text-cream mb-2"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Your name"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-dark dark:text-cream mb-2"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your@email.com"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full py-3 px-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                      style={{ backgroundColor: 'rgba(25, 171, 228, 1)' }}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
+                            className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                          />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Download size={18} />
+                          Get Free Guide
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-xs text-gray-600 dark:text-gray-400 text-center">
+                      We respect your privacy. Unsubscribe anytime.
+                    </p>
+                  </motion.form>
+                </div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="p-8 md:p-10 text-center"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                    className="mb-4"
+                  >
+                    <CheckCircle
+                      size={56}
+                      className="text-green-500 mx-auto"
+                    />
+                  </motion.div>
+
+                  <h3 className="text-2xl font-serif text-dark dark:text-cream mb-2">
+                    Success!
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-2">
+                    Check your email for your free guide
+                  </p>
+                  <p className="text-sm text-gray-500 dark:text-gray-500">
+                    We've sent the Family Office Operations Excellence guide to {email}
+                  </p>
+                </motion.div>
+              )}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default LeadMagnetGuide;

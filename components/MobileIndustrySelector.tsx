@@ -43,6 +43,7 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="text-base font-light leading-relaxed text-gray-700 dark:text-white/90"
+          style={{ fontSize: '17px', lineHeight: '22px' }}
         >
           From customer communication outsourcing to executive operations management, we provide specialized support tailored to your industry.
         </motion.p>
@@ -76,12 +77,9 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
 
                 {/* Title and Badge */}
                 <div className="flex-1">
-                  <span className="text-[9px] uppercase tracking-[0.3em] font-bold block mb-1" style={{ fontFamily: 'Lato, sans-serif', color: 'var(--color-accent)' }}>
-                    {sector.ref}
-                  </span>
                   <h4
-                    className="text-xl text-dark dark:text-cream transition-colors duration-500 group-hover:text-accent"
-                    style={{ fontFamily: 'var(--font-serif)', fontWeight: '600' }}
+                    className="text-xl transition-colors duration-500 group-hover:text-accent"
+                    style={{ fontFamily: 'var(--font-serif)', fontWeight: '600', color: '#19abe4' }}
                   >
                     {sector.title}
                   </h4>
@@ -90,10 +88,14 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
 
               {/* Description */}
               <p
-                className="text-sm font-light text-gray-600 dark:text-gray-300 italic relative z-10 leading-relaxed"
-                style={{ fontFamily: 'Lato, sans-serif' }}
+                className="text-sm font-light italic relative z-10 leading-relaxed"
+                style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}
               >
-                "{sector.subtitle}"
+                "
+                <span style={{ color: 'rgba(255, 255, 255, 1)' }}>
+                  {sector.subtitle}
+                </span>
+                "
               </p>
 
               {/* Arrow */}
