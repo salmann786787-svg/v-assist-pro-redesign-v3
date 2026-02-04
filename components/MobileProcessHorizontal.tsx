@@ -44,8 +44,8 @@ const MobileProcessHorizontal: React.FC = () => {
               <CircleDot size={18} className="animate-pulse" />
             </div>
             <div>
-              <p className="text-base md:text-lg font-light leading-relaxed text-gray-700 dark:text-white/90" style={{ fontFamily: 'Lato, sans-serif' }}>
-                <span>Talent is a variable. </span>
+              <p className="text-base md:text-lg font-light leading-relaxed" style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}>
+                <span style={{ color: 'rgba(255, 255, 255, 1)' }}>Talent is a variable. </span>
                 <span className="text-dark dark:text-white italic font-medium" style={{ color: 'rgba(25, 171, 228, 1)' }}>Infrastructure is a constant.</span>
               </p>
               <p className="text-base font-light leading-relaxed text-gray-600 dark:text-white/80 mt-2" style={{ fontFamily: 'Lato, sans-serif' }}>
