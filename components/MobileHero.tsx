@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Lock, Menu } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Lock, Menu, Download } from 'lucide-react';
+import CountdownTimer from './CountdownTimer';
+import LeadMagnetGuide from './LeadMagnetGuide';
 
 interface MobileHeroProps {
   onOpenProtocol?: () => void;
