@@ -54,18 +54,21 @@ const CountdownTimer: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col items-center gap-3 text-white"
+      className="flex items-center gap-4 text-white"
     >
       {/* Limited Slots Label */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-shrink-0">
         <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-        <span className="text-xs uppercase tracking-widest font-bold" style={{ color: 'rgba(208, 2, 27, 1)', fontFamily: 'Lato, sans-serif' }}>
-          Limited Slots Available
+        <span className="text-xs uppercase tracking-widest font-bold whitespace-nowrap" style={{ color: 'rgba(208, 2, 27, 1)', fontFamily: 'Lato, sans-serif' }}>
+          Limited Slots
         </span>
       </div>
 
+      {/* Divider */}
+      <div className="w-px h-6 bg-white/20" />
+
       {/* Countdown Display */}
-      <div className="flex items-center gap-2 md:gap-3">
+      <div className="flex items-center gap-1 md:gap-2">
         <div className="text-center">
           <div className="font-bold text-lg md:text-2xl font-serif" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.days).padStart(2, '0')}
