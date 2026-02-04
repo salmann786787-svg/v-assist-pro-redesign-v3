@@ -12,7 +12,7 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onOpenProtocol }) => 
 
     useEffect(() => {
         const handleMouseLeave = (e: MouseEvent) => {
-            // Show popup when user's mouse leaves the viewport (intent to close tab/navigate away)
+            // Show popup when user's mouse leaves the viewport at the top
             if (e.clientY <= 0 && !hasShown) {
                 setIsVisible(true);
                 setHasShown(true);
@@ -21,17 +21,8 @@ const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onOpenProtocol }) => 
 
         document.addEventListener('mouseleave', handleMouseLeave);
 
-        // Also show after 60 seconds if they haven't seen it
-        const timer = setTimeout(() => {
-            if (!hasShown) {
-                setIsVisible(true);
-                setHasShown(true);
-            }
-        }, 60000);
-
         return () => {
             document.removeEventListener('mouseleave', handleMouseLeave);
-            clearTimeout(timer);
         };
     }, [hasShown]);
 

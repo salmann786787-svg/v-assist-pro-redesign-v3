@@ -16,9 +16,10 @@ import { SECTORS } from '../constants';
 interface FooterProps {
   onOpenProtocol?: () => void;
   onSelectSector?: (id: number) => void;
+  onSelectLocation?: (id: string) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
+const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelectLocation }) => {
   const handleScroll = (id: string) => {
     if (onSelectSector) {
       onSelectSector(null as any); // Type cast if necessary or use 0/null
@@ -131,6 +132,27 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
                   <button onClick={() => handleScroll(link.id)} className="hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]">
                     <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                     {link.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-8">
+            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Regional</h4>
+            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
+              {[
+                { name: 'Florida Operations', id: 'florida' },
+                { name: 'Miami Luxury market', id: 'miami' },
+                { name: 'US National Support', id: 'us' }
+              ].map((loc) => (
+                <li key={loc.id}>
+                  <button
+                    onClick={() => onSelectLocation?.(loc.id)}
+                    className="hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left"
+                  >
+                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                    {loc.name}
                   </button>
                 </li>
               ))}

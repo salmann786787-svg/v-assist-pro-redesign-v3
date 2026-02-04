@@ -1,4 +1,4 @@
-import { SectorCard, FAQItem, Step } from './types';
+import { SectorCard, FAQItem, Step, LocationData } from './types';
 import realEstateHero from './real-estate-hero.png';
 
 export const SECTORS: SectorCard[] = [
@@ -267,5 +267,56 @@ export const FAQS: FAQItem[] = [
   {
     question: "What happens if our volume fluctuates?",
     answer: "Our model is built for the high-velocity world. We scale our presence up during peak seasons and down during lulls, ensuring you always have capacity without the overhead of full-time idle staff."
+  }
+];
+
+export const LOCATIONS: LocationData[] = [
+  {
+    id: "florida",
+    city: "Florida",
+    region: "Statewide",
+    description: "Institutional operational support tailored for the unique landscape of Florida wealth management and family offices. From Naples to Palm Beach.",
+    stats: [
+      { label: "Local Partners", value: "15+" },
+      { label: "Naples/Miami Coverage", value: "100%" }
+    ],
+    features: [
+      "State-specific compliance oversight",
+      "Local vendor network management",
+      "Seasonal property coordination",
+      "Florida-based principal support"
+    ]
+  },
+  {
+    id: "miami",
+    city: "Miami",
+    region: "South Florida",
+    description: "High-velocity operational intelligence for the Miami luxury market. Supporting elite transport, real estate development, and private family assets.",
+    stats: [
+      { label: "Market Presence", value: "8 yrs" },
+      { label: "Rapid Response", value: "<15m" }
+    ],
+    features: [
+      "Luxury fleet dispatch expertise",
+      "High-discretion real estate ops",
+      "Global-to-local travel logistics",
+      "Concierge-level attention"
+    ]
+  },
+  {
+    id: "us",
+    city: "United States",
+    region: "National",
+    description: "National executive operations management for decentralized family offices and multi-state business interests.",
+    stats: [
+      { label: "States Served", value: "24" },
+      { label: "Core Timezones", value: "All" }
+    ],
+    features: [
+      "Coast-to-coast operational sync",
+      "Remote human infrastructure",
+      "Multi-state tax/legal interface",
+      "National travel management"
+    ]
   }
 ];

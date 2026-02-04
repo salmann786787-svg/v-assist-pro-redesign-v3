@@ -399,8 +399,37 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                         <span className="text-[11px] font-medium border-b border-dark/10 dark:border-white/10 group-hover:border-accent transition-colors">Schedule Consultation</span>
                       </button>
                     </div>
+
+                    {/* Conversion Path Indicator - Integrated Layout */}
+                    <div className="mt-16 flex flex-col gap-6">
+                      <div className="flex items-center gap-4">
+                        <div className="h-[1px] w-8 bg-accent/20" />
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-accent/60 font-bold">The Onboarding Protocol</span>
+                      </div>
+
+                      <div className="flex items-center gap-6">
+                        {[
+                          { label: 'Secure Slot', status: 'Current' },
+                          { label: 'Qualification Call', status: 'Pending' },
+                          { label: 'Onboarding', status: 'Pending' }
+                        ].map((step, i) => (
+                          <React.Fragment key={step.label}>
+                            <div className="flex flex-col items-start gap-2">
+                              <div className={`flex items-center gap-3`}>
+                                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold border transition-colors ${i === 0 ? 'bg-accent border-accent text-white shadow-[0_0_15px_rgba(25,171,228,0.3)]' : 'border-dark/10 dark:border-white/10 text-dark/40 dark:text-white/40'}`}>
+                                  {i + 1}
+                                </div>
+                                <span className={`text-[10px] uppercase tracking-widest font-bold ${i === 0 ? 'text-dark dark:text-cream' : 'text-dark/40 dark:text-white/40'}`}>
+                                  {step.label}
+                                </span>
+                              </div>
+                            </div>
+                            {i < 2 && <ArrowRight size={12} className="text-dark/10 dark:text-white/10" />}
+                          </React.Fragment>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
               </motion.div>
             </div>
 
@@ -437,29 +466,12 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
           </div>
         </div>
 
-        {/* Conversion Path Indicator - Floating Bottom */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden xl:flex items-center gap-12 px-12 py-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl z-20">
-          {[
-            { label: 'Secure Slot', status: 'Current' },
-            { label: 'Qualification Call', status: 'Pending' },
-            { label: 'Onboarding', status: 'Pending' }
-          ].map((step, i) => (
-            <React.Fragment key={step.label}>
-              <div className="flex flex-col items-center gap-2">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[10px] font-bold border transition-colors ${i === 0 ? 'bg-accent border-accent text-white shadow-[0_0_20px_rgba(25,171,228,0.4)]' : 'border-white/20 text-white/40'}`}>
-                  {i + 1}
-                </div>
-                <span className={`text-[9px] uppercase tracking-widest font-bold ${i === 0 ? 'text-accent' : 'text-white/40'}`}>{step.label}</span>
-              </div>
-              {i < 2 && <div className="w-8 h-[1px] bg-white/10" />}
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
+      </div >
+    </div >
 
-      {/* Lead Magnet Modal */}
-      <LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
-    </section>
+  {/* Lead Magnet Modal */ }
+  < LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
+    </section >
   );
 };
 

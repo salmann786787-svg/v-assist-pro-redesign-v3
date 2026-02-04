@@ -57,3 +57,12 @@ export interface Step {
   title: string;
   description: string;
 }
+
+export interface LocationData {
+  id: string;
+  city: string;
+  region: string;
+  description: string;
+  stats: ImpactStat[];
+  features: string[];
+}
