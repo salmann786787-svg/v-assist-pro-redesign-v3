@@ -59,9 +59,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol }) => {
           {/* Logo Section - compact */}
           <div className="flex flex-col items-center py-1">
             <img
-              src="/logo-dark.png"
+              src="https://cdn.builder.io/api/v1/image/assets%2F489119e2c69c42a5b0f1e2f32846041e%2F78a40fb43aba42628517ae101ff5d72e"
               alt="V Assist Pro"
               className="h-6 w-auto object-contain hidden dark:block"
+              style={{ marginRight: 'auto' }}
             />
             <img
               src="/logo-light.png"
