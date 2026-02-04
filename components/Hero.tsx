@@ -337,22 +337,37 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
-                  {/* Liquid Glass CTA */}
-                  <button
-                    onClick={onOpenProtocol}
-                    className="group relative px-10 py-4 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-                    style={{
-                      backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
-                      boxShadow: 'hover:shadow-[0_20px_40px_rgba(0,180,216,0.25)]'
-                    }}
-                  >
-                    {/* Glow background on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                <div className="flex flex-col items-start gap-6">
+                  {/* Primary CTA */}
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <button
+                      onClick={onOpenProtocol}
+                      className="group relative px-10 py-4 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-lg transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                      style={{
+                        backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
+                        boxShadow: 'hover:shadow-[0_20px_40px_rgba(0,180,216,0.25)]'
+                      }}
+                    >
+                      {/* Glow background on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
 
-                    <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold transition-colors duration-300 text-white">Secure Your Slot</span>
-                    <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
-                  </button>
+                      <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold transition-colors duration-300 text-white">Secure Your Slot</span>
+                      <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
+                    </button>
+
+                    {/* Secondary CTA - Free Guide */}
+                    <button
+                      onClick={() => setIsGuideOpen(true)}
+                      className="group relative px-8 py-4 flex items-center gap-3 rounded-lg border-2 border-accent/40 hover:border-accent transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                      style={{
+                        backgroundColor: 'transparent',
+                        color: 'var(--color-accent)'
+                      }}
+                    >
+                      <Download size={16} className="group-hover:scale-110 transition-transform" />
+                      <span className="uppercase tracking-[0.15em] text-xs font-bold transition-colors duration-300">Get Free Guide</span>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             </div>
