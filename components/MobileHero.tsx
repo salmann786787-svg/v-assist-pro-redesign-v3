@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, ShieldCheck, Lock } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Lock, Menu } from 'lucide-react';
 
 interface MobileHeroProps {
   onOpenProtocol?: () => void;
