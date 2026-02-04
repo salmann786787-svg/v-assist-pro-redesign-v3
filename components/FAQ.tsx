@@ -18,7 +18,7 @@ const FAQ: React.FC = () => {
           <h2 className="text-5xl md:text-7xl font-serif text-dark dark:text-cream leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
             Institutional <span style={{ color: 'rgba(255, 255, 255, 1)' }}>clarity.</span>
           </h2>
-          <p className="mt-6 text-lg text-gray-900 dark:text-white font-medium max-w-2xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <p className="mt-6 text-lg text-gray-900 dark:text-white max-w-2xl" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '300', lineHeight: '22px' }}>
             We operate with radical transparency. If your question isn't addressed here, our principals are available for direct inquiry.
           </p>
         </div>
