@@ -102,7 +102,9 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
               >
                 <div style={{ fontFamily: 'Lato, sans-serif' }} className="space-y-1">
                   <p className="text-lg md:text-xl font-medium">(941) 623-4590</p>
-                  <p className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors" style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '500' }}><p>info@vassistproinc.com</p></p>
+                  <div className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors" style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '500' }}>
+                    <p>info@vassistproinc.com</p>
+                  </div>
                 </div>
 
                 <div>
