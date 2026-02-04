@@ -4,6 +4,7 @@ import { ArrowRight, Lock, Activity, Sparkles, ShieldCheck } from 'lucide-react'
 import logoDark from '../logo-dark.png';
 import logoLight from '../logo-light.png';
 import CountdownTimer from './CountdownTimer';
+import LeadMagnetGuide from './LeadMagnetGuide';
 
 const heroStyles = `
   .hero-title {
