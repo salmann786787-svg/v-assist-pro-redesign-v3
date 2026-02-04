@@ -17,9 +17,24 @@ const icons = {
   "04": ShieldCheck
 };
 
+const icons = {
+  "01": Telescope,
+  "02": DraftingCompass,
+  "03": Cpu,
+  "04": ShieldCheck
+};
+
 const MobileProcessHorizontal: React.FC = () => {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"]
+  });
+
+  const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
   return (
-    <section id="methodology" className="relative bg-cream dark:bg-dark text-dark dark:text-cream py-16 px-4">
+    <section ref={targetRef} id="methodology" className="relative bg-cream dark:bg-dark text-dark dark:text-cream py-16 px-4">
       {/* Header */}
       <div className="mb-16 max-w-2xl mx-auto">
         <motion.div
