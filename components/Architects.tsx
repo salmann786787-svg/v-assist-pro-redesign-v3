@@ -72,12 +72,12 @@ const Architects: React.FC = () => {
             className="lg:border-l border-dark/10 dark:border-white/10"
             style={{ paddingLeft: 'var(--sp-3xl)' }}
           >
-            <p className="text-xl md:text-2xl font-medium leading-relaxed text-gray-700 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', marginBottom: 'var(--sp-2xl)' }}>
+            <p className="text-gray-700 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '26.5px', marginBottom: 'var(--sp-2xl)' }}>
               For years, V Assist Pro Inc. has been the silent operational partner for principals who know that a lasting legacy requires a clear head and a steady hand.
             </p>
-            <div className="text-2xl text-gray-600 dark:text-white leading-relaxed" style={{ fontFamily: 'Lato, sans-serif', marginBottom: 'var(--sp-4xl)' }}>
+            <div className="text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '26.5px', marginBottom: 'var(--sp-4xl)' }}>
               <span>We don't just fill seats; we build the </span>
-              <span className="font-medium italic">Human Infrastructure</span>
+              <span className="italic" style={{ fontWeight: '500' }}>Human Infrastructure</span>
               <span>—a proprietary suite of human-led protocols designed to turn daily noise into institutional quiet.</span>
             </div>
 
