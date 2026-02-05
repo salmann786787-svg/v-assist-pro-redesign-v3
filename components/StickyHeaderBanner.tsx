@@ -25,6 +25,7 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
             src={isDarkMode ? logoDark : logoLight}
             alt="V-Assist Pro"
             className="h-8 md:h-10 w-auto object-contain"
+            style={{ margin: '0 auto 0 -5px' }}
           />
         </div>
 
