@@ -14,7 +14,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode, toggleTheme, onOpenProtocol }) => {
   return (
     <>
-      <aside className="fixed left-0 top-0 h-screen w-16 md:w-20 flex flex-col justify-between items-center py-8 transition-all duration-500 overflow-hidden" style={{ zIndex: 'var(--z-modal)' }}>
+      <aside className="fixed left-0 top-0 h-screen w-14 md:w-16 flex flex-col justify-between items-center py-8 transition-all duration-500 overflow-hidden" style={{ zIndex: 'var(--z-modal)' }}>
 
         {/* Liquid Glass Background Layer - Enhanced for Light Mode Visibility */}
         <div className="absolute inset-0 bg-white/95 dark:bg-black/80 backdrop-blur-3xl border-r border-dark/[0.12] dark:border-white/10 z-0 shadow-[8px_0_40px_rgba(0,0,0,0.06)] dark:shadow-2xl" />
