@@ -88,19 +88,6 @@ const heroStyles = `
   .light .border-white\/10 {
     border-color: rgba(17, 24, 39, 0.15) !important;
   }
-
-  /* Light mode breathing dot grid visibility fix */
-  .light {
-    --dot-grid-opacity: 0.5;
-  }
-
-  .light #home > div > div:nth-child(2) {
-    opacity: 1 !important;
-  }
-
-  .light #home > div > div:nth-child(2) div[style*="radial-gradient"] {
-    opacity: 1 !important;
-  }
 `;
 
 interface HeroProps {
