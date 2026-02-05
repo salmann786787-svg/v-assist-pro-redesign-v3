@@ -88,6 +88,15 @@ const heroStyles = `
   .light .border-white\/10 {
     border-color: rgba(17, 24, 39, 0.15) !important;
   }
+
+  /* Light mode breathing dot grid visibility fix */
+  .light motion div[style*="radial-gradient"] {
+    opacity: 1 !important;
+  }
+
+  .light div[style*="radial-gradient(circle, rgba(25, 171, 228"] {
+    background-image: radial-gradient(circle, rgba(25, 171, 228, 0.4) 1px, transparent 1px), radial-gradient(circle, rgba(17, 24, 39, 0.15) 1px, transparent 1px) !important;
+  }
 `;
 
 interface HeroProps {
