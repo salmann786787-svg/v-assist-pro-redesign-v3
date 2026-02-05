@@ -79,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden min-h-[100vh]" id="hero">
       {/* Premium Background - Breathing Dot Grid & Gradient Orbs (Covering entire section) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Base gradient layer */}
@@ -87,13 +87,15 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
         {/* ===== BREATHING DOT GRID ===== */}
         <motion.div
-          animate={{ opacity: [0.15, 0.25, 0.15] }}
+          animate={{ opacity: [0.08, 0.15, 0.08] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.4) 1.5px, transparent 1.5px)`,
-            backgroundSize: '40px 40px',
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.6) 1.5px, transparent 1.5px), radial-gradient(circle, rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px)`,
+            backgroundSize: '40px 40px, 40px 40px',
+            backgroundPosition: '0 0, 0 0',
           }}
+          className="absolute inset-0"
         />
 
         {/* ===== GRADIENT ORBS - Soft depth elements ===== */}
