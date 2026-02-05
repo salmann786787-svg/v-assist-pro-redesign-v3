@@ -5,7 +5,6 @@ import {
   Linkedin,
   Twitter,
   ShieldCheck,
-  Activity,
   Lock,
   Globe,
   Sparkles
