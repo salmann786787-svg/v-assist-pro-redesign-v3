@@ -236,8 +236,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:max-w-2xl border-l border-gray-300 dark:border-white/5"
-                style={{ paddingLeft: 'var(--sp-4xl)', marginTop: 'var(--sp-3xl)' }}
+                className="lg:max-w-2xl"
+                style={{ paddingLeft: 'var(--sp-4xl)', marginTop: 'var(--sp-3xl)', borderLeft: '0.2px solid rgba(25, 171, 228, 0.8)' }}
               >
                 <div className="hero-description text-gray-900 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '28px', marginBottom: '48px' }}>
                   <div style={{ fontWeight: '400' }}>
