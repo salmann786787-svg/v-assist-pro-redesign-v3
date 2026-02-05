@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode
         {/* Logo removed - moved to banner */}
 
         {/* Menu Trigger */}
-        <div className="relative z-10 flex flex-col items-center select-none" style={{ gap: 'var(--sp-lg)', marginTop: 'var(--sp-md)' }}>
+        <div className="relative z-10 flex flex-col items-center select-none" style={{ gap: 'var(--sp-lg)', marginTop: '110px' }}>
           <button
             className="flex flex-col items-center cursor-pointer group transition-colors p-3 hover:bg-dark/5 dark:hover:bg-white/10 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
             onClick={() => setIsMenuOpen(true)}
