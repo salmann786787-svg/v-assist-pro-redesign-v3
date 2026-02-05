@@ -168,14 +168,6 @@
   color: rgba(17, 24, 39, 0.85) !important;
 }
 
-/* Fix opacity text in light mode */
-.light .opacity-50 {
-  opacity: 0.7 !important;
-}
-
-.light .opacity-30 {
-  opacity: 0.6 !important;
-}
 
 
 /* Fix border-white opacity in light mode */
