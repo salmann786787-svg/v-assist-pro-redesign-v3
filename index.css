@@ -193,6 +193,36 @@
   opacity: 0.6 !important;
 }
 
+/* Ensure small text and labels are visible in light mode */
+.light .text-\[10px\],
+.light .text-\[8px\],
+.light .text-xs,
+.light .text-sm {
+  color: #374151 !important;
+}
+
+/* Fix SVG stroke colors in light mode */
+.light svg [stroke="currentColor"],
+.light svg text {
+  color: #374151 !important;
+}
+
+/* Fix numeric countdown and small UI text */
+.light .font-bold.text-\[10px\],
+.light .font-bold.text-xs {
+  color: #374151 !important;
+}
+
+/* Ensure trust indicators are visible */
+.light .font-bold:not([class*="dark"]) {
+  color: #111827 !important;
+}
+
+/* Fix action required and status text */
+.light [class*="animate-pulse"]:not([class*="dark"]) {
+  color: #374151 !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
