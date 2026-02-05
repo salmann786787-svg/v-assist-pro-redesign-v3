@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ChevronRight } from 'lucide-react';
+import { SECTORS } from '../constants';
 
 interface MenuOverlayProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface MenuOverlayProps {
   isDarkMode?: boolean;
   onOpenProtocol?: () => void;
   onHomeClick?: () => void;
+  onSelectSector?: (id: number) => void;
 }
 
 const links = [
@@ -31,6 +33,12 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
         if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     }, 350);
+  };
+
+  const handleSectorClick = (id: number) => {
+    onClose();
+    if (onSelectSector) onSelectSector(id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleAction = () => {
@@ -78,21 +86,48 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
                 <p className="text-[10px] font-bold tracking-[0.6em] text-accent uppercase opacity-50">Private Terminal</p>
               </div>
 
-              <div className="grid gap-2 md:gap-4 lg:gap-6">
-                {links.map((link, index) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ x: -30, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 + index * 0.08, type: "spring", stiffness: 100, damping: 25 }}
-                    onClick={() => handleScroll(link.id)}
-                    className="group cursor-pointer flex items-baseline border-b border-gray-300 dark:border-white/5 pb-3 md:pb-4 hover:border-accent/40 transition-colors"
-                  >
-                    <span className="text-[10px] md:text-xs mr-6 md:mr-10 opacity-50 dark:opacity-30 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest text-gray-700 dark:text-cream" style={{ fontFamily: 'Lato, sans-serif' }}>{link.number}</span>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight leading-none group-hover:translate-x-3 transition-transform duration-700 group-hover:text-accent" style={{ fontFamily: '"Playfair Display", serif' }}>
-                      {link.name}
-                    </h2>
-                  </motion.div>
+              <div className="flex flex-col gap-2 md:gap-3 overflow-y-auto no-scrollbar pr-4">
+                {[
+                  { name: "Home", number: "00", id: "home" },
+                  { name: "Industries we service", number: "01", id: "industries", isParent: true },
+                  { name: "How It Works", number: "02", id: "methodology" },
+                  { name: "Operations Hub", number: "03", id: "integrations" },
+                  { name: "FAQs", number: "04", id: "evidence" },
+                ].map((link, index) => (
+                  <div key={link.id} className="flex flex-col">
+                    <motion.div
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: 0.1 + index * 0.05 }}
+                      onClick={() => !link.isParent && handleScroll(link.id)}
+                      className={`group flex items-baseline border-b border-dark/5 dark:border-white/5 pb-2 transition-colors ${!link.isParent ? 'cursor-pointer hover:border-accent/40' : 'mb-2'}`}
+                    >
+                      <span className="text-[10px] mr-6 opacity-40 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest font-sans">{link.number}</span>
+                      <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif italic tracking-tight group-hover:translate-x-2 transition-transform duration-500 group-hover:text-accent">
+                        {link.name}
+                      </h2>
+                    </motion.div>
+
+                    {link.isParent && (
+                      <div className="flex flex-col gap-2 pl-12 mb-4">
+                        {SECTORS.map((sector, sIdx) => (
+                          <motion.button
+                            key={sector.id}
+                            initial={{ x: -10, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 0.3 + sIdx * 0.05 }}
+                            onClick={() => handleSectorClick(sector.id)}
+                            className="flex items-center gap-2 group/sub text-left py-0.5"
+                          >
+                            <ChevronRight size={12} className="text-accent/40 group-hover/sub:text-accent transition-colors" />
+                            <span className="text-xs md:text-sm font-light text-dark/70 dark:text-cream/60 group-hover/sub:text-accent group-hover/sub:translate-x-1 transition-all">
+                              {sector.title.split(' & ')[0]}
+                            </span>
+                          </motion.button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
 

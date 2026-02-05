@@ -80,6 +80,7 @@ const App: React.FC = () => {
           toggleTheme={toggleTheme}
           onOpenProtocol={handleOpenProtocol}
           onHomeClick={resetView}
+          onSelectSector={setSelectedSectorId}
         />
       ) : (
         <Sidebar
@@ -89,6 +90,7 @@ const App: React.FC = () => {
           toggleTheme={toggleTheme}
           onOpenProtocol={handleOpenProtocol}
           onHomeClick={resetView}
+          onSelectSector={setSelectedSectorId}
         />
       )}
 

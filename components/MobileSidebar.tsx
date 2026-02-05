@@ -10,6 +10,7 @@ interface MobileSidebarProps {
   toggleTheme: () => void;
   onOpenProtocol: () => void;
   onHomeClick: () => void;
+  onSelectSector: (id: number) => void;
 }
 
 const MobileSidebar: React.FC<MobileSidebarProps> = ({
@@ -19,6 +20,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
   toggleTheme,
   onOpenProtocol,
   onHomeClick,
+  onSelectSector,
 }) => {
   return (
     <>
@@ -67,6 +69,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
         isDarkMode={isDarkMode}
         onOpenProtocol={onOpenProtocol}
         onHomeClick={onHomeClick}
+        onSelectSector={onSelectSector}
       />
     </>
   );
