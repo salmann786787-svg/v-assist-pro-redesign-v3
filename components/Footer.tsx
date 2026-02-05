@@ -40,10 +40,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
       {/* Ghost Aura Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_20%,_rgba(25,171,228,0.15),transparent_60%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 md:pl-28 relative z-10">
+      <div className="container mx-auto px-6 md:pl-28 relative z-10 flex flex-col" style={{ maxWidth: '768px', margin: '0 auto' }}>
 
         {/* Cinematic CTA Section */}
-        <div className="flex flex-col items-start mb-32">
+        <div className="flex flex-col items-start" style={{ margin: '0 auto 128px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -62,12 +62,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-10"
           >
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1]" style={{ fontFamily: '"Playfair Display", serif' }}>
-              Stop managing <span className="italic text-white">the noise.</span>
+            <h2 style={{ fontFamily: '"Playfair Display", serif', font: '400 36px/48px "Playfair Display", serif', letterSpacing: '-0.9px' }}>
+              <div style={{ fontSize: '60px' }}>Stop managing </div>
+              <div style={{ display: 'inline', color: 'white', fontStyle: 'italic', fontWeight: '400', fontSize: '60px' }}>the noise.</div>
             </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] italic text-accent mt-1" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <div style={{ color: 'var(--color-accent)', letterSpacing: '-0.9px', marginTop: '4px', font: 'italic 400 60px/40px "Playfair Display", serif' }}>
               Claim Focus.
-            </h2>
+            </div>
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8 w-full">
@@ -87,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
         </div>
 
         {/* Navigation Readout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-24 border-b border-white/5">
+        <div className="grid grid-cols-3 gap-5 pb-24 border-b border-white/5">
           <div className="lg:col-span-2 space-y-8">
             <div className="space-y-6">
               <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
