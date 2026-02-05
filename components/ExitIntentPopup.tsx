@@ -9,22 +9,38 @@ interface ExitIntentPopupProps {
 const ExitIntentPopup: React.FC<ExitIntentPopupProps> = ({ onOpenProtocol }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [hasShown, setHasShown] = useState(false);
+    const [isGracePeriodOver, setIsGracePeriodOver] = useState(false);
+    const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
 
     useEffect(() => {
+        // Only start listening after 10 seconds to avoid annoying immediate popups
+        const timer = setTimeout(() => {
+            setIsGracePeriodOver(true);
+        }, 10000);
+
+        const handleMouseEnter = () => setHasEnteredViewport(true);
+
         const handleMouseLeave = (e: MouseEvent) => {
-            // Show popup when user's mouse leaves the viewport at the top
-            if (e.clientY <= 0 && !hasShown) {
+            // Only trigger if:
+            // 1. Grace period is over
+            // 2. Not shown yet
+            // 3. User actually entered the viewport first (to avoid firing on immediate load if mouse is at top)
+            // 4. Mouse is actually leaving at the top
+            if (isGracePeriodOver && !hasShown && hasEnteredViewport && e.clientY <= 0) {
                 setIsVisible(true);
                 setHasShown(true);
             }
         };
 
+        document.addEventListener('mouseenter', handleMouseEnter);
         document.addEventListener('mouseleave', handleMouseLeave);
 
         return () => {
+            clearTimeout(timer);
+            document.removeEventListener('mouseenter', handleMouseEnter);
             document.removeEventListener('mouseleave', handleMouseLeave);
         };
-    }, [hasShown]);
+    }, [hasShown, isGracePeriodOver, hasEnteredViewport]);
 
     const closePopup = () => setIsVisible(false);
 
