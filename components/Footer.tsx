@@ -121,8 +121,8 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {[
                 { name: 'Home', id: 'home' },
-                { name: 'The Methodology', id: 'methodology' },
-                { name: 'The Engine Room', id: 'integrations' },
+                { name: 'How It Works', id: 'methodology' },
+                { name: 'Operations Hub', id: 'integrations' },
                 { name: 'Private Evidence', id: 'evidence' },
                 { name: 'Principal Support', id: 'faq' }
               ].map((link) => (
