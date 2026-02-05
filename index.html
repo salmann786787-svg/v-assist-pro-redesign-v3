@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Executive operational management for family offices and high-net-worth individuals. Human intelligence, not software. Reduce operational noise, reclaim focus.">
-    <meta name="keywords" content="executive operations, family office services, operational management, business outsourcing, customer communications">
-    <title>V-Assist Pro | Institutional Operations & Executive Management</title>
 
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Executive operational management for family offices and high-net-worth individuals. Human intelligence, not software. Reduce operational noise, reclaim focus.">
+  <meta name="keywords"
+    content="executive operations, family office services, operational management, business outsourcing, customer communications">
+  <title>V-Assist Pro | Institutional Operations & Executive Management</title>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -60,7 +63,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
@@ -83,7 +86,7 @@
     }
     </script>
 
-    <script type="application/ld+json">
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
@@ -115,249 +118,56 @@
       ]
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Lato', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              cream: '#fdfbf7',
-              dark: '#0f0f0f',
-              accent: '#19abe4',
-              'accent-light': '#17c3f3',
-              charcoal: '#1a1a1a',
-            },
-            backgroundImage: {
-              'grid-pattern': "linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)",
-              'grid-pattern-dark': "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.8s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
-              'slow-spin': 'spin 12s linear infinite',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-            }
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Lato', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
           },
-        },
-      }
-    </script>
-    <style>
-      :root {
-        /* Primary Colors */
-        --color-accent: #19abe4;
-        --color-accent-rgb: 25, 171, 228;
-        --color-accent-light: #17c3f3;
-        --color-accent-secondary: #06b4d4;
-        --color-accent-tertiary: #22d3ee;
-
-        /* Neutrals */
-        --color-dark: #0f0f0f;
-        --color-cream: #fdfbf7;
-        --color-charcoal: #1a1a1a;
-        --color-white: #ffffff;
-
-        /* Semantic Colors */
-        --color-error: #ef4444;
-        --color-error-dark: #d00213;
-        --color-success: #10b981;
-        --color-warning: #f59e0b;
-
-        /* Typography */
-        --font-serif: "Playfair Display", serif;
-        --font-sans: "Lato", sans-serif;
-
-        /* Font Weights */
-        --fw-light: 300;
-        --fw-normal: 400;
-        --fw-medium: 500;
-        --fw-semibold: 600;
-        --fw-bold: 700;
-
-        /* Transitions */
-        --transition-fast: 300ms;
-        --transition-normal: 500ms;
-        --transition-slow: 700ms;
-        --easing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-
-        /* Spacing Scale (8px base) */
-        --sp-xs: 4px;
-        --sp-sm: 8px;
-        --sp-md: 12px;
-        --sp-lg: 16px;
-        --sp-xl: 24px;
-        --sp-2xl: 32px;
-        --sp-3xl: 40px;
-        --sp-4xl: 48px;
-        --sp-5xl: 56px;
-
-        /* Border Radius */
-        --radius-sm: 6px;
-        --radius-md: 8px;
-        --radius-lg: 12px;
-        --radius-xl: 16px;
-        --radius-2xl: 20px;
-        --radius-full: 9999px;
-
-        /* Z-index */
-        --z-base: 0;
-        --z-dropdown: 10;
-        --z-sticky: 20;
-        --z-overlay: 40;
-        --z-modal: 50;
-      }
-
-      .dark {
-        color-scheme: dark;
-      }
-
-      .light {
-        color-scheme: light;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      /* Light Mode Enhancements - Improved Depth & Contrast */
-      .light {
-        --text-primary: #111827;
-        --text-secondary: #374151;
-        --bg-primary: #faf9f6;
-        --bg-secondary: #f3f0e8;
-        --bg-surface: #ffffff;
-        --border-light: rgba(0, 0, 0, 0.08);
-        --shadow-elevation: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -4px rgba(0, 0, 0, 0.05);
-      }
-
-      .light .bg-cream {
-        background-color: var(--bg-primary);
-      }
-
-      .light .dark\:text-cream {
-        color: var(--text-primary) !important;
-      }
-
-      .light .dark\:text-white {
-        color: var(--text-secondary) !important;
-      }
-
-      .light .dark\:bg-dark {
-        background-color: var(--bg-primary);
-      }
-
-      .light .dark\:bg-charcoal {
-        background-color: var(--bg-surface);
-        box-shadow: var(--shadow-elevation);
-      }
-
-      .light .dark\:border-white\/5,
-      .light .dark\:border-white\/10 {
-        border-color: var(--border-light);
-      }
-
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
-      .no-scrollbar {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-      }
-      body {
-        transition: background-color var(--transition-normal) ease, color var(--transition-normal) ease;
-      }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-      }
-      .dark .glass-panel {
-        background: rgba(15, 15, 15, 0.7);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-
-      /* Focus State Utility */
-      button:focus-visible,
-      a:focus-visible {
-        outline: 2px solid var(--color-accent);
-        outline-offset: 2px;
-      }
-
-      /* Smooth Transitions for Interactive Elements */
-      button, a, [role="button"] {
-        transition: all var(--transition-fast) ease;
-      }
-
-      /* Mobile Performance Optimizations */
-      @media (max-width: 768px) {
-        /* Disable animations on mobile if possible */
-        @media (prefers-reduced-motion: no-preference) {
-          .wave-container {
-            animation: wave-float 6s ease-in-out infinite;
+          colors: {
+            cream: '#fdfbf7',
+            dark: '#0f0f0f',
+            accent: '#19abe4',
+            'accent-light': '#17c3f3',
+            charcoal: '#1a1a1a',
+          },
+          backgroundImage: {
+            'grid-pattern': "linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px)",
+            'grid-pattern-dark': "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'slow-spin': 'spin 12s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
           }
-        }
-
-        /* Simplify decorative elements on mobile */
-        .absolute.inset-0.pointer-events-none {
-          display: none;
-        }
-      }
-
-      /* Reduce blur effects on mobile for performance */
-      @media (max-width: 640px) {
-        [style*="backdrop-filter"] {
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px);
-        }
-      }
-
-      /* Optimize shadows for mobile */
-      @media (max-width: 768px) {
-        button {
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-        }
-      }
-    </style>
-    <script type="importmap">
-{
-  "imports": {
-    "framer-motion": "https://esm.sh/framer-motion@^12.29.2",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
-  }
-}
-</script>
-  <link rel="stylesheet" href="/index.css">
+        },
+      },
+    }
+  </script>
 </head>
-  <body class="bg-cream text-dark dark:bg-dark dark:text-cream selection:bg-accent selection:text-white">
-    <div id="root"></div>
+
+<body class="bg-cream text-dark dark:bg-dark dark:text-cream selection:bg-accent selection:text-white">
+  <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
