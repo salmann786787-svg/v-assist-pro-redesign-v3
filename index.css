@@ -159,29 +159,13 @@
   border-color: rgba(17, 24, 39, 0.08) !important;
 }
 
-/* Light mode button and interactive element fixes */
-.light button span,
-.light span:not([class*="dark"]),
-.light p:not([class*="dark"]) {
-  color: inherit;
-}
-
-/* Fix opacity-based text colors in light mode */
-.light [class*="text-white"]:not(.dark\:text-white) {
-  color: #111827 !important;
-}
-
-.light [class*="text-cream"] {
-  color: #111827 !important;
-}
-
 /* Fix for small text elements with low opacity */
 .light .text-white\/30,
 .light .text-white\/40,
 .light .text-white\/50,
 .light .text-white\/60,
 .light .text-white\/70 {
-  color: rgba(17, 24, 39, 0.7) !important;
+  color: rgba(17, 24, 39, 0.85) !important;
 }
 
 /* Fix opacity text in light mode */
