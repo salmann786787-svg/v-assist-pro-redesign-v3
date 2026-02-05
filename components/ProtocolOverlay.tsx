@@ -94,7 +94,9 @@ const ProtocolOverlay: React.FC<ProtocolOverlayProps> = ({ isOpen, onClose }) =>
 
             <button
               onClick={onClose}
-              className="p-4 hover:bg-accent hover:text-white rounded-full transition-all duration-300 flex items-center gap-3 group"
+              className="p-4 hover:bg-accent hover:text-white rounded-full transition-all duration-300 flex items-center gap-3 group pointer-events-auto cursor-pointer relative z-20"
+              aria-label="Close modal"
+              type="button"
             >
               <span className="text-[10px] font-mono uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Return to Home</span>
               <X size={24} />

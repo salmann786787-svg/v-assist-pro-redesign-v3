@@ -2,11 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Linkedin,
-  Twitter,
-  ShieldCheck,
-  Activity,
-  Lock,
   Globe,
   Sparkles
 } from 'lucide-react';
@@ -16,10 +11,9 @@ import { SECTORS } from '../constants';
 interface FooterProps {
   onOpenProtocol?: () => void;
   onSelectSector?: (id: number) => void;
-  onSelectLocation?: (id: string) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelectLocation }) => {
+const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
   const handleScroll = (id: string) => {
     if (onSelectSector) {
       onSelectSector(null as any); // Type cast if necessary or use 0/null
@@ -41,10 +35,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
       {/* Ghost Aura Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_20%,_rgba(25,171,228,0.15),transparent_60%)] pointer-events-none" />
 
-      <div className="container mx-auto px-6 md:pl-28 relative z-10">
+      <div className="container mx-auto px-6 md:pl-28 relative z-10 flex flex-col" style={{ maxWidth: '768px', margin: '0 auto' }}>
 
         {/* Cinematic CTA Section */}
-        <div className="flex flex-col items-start mb-32">
+        <div className="flex flex-col items-start" style={{ margin: '0 auto 128px' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,12 +57,13 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-10"
           >
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1]" style={{ fontFamily: '"Playfair Display", serif' }}>
-              Stop managing <span className="italic text-white/50">the noise.</span>
+            <h2 style={{ fontFamily: '"Playfair Display", serif', font: '400 36px/48px "Playfair Display", serif', letterSpacing: '-0.9px' }}>
+              <div style={{ fontSize: '60px' }}>Stop managing </div>
+              <div style={{ display: 'inline', color: 'white', fontStyle: 'italic', fontWeight: '400', fontSize: '60px' }}>the noise.</div>
             </h2>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] italic text-accent mt-1" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <div style={{ color: 'var(--color-accent)', letterSpacing: '-0.9px', marginTop: '4px', font: 'italic 400 60px/40px "Playfair Display", serif' }}>
               Claim Focus.
-            </h2>
+            </div>
           </motion.div>
 
           <div className="flex flex-col md:flex-row items-start md:items-center gap-8 w-full">
@@ -88,111 +83,74 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
         </div>
 
         {/* Navigation Readout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 pb-32 border-b border-white/5">
-          <div className="lg:col-span-2 space-y-8">
+        <div className="grid grid-cols-3 gap-5 pb-24 border-b border-white/5">
+          <div className="space-y-8">
             <div className="space-y-6">
               <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
-              <p className="text-gray-600 dark:text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <p className="text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
                 We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
               </p>
             </div>
 
             <div className="space-y-4 pt-4">
               <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Private Comms</h4>
-              <a href="tel:+19416234590" className="text-gray-700 dark:text-white text-xl font-light block hover:text-accent transition-colors">(941) 623-4590</a>
-              <a href="mailto:info@vassistproinc.com" className="text-gray-600 dark:text-white hover:text-accent transition-colors block text-xs underline underline-offset-4">info@vassistproinc.com</a>
+              <a href="tel:+19416234590" className="text-white text-xl font-light block hover:text-accent transition-colors">(941) 623-4590</a>
+              <a href="mailto:info@vassistproinc.com" className="text-white hover:text-accent transition-colors block text-xs underline underline-offset-4">info@vassistproinc.com</a>
             </div>
           </div>
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Sectors</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {SECTORS.map((sector) => (
-                <li key={sector.id} className="h-4 flex items-baseline">
-                  <button
-                    onClick={() => {
-                      if (onSelectSector) onSelectSector(sector.id);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
-                  >
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    <span className="text-[14px]">{sector.title.split(' & ')[0].split(' - ')[0]}</span>
-                  </button>
-                </li>
-              ))}
+            <ul className="font-light text-white" style={{ fontFamily: 'Lato, sans-serif', marginTop: '22px', gap: '11px', display: 'flex', flexDirection: 'column' }}>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(1);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '21px', listStyle: 'none', marginRight: '10px', padding: '0 15px 15px 0' }}>
+                    <p>Luxury Ground Transport / Limo Services </p>
+                  </div>
+                </button>
+              </li>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none', marginTop: '16px' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(2);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '10px', listStyle: 'none' }}>
+                    High-Discretion Real Estate
+                  </div>
+                </button>
+              </li>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none', marginTop: '16px' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(3);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '10px', listStyle: 'none', marginTop: '-4px' }}>
+                    <p>Private &amp; Family Offices</p>
+                  </div>
+                </button>
+              </li>
             </ul>
           </div>
 
-          <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Command</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {[
-                { name: 'Home', id: 'home' },
-                { name: 'How It Works', id: 'methodology' },
-                { name: 'Operations Hub', id: 'integrations' },
-                { name: 'Private Evidence', id: 'evidence' },
-                { name: 'Principal Support', id: 'faq' }
-              ].map((link) => (
-                <li key={link.name} className="h-4 flex items-baseline">
-                  <button onClick={() => handleScroll(link.id)} className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] py-0">
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-[14px]">{link.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Regional</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {[
-                { name: 'Florida Operations', id: 'florida' },
-                { name: 'Miami Luxury market', id: 'miami' },
-                { name: 'US National Support', id: 'us' }
-              ].map((loc) => (
-                <li key={loc.id} className="h-4 flex items-baseline">
-                  <button
-                    onClick={() => {
-                      if (onSelectLocation) onSelectLocation(loc.id);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
-                  >
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    <span className="text-[14px]">{loc.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Readout</h4>
-            <div className="flex flex-col gap-6">
-              <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm w-fit">
-                <Activity className="w-4 h-4 text-accent animate-pulse" />
-                <span className="text-[10px] uppercase tracking-widest text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Boutique Capacity: Stable</span>
-              </div>
-
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
-                <ShieldCheck size={12} className="text-accent/50" />
-                <span>US-Based • 100% Confidential</span>
-              </div>
-
-              <div className="hidden md:block">
-                <div className="flex items-center gap-2 text-white/30 text-[9px] uppercase tracking-widest">
-                  <Globe size={10} />
-                  <span>Global Presence Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-40" style={{ font: '700 10px/15px Lato, sans-serif' }}>
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-50" style={{ font: '700 10px/15px Lato, sans-serif' }}>
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <Globe size={12} className="text-accent" />

@@ -60,6 +60,34 @@ const heroStyles = `
       color: inherit;
     }
   }
+
+  /* Light mode fixes */
+  .light .hero-title {
+    color: #111827 !important;
+  }
+
+  .light .hero-uninterrupted {
+    color: #19abe4 !important;
+  }
+
+  .light .hero-description {
+    color: #111827 !important;
+  }
+
+  /* Light mode fixes for the floating onboarding card */
+  .light {
+    --tw-text-opacity: 1;
+  }
+
+  .light .text-white\/30,
+  .light .text-white\/40,
+  .light .text-white\/50 {
+    color: rgba(17, 24, 39, 0.85) !important;
+  }
+
+  .light .border-white\/10 {
+    border-color: rgba(17, 24, 39, 0.15) !important;
+  }
 `;
 
 interface HeroProps {
@@ -84,11 +112,11 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
         {/* ===== BREATHING DOT GRID ===== */}
         <motion.div
-          animate={{ opacity: [0.2, 0.35, 0.2] }}
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.25) 1px, transparent 1px), radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.35) 1px, transparent 1px), radial-gradient(circle, rgba(0, 0, 0, 0.12) 1px, transparent 1px)`,
             backgroundSize: '32px 32px, 32px 32px',
             backgroundPosition: '0 0, 0 0',
           }}
@@ -196,7 +224,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                   <span style={{ letterSpacing: '3px', fontSize: '11px', fontWeight: '700', color: '#17aee7', fontFamily: 'Lato, sans-serif', textTransform: 'uppercase' }}>Customer Communications & Executive Operations, Handled</span>
                 </div>
 
-                <h1 className="font-serif text-dark dark:text-cream hero-title">
+                <h1 className="font-serif text-gray-900 dark:text-cream hero-title">
                   <p style={{ font: '600 115px/115px Playfair Display, serif', letterSpacing: '-4px' }}>Your focus,</p>
                   <div className="italic block hero-uninterrupted">
                     <p><span style={{ font: '600 100px/72px Playfair Display, serif', letterSpacing: '-4px', color: 'var(--color-accent)' }}>Uninterrupted.</span></p>
@@ -208,10 +236,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="lg:max-w-2xl border-l border-dark/5 dark:border-white/5"
-                style={{ paddingLeft: 'var(--sp-4xl)', marginTop: 'var(--sp-3xl)' }}
+                className="lg:max-w-2xl"
+                style={{ paddingLeft: 'var(--sp-4xl)', marginTop: 'var(--sp-3xl)', borderLeft: '0.2px solid rgba(25, 171, 228, 0.8)' }}
               >
-                <div className="hero-description text-dark dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '28px', marginBottom: '48px' }}>
+                <div className="hero-description text-gray-900 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '28px', marginBottom: '48px' }}>
                   <div style={{ fontWeight: '400' }}>
                     <p className="mb-4">
                       Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: <span className="font-semibold italic">operational noise drowns out what matters.</span>
@@ -241,12 +269,12 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                     </button>
 
                     {/* Trust Indicators */}
-                    <div className="flex items-center gap-4 px-2 text-dark/50 dark:text-cream/50">
+                    <div className="flex items-center gap-4 px-2 text-gray-600 dark:text-cream/50">
                       <div className="flex items-center gap-1.5">
                         <ShieldCheck size={12} className="text-accent" />
                         <span className="text-[10px] uppercase tracking-wider font-bold">100% Confidential</span>
                       </div>
-                      <div className="w-1 h-1 bg-dark/20 dark:bg-white/20 rounded-full" />
+                      <div className="w-1 h-1 bg-gray-300 dark:bg-white/20 rounded-full" />
                       <div className="flex items-center gap-1.5">
                         <Lock size={12} className="text-accent" />
                         <span className="text-[10px] uppercase tracking-wider font-bold">30-Day Guarantee</span>
@@ -275,7 +303,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="bg-white/95 dark:bg-charcoal/80 backdrop-blur-3xl border border-dark/10 dark:border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.15)] relative z-10 group rounded-xl"
+                className="bg-white/95 dark:bg-charcoal/80 backdrop-blur-3xl border border-gray-300 dark:border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.15)] relative z-10 group rounded-xl"
                 style={{ padding: "30px 40px", marginTop: "7px" }}
               >
                 <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform" style={{ backgroundColor: 'var(--color-accent)' }}>
@@ -286,9 +314,9 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all">
                     <ShieldCheck size={35} />
                   </div>
-                  <div className="text-dark dark:text-white" style={{ fontWeight: '500' }}>
-                    <h4 className="text-dark dark:text-white" style={{ marginBottom: '12px', font: 'italic 600 20px/28px Lato, sans-serif' }}>Human Intelligence</h4>
-                    <div className="text-dark/90 dark:text-white" style={{ font: '500 17px/19.5px Lato, sans-serif' }}>
+                  <div className="text-gray-900 dark:text-white" style={{ fontWeight: '500' }}>
+                    <h4 className="text-gray-900 dark:text-white" style={{ marginBottom: '12px', font: 'italic 600 20px/28px Lato, sans-serif' }}>Human Intelligence</h4>
+                    <div className="text-gray-800 dark:text-white" style={{ font: '500 17px/19.5px Lato, sans-serif' }}>
                       <p style={{ fontWeight: '400', lineHeight: '20.5px', fontSize: '18px' }}>
                         We are a boutique firm of people, not software. We learn your voice and preferences, and the rhythm of your business.
                       </p>

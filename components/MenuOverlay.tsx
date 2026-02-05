@@ -57,7 +57,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 bottom-0 w-[55%] md:w-[32%] min-w-[300px] z-[60] flex flex-col bg-white/80 dark:bg-black/60 backdrop-blur-3xl shadow-[20px_0_100px_rgba(0,0,0,0.2)] dark:shadow-[80px_0_120px_rgba(0,0,0,0.6)] border-r border-white/20 dark:border-white/10 overflow-hidden"
+            className="fixed top-0 left-0 bottom-0 w-[60%] md:w-[40%] lg:w-[35%] min-w-[350px] z-[60] flex flex-col bg-white/80 dark:bg-black/60 backdrop-blur-3xl shadow-[20px_0_100px_rgba(0,0,0,0.2)] dark:shadow-[80px_0_120px_rgba(0,0,0,0.6)] border-r border-white/20 dark:border-white/10 overflow-hidden"
           >
             {/* Liquid Background Accents */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 pointer-events-none" />
@@ -72,7 +72,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
               <X size={24} />
             </button>
 
-            <div className="flex-1 flex flex-col justify-center px-8 md:px-12 lg:px-20 py-12 relative z-10 text-dark dark:text-cream h-full max-h-screen">
+            <div className="flex-1 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-12 relative z-10 text-gray-900 dark:text-cream h-full max-h-screen">
               {/* Logo / Title Area (Optional height reduction) */}
               <div className="mb-8 md:mb-12">
                 <p className="text-[10px] font-bold tracking-[0.6em] text-accent uppercase opacity-50">Private Terminal</p>
@@ -86,9 +86,9 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 + index * 0.08, type: "spring", stiffness: 100, damping: 25 }}
                     onClick={() => handleScroll(link.id)}
-                    className="group cursor-pointer flex items-baseline border-b border-dark/5 dark:border-white/5 pb-3 md:pb-4 hover:border-accent/40 transition-colors"
+                    className="group cursor-pointer flex items-baseline border-b border-gray-300 dark:border-white/5 pb-3 md:pb-4 hover:border-accent/40 transition-colors"
                   >
-                    <span className="text-[10px] md:text-xs mr-6 md:mr-10 opacity-50 dark:opacity-30 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest text-dark dark:text-cream" style={{ fontFamily: 'Lato, sans-serif' }}>{link.number}</span>
+                    <span className="text-[10px] md:text-xs mr-6 md:mr-10 opacity-50 dark:opacity-30 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest text-gray-700 dark:text-cream" style={{ fontFamily: 'Lato, sans-serif' }}>{link.number}</span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight leading-none group-hover:translate-x-3 transition-transform duration-700 group-hover:text-accent" style={{ fontFamily: '"Playfair Display", serif' }}>
                       {link.name}
                     </h2>
@@ -104,8 +104,8 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
                 className="mt-12 md:mt-16 grid grid-cols-1 gap-6 md:gap-8"
               >
                 <div style={{ fontFamily: 'Lato, sans-serif' }} className="space-y-1">
-                  <p className="text-lg md:text-xl font-medium">(941) 623-4590</p>
-                  <div className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors text-dark/80 dark:text-cream/80" style={{ fontWeight: '500' }}>
+                  <p className="text-lg md:text-xl font-medium text-gray-900 dark:text-white">(941) 623-4590</p>
+                  <div className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors text-gray-800 dark:text-cream/80" style={{ fontWeight: '500' }}>
                     <p>info@vassistproinc.com</p>
                   </div>
                 </div>
