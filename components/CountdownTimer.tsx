@@ -58,7 +58,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`flex items-center ${compact ? 'gap-2' : 'gap-4'} text-dark dark:text-cream`}
+      className={`flex items-center ${compact ? 'gap-2' : 'gap-4'} text-gray-900 dark:text-cream`}
     >
       {!compact && (
         <>
@@ -71,7 +71,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
           </div>
 
           {/* Divider */}
-          <div className="w-px h-6 bg-dark/20 dark:bg-white/20" />
+          <div className="w-px h-6 bg-gray-300 dark:bg-white/20" />
         </>
       )}
 
@@ -81,34 +81,34 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.days).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Days</div>
+          <div className="text-[10px] uppercase tracking-wider text-gray-700 dark:text-cream/60">Days</div>
         </div>
 
-        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
+        <span className="font-serif text-gray-400 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.hours).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Hrs</div>
+          <div className="text-[10px] uppercase tracking-wider text-gray-700 dark:text-cream/60">Hrs</div>
         </div>
 
-        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
+        <span className="font-serif text-gray-400 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.minutes).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Min</div>
+          <div className="text-[10px] uppercase tracking-wider text-gray-700 dark:text-cream/60">Min</div>
         </div>
 
-        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
+        <span className="font-serif text-gray-400 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.seconds).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Sec</div>
+          <div className="text-[10px] uppercase tracking-wider text-gray-700 dark:text-cream/60">Sec</div>
         </div>
       </div>
     </motion.div>
