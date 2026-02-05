@@ -84,12 +84,12 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
         {/* ===== BREATHING DOT GRID ===== */}
         <motion.div
-          animate={{ opacity: [0.08, 0.15, 0.08] }}
+          animate={{ opacity: [0.2, 0.35, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.6) 1.5px, transparent 1.5px), radial-gradient(circle, rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px)`,
-            backgroundSize: '40px 40px, 40px 40px',
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.25) 1px, transparent 1px), radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
+            backgroundSize: '32px 32px, 32px 32px',
             backgroundPosition: '0 0, 0 0',
           }}
         />
@@ -211,8 +211,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                 className="lg:max-w-2xl border-l border-dark/5 dark:border-white/5"
                 style={{ paddingLeft: 'var(--sp-4xl)', marginTop: 'var(--sp-3xl)' }}
               >
-                <div className="hero-description text-gray-700 dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '300', lineHeight: '28px', marginBottom: '48px' }}>
-                  <div style={{ fontWeight: '300' }}>
+                <div className="hero-description text-dark dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '20px', fontWeight: '400', lineHeight: '28px', marginBottom: '48px' }}>
+                  <div style={{ fontWeight: '400' }}>
                     <p className="mb-4">
                       Whether you run a limo fleet, manage a family office, or close million-dollar deals, one problem persists: <span className="font-semibold italic">operational noise drowns out what matters.</span>
                     </p>
@@ -263,15 +263,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                       <Download size={16} className="text-accent group-hover:scale-110 transition-transform" />
                       <span className="uppercase tracking-[0.15em] text-xs font-bold text-accent">Get Free Guide</span>
                     </button>
-
-                    {/* Consultation Link */}
-                    <button
-                      onClick={() => window.open('https://calendly.com', '_blank')}
-                      className="flex flex-col items-start group px-2"
-                    >
-                      <span className="text-[9px] uppercase tracking-[0.2em] text-accent/70 font-bold mb-1 group-hover:text-accent transition-colors">Private Advisory</span>
-                      <span className="text-[11px] font-medium border-b border-dark/20 dark:border-white/20 text-dark/80 dark:text-cream/80 group-hover:border-accent transition-colors">Schedule Consultation</span>
-                    </button>
                   </div>
                 </div>
 
@@ -295,10 +286,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                   <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all">
                     <ShieldCheck size={35} />
                   </div>
-                  <div className="text-gray-700 dark:text-white" style={{ fontWeight: '400' }}>
-                    <h4 className="text-gray-800 dark:text-white" style={{ marginBottom: '12px', font: 'italic 400 20px/28px Lato, sans-serif' }}>Human Intelligence</h4>
-                    <div className="text-gray-600 dark:text-white" style={{ font: '400 17px/19.5px Lato, sans-serif' }}>
-                      <p style={{ fontWeight: '300', lineHeight: '20.5px', fontSize: '18px' }}>
+                  <div className="text-dark dark:text-white" style={{ fontWeight: '500' }}>
+                    <h4 className="text-dark dark:text-white" style={{ marginBottom: '12px', font: 'italic 600 20px/28px Lato, sans-serif' }}>Human Intelligence</h4>
+                    <div className="text-dark/90 dark:text-white" style={{ font: '500 17px/19.5px Lato, sans-serif' }}>
+                      <p style={{ fontWeight: '400', lineHeight: '20.5px', fontSize: '18px' }}>
                         We are a boutique firm of people, not software. We learn your voice and preferences, and the rhythm of your business.
                       </p>
                     </div>

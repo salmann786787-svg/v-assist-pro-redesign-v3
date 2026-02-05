@@ -91,7 +91,7 @@ const Integrations: React.FC = () => {
             <h3 className="text-5xl md:text-7xl text-dark dark:text-cream leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
               The <span className="italic text-gray-900 dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>Operations Hub.</span>
             </h3>
-            <p className="mt-8 text-lg text-gray-900 dark:text-cream/90 font-light leading-relaxed max-w-2xl" style={{ fontFamily: 'Lato, sans-serif', lineHeight: '22px' }}>
+            <p className="mt-8 text-lg text-dark dark:text-cream/90 font-light leading-relaxed max-w-2xl" style={{ fontFamily: 'Lato, sans-serif', lineHeight: '22px' }}>
               Our Ghost Engine doesn't work in isolation. We bridge the gap between your specialized industry tools and institutional automation.
             </p>
           </div>
@@ -116,7 +116,7 @@ const Integrations: React.FC = () => {
                         className="integration-logo-img"
                       />
                     </div>
-                    <span className="text-sm font-medium tracking-wide text-gray-900 dark:text-cream/90 transition-colors text-center">
+                    <span className="text-sm font-medium tracking-wide text-dark dark:text-cream/90 transition-colors text-center">
                       {tool.name}
                     </span>
                   </div>
@@ -157,7 +157,7 @@ const Integrations: React.FC = () => {
 
                   <div>
                     <h4 className="font-serif text-2xl tracking-wide text-dark dark:text-cream mb-1" style={{ fontFamily: '"Playfair Display", serif' }}>{app.name}</h4>
-                    <p className="text-xs text-gray-900 dark:text-cream/80 leading-relaxed max-w-sm" style={{ fontFamily: 'Lato, sans-serif' }}>{app.desc}</p>
+                    <p className="text-xs text-dark dark:text-cream/80 leading-relaxed max-w-sm" style={{ fontFamily: 'Lato, sans-serif' }}>{app.desc}</p>
                   </div>
                 </div>
               </motion.div>

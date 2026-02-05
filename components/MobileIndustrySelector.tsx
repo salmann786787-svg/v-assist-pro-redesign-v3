@@ -88,7 +88,7 @@ const MobileIndustrySelector: React.FC<MobileIndustrySelectorProps> = ({ onSelec
 
               {/* Description */}
               <p
-                className="text-sm font-light italic relative z-10 leading-relaxed text-dark/70 dark:text-cream/70"
+                className="text-sm font-light italic relative z-10 leading-relaxed text-dark dark:text-cream/90"
                 style={{ fontFamily: 'Lato, sans-serif' }}
               >
                 "{sector.subtitle}"

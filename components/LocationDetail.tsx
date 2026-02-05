@@ -70,7 +70,7 @@ const LocationDetail: React.FC<LocationDetailProps> = ({ location, onBack, onOpe
                                 The `h4` and `p` with `app.name` and `app.desc` are not part of the current `LocationDetailProps` and would cause errors.
                                 I will only apply the contrast fix to the existing `p` tag.
                             */}
-                            <p className="text-xl md:text-2xl font-light text-gray-900 dark:text-cream leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+                            <p className="text-xl md:text-2xl font-light text-dark dark:text-cream leading-relaxed mb-12 max-w-2xl" style={{ fontFamily: 'Lato, sans-serif' }}>
                                 {location.description}
                             </p>
 
@@ -79,7 +79,7 @@ const LocationDetail: React.FC<LocationDetailProps> = ({ location, onBack, onOpe
                                 {location.stats.map((stat, i) => (
                                     <div key={i} className="p-6 bg-white/50 dark:bg-white/5 border border-dark/10 dark:border-white/10 rounded-2xl backdrop-blur-sm">
                                         <div className="text-4xl font-serif text-accent mb-2">{stat.value}</div>
-                                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-dark/70 dark:text-cream/50">{stat.label}</div>
+                                        <div className="text-[10px] uppercase tracking-[0.2em] font-bold text-dark dark:text-cream/50">{stat.label}</div>
                                     </div>
                                 ))}
                             </div>
@@ -116,7 +116,7 @@ const LocationDetail: React.FC<LocationDetailProps> = ({ location, onBack, onOpe
                                         <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent mt-1 group-hover:bg-accent group-hover:text-white transition-colors">
                                             <Activity size={12} />
                                         </div>
-                                        <p className="text-gray-700 dark:text-white/70 font-light leading-relaxed">
+                                        <p className="text-dark/90 dark:text-white/70 font-light leading-relaxed">
                                             {feature}
                                         </p>
                                     </div>

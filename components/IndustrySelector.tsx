@@ -63,7 +63,7 @@ const IndustrySelector: React.FC<IndustrySelectorProps> = ({ onSelectSector }) =
                       <span style={{ transition: 'color var(--transition-normal) ease' }} className="group-hover/card:text-accent">{sector.title}</span>
                     </h4>
 
-                    <p className="text-lg md:text-xl font-light text-gray-900 dark:text-cream/70 max-w-xl leading-relaxed italic" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <p className="text-lg md:text-xl font-light text-dark dark:text-cream leading-relaxed italic" style={{ fontFamily: 'Lato, sans-serif' }}>
                       "{sector.subtitle}"
                     </p>
                   </div>

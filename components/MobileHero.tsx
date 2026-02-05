@@ -24,21 +24,21 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
 
         {/* Subtle dot grid for mobile */}
         <motion.div
-          animate={{ opacity: [0.15, 0.25, 0.15] }}
+          animate={{ opacity: [0.25, 0.4, 0.25] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0 pointer-events-none dark:hidden"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.4) 1.5px, transparent 1.5px)`,
-            backgroundSize: '40px 40px',
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '32px 32px',
           }}
         />
         <motion.div
-          animate={{ opacity: [0.08, 0.15, 0.08] }}
+          animate={{ opacity: [0.15, 0.25, 0.15] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0 pointer-events-none hidden dark:block"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.3) 1.5px, transparent 1.5px)`,
-            backgroundSize: '40px 40px',
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.2) 1px, transparent 1px)`,
+            backgroundSize: '32px 32px',
           }}
         />
 
@@ -152,10 +152,10 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           className="mb-5 max-w-sm"
         >
           <div
-            className="text-gray-900 dark:text-cream/90 text-center"
+            className="text-dark dark:text-cream/90 text-center"
             style={{
               fontFamily: 'Lato, sans-serif',
-              fontWeight: '300',
+              fontWeight: '400',
               fontSize: '16px',
               lineHeight: '22px',
               marginTop: '-5px',
@@ -229,17 +229,7 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
           </span>
         </motion.button>
 
-        {/* Consultation Link for Mobile */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.9 }}
-          onClick={() => window.open('https://calendly.com', '_blank')}
-          className="flex flex-col items-center group px-2 mb-8"
-        >
-          <span className="text-[9px] uppercase tracking-[0.2em] text-accent/70 font-bold mb-1 group-hover:text-accent transition-colors">Private Advisory</span>
-          <span className="text-[11px] font-medium border-b border-dark/10 dark:border-white/10 group-hover:border-accent transition-colors text-dark dark:text-white">Schedule Consultation</span>
-        </motion.button>
+        <div className="mb-8" />
 
         {/* Feature Card */}
         <motion.div
@@ -255,21 +245,21 @@ const MobileHero: React.FC<MobileHeroProps> = ({ onOpenProtocol, isMenuOpen = fa
             </div>
             <div className="flex-1">
               <h4
-                className="text-gray-800 dark:text-white mb-2"
+                className="text-dark dark:text-white mb-2"
                 style={{
                   fontFamily: 'Lato, sans-serif',
                   fontSize: '16px',
-                  fontWeight: '500',
+                  fontWeight: '600',
                   fontStyle: 'italic',
                 }}
               >
                 Human Intelligence
               </h4>
               <div
-                className="text-gray-600 dark:text-white text-sm"
+                className="text-dark/90 dark:text-white text-sm"
                 style={{
                   fontFamily: 'Lato, sans-serif',
-                  fontWeight: '300',
+                  fontWeight: '400',
                   lineHeight: '18px',
                 }}
               >

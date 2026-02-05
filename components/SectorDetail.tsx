@@ -58,11 +58,11 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
               )}
             </div>
 
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-gray-900 dark:text-cream leading-[0.9] mb-8 tracking-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-dark dark:text-cream leading-[0.9] mb-8 tracking-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
               {sector.title}
             </h1>
 
-            <p className="text-xl text-gray-900 dark:text-white font-light max-w-md leading-relaxed mb-12 border-l-2 border-accent pl-6" style={{ fontFamily: 'Lato, sans-serif' }}>
+            <p className="text-xl text-dark dark:text-white font-light max-w-md leading-relaxed mb-12 border-l-2 border-accent pl-6" style={{ fontFamily: 'Lato, sans-serif' }}>
               {sector.subtitle}
             </p>
 
@@ -74,12 +74,12 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
 
           {/* Right Protocol Stats */}
           <div className="bg-white dark:bg-white/5 p-8 md:p-12 border border-dark/5 dark:border-white/10 shadow-xl">
-            <h3 className="font-serif text-2xl text-gray-900 dark:text-cream mb-8" style={{ fontFamily: '"Playfair Display", serif' }}>Protocol Impact</h3>
+            <h3 className="font-serif text-2xl text-dark dark:text-cream mb-8" style={{ fontFamily: '"Playfair Display", serif' }}>Protocol Impact</h3>
             <div className="space-y-8">
               {sector.impact.stats.map((stat, i) => (
                 <div key={i} className="flex items-center justify-between border-b border-dark/5 dark:border-white/5 pb-4">
-                  <span className="text-xs text-gray-900 dark:text-white uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif' }}>{stat.label}</span>
-                  <span className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-cream">{stat.value}</span>
+                  <span className="text-xs text-dark dark:text-white uppercase tracking-wider" style={{ fontFamily: 'Lato, sans-serif' }}>{stat.label}</span>
+                  <span className="text-3xl md:text-4xl font-bold text-dark dark:text-cream">{stat.value}</span>
                 </div>
               ))}
             </div>
@@ -131,8 +131,8 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
 
         {/* The Friction Section */}
         <div className="mb-32" style={{ borderColor: 'rgba(255, 255, 255, 0.1)', borderTopWidth: '1px', borderWidth: '1px 0px 0px', marginBottom: '128px', paddingTop: '80px' }}>
-          <h2 className="font-serif text-4xl md:text-5xl text-gray-900 dark:text-cream mb-6" style={{ fontFamily: '"Playfair Display", serif', marginBottom: '24px', font: '400 48px/48px "Playfair Display", serif' }}>The Friction</h2>
-          <p className="text-lg text-gray-900 dark:text-white mb-12 max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <h2 className="font-serif text-4xl md:text-5xl text-dark dark:text-cream mb-6" style={{ fontFamily: '"Playfair Display", serif', marginBottom: '24px', font: '400 48px/48px "Playfair Display", serif' }}>The Friction</h2>
+          <p className="text-lg text-dark dark:text-white mb-12 max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
             The specific operational bottlenecks holding this industry back.
           </p>
 
@@ -146,8 +146,8 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
                 transition={{ delay: i * 0.1 }}
                 className="bg-red-500/5 p-8 border-l-4 border-red-500/40 hover:border-red-500/60 transition-colors"
               >
-                <h4 className="font-bold text-lg mb-2 text-gray-900 dark:text-cream">{friction.title}</h4>
-                <p className="text-sm text-gray-900 dark:text-white leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{friction.description}</p>
+                <h4 className="font-bold text-lg mb-2 text-dark dark:text-cream">{friction.title}</h4>
+                <p className="text-sm text-dark dark:text-white leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{friction.description}</p>
               </motion.div>
             ))}
           </div>
@@ -156,7 +156,7 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
         {/* The Vortex Solution - Multiple Solutions */}
         <div className="mb-32">
           <h2 className="font-serif text-4xl md:text-5xl text-dark dark:text-cream mb-6" style={{ fontFamily: '"Playfair Display", serif' }}>The Vortex Solution</h2>
-          <p className="text-lg text-gray-900 dark:text-white mb-12 max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <p className="text-lg text-dark dark:text-white mb-12 max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
             {sector.protocol.description}
           </p>
 
@@ -176,7 +176,7 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
                   </div>
                   <div>
                     <h4 className="font-bold text-lg text-dark dark:text-cream mb-2">{solution.title}</h4>
-                    <p className="text-sm text-gray-900 dark:text-white leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{solution.description}</p>
+                    <p className="text-sm text-dark dark:text-white leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>{solution.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -195,7 +195,7 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
               <h3 className="font-serif text-3xl md:text-4xl text-dark dark:text-cream mb-4" style={{ fontFamily: '"Playfair Display", serif' }}>
                 {sector.caseStudy.title}
               </h3>
-              <p className="text-lg text-gray-900 dark:text-white mb-8 leading-relaxed max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <p className="text-lg text-dark dark:text-white mb-8 leading-relaxed max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
                 {sector.caseStudy.outcome}
               </p>
               <div className="flex flex-wrap gap-4">
@@ -215,7 +215,7 @@ const SectorDetail: React.FC<SectorDetailProps> = ({ sector, onBack, onOpenProto
           <h3 className="font-serif text-3xl md:text-4xl text-dark dark:text-cream mb-6" style={{ fontFamily: '"Playfair Display", serif' }}>
             Ready to Eliminate the Noise?
           </h3>
-          <p className="text-lg text-gray-900 dark:text-white mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <p className="text-lg text-dark dark:text-white mb-8 max-w-2xl mx-auto" style={{ fontFamily: 'Lato, sans-serif' }}>
             Join forward-thinking leaders who've reclaimed their focus and scaled without the operational burden.
           </p>
           <button
