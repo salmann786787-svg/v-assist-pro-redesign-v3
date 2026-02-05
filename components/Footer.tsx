@@ -88,7 +88,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
         </div>
 
         {/* Navigation Readout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 pb-32 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 pb-24 border-b border-white/5">
           <div className="lg:col-span-2 space-y-8">
             <div className="space-y-6">
               <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
@@ -192,7 +192,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-40" style={{ font: '700 10px/15px Lato, sans-serif' }}>
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-50" style={{ font: '700 10px/15px Lato, sans-serif' }}>
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <Globe size={12} className="text-accent" />
