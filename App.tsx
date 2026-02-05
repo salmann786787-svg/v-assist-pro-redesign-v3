@@ -63,6 +63,7 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-cream dark:bg-dark min-h-screen transition-colors duration-500 relative">
+      <StickyHeaderBanner isDarkMode={isDarkMode} onOpenProtocol={handleOpenProtocol} />
 
       {isMobile ? (
         <MobileSidebar
