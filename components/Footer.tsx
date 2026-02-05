@@ -37,7 +37,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
   };
 
   return (
-    <footer className="bg-dark text-cream pt-48 pb-12 overflow-hidden relative">
+    <footer className="bg-dark text-cream pt-24 pb-12 overflow-hidden relative">
       {/* Ghost Aura Background */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_20%,_rgba(25,171,228,0.15),transparent_60%)] pointer-events-none" />
 
@@ -88,28 +88,36 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
         </div>
 
         {/* Navigation Readout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 pb-32 border-b border-white/5">
-          <div className="space-y-8">
-            <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
-            <p className="text-gray-600 dark:text-white leading-relaxed max-w-xs font-light" style={{ fontFamily: 'Lato, sans-serif' }}>
-              We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 pb-32 border-b border-white/5">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="space-y-6">
+              <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
+              <p className="text-gray-600 dark:text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
+                We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
+              </p>
+            </div>
+
+            <div className="space-y-4 pt-4">
+              <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Private Comms</h4>
+              <a href="tel:+19416234590" className="text-gray-700 dark:text-white text-xl font-light block hover:text-accent transition-colors">(941) 623-4590</a>
+              <a href="mailto:info@vassistproinc.com" className="text-gray-600 dark:text-white hover:text-accent transition-colors block text-xs underline underline-offset-4">info@vassistproinc.com</a>
+            </div>
           </div>
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Sectors</h4>
             <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {SECTORS.map((sector) => (
-                <li key={sector.id}>
+                <li key={sector.id} className="h-4 flex items-baseline">
                   <button
                     onClick={() => {
                       if (onSelectSector) onSelectSector(sector.id);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
-                    className="hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left"
+                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
                   >
                     <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    {sector.title.split(' & ')[0].split(' - ')[0]}
+                    <span className="text-[14px]">{sector.title.split(' & ')[0].split(' - ')[0]}</span>
                   </button>
                 </li>
               ))}
@@ -126,10 +134,10 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
                 { name: 'Private Evidence', id: 'evidence' },
                 { name: 'Principal Support', id: 'faq' }
               ].map((link) => (
-                <li key={link.name}>
-                  <button onClick={() => handleScroll(link.id)} className="hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]">
+                <li key={link.name} className="h-4 flex items-baseline">
+                  <button onClick={() => handleScroll(link.id)} className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] py-0">
                     <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {link.name}
+                    <span className="text-[14px]">{link.name}</span>
                   </button>
                 </li>
               ))}
@@ -144,13 +152,16 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
                 { name: 'Miami Luxury market', id: 'miami' },
                 { name: 'US National Support', id: 'us' }
               ].map((loc) => (
-                <li key={loc.id}>
+                <li key={loc.id} className="h-4 flex items-baseline">
                   <button
-                    onClick={() => onSelectLocation?.(loc.id)}
-                    className="hover:text-white hover:translate-x-2 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left"
+                    onClick={() => {
+                      if (onSelectLocation) onSelectLocation(loc.id);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
                   >
                     <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    {loc.name}
+                    <span className="text-[14px]">{loc.name}</span>
                   </button>
                 </li>
               ))}
@@ -158,51 +169,30 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Private Comms</h4>
-            <div className="space-y-4">
-              <a
-                href="tel:+19416234590"
-                className="text-gray-700 dark:text-white text-2xl font-light block hover:text-accent transition-colors"
-                aria-label="Call (941) 623-4590"
-              >
-                (941) 623-4590
-              </a>
-              <a
-                href="mailto:info@vassistproinc.com"
-                className="text-gray-600 dark:text-white hover:text-accent transition-colors cursor-pointer block text-sm"
-                style={{ fontFamily: 'Lato, sans-serif' }}
-              >
-                info@vassistproinc.com
-              </a>
-
-              <div className="flex flex-col gap-3 pt-4">
-                <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm w-fit">
-                  <Activity className="w-4 h-4 text-accent animate-pulse" />
-                  <span className="text-[10px] uppercase tracking-widest text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Boutique Capacity: Stable</span>
-                </div>
-
-                <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
-                  <ShieldCheck size={12} className="text-accent/50" />
-                  <span>US-Based • 100% Confidential</span>
-                </div>
+            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Readout</h4>
+            <div className="flex flex-col gap-6">
+              <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm w-fit">
+                <Activity className="w-4 h-4 text-accent animate-pulse" />
+                <span className="text-[10px] uppercase tracking-widest text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Boutique Capacity: Stable</span>
               </div>
 
-              {/* Mobile Mobile Quick Call Button */}
-              <div className="md:hidden pt-6">
-                <a
-                  href="tel:+19416234590"
-                  className="w-full py-4 bg-accent/20 border border-accent/40 rounded-lg flex items-center justify-center gap-3 text-accent font-bold uppercase tracking-widest text-xs"
-                >
-                  <Globe size={16} />
-                  Call Now
-                </a>
+              <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
+                <ShieldCheck size={12} className="text-accent/50" />
+                <span>US-Based • 100% Confidential</span>
+              </div>
+
+              <div className="hidden md:block">
+                <div className="flex items-center gap-2 text-white/30 text-[9px] uppercase tracking-widest">
+                  <Globe size={10} />
+                  <span>Global Presence Active</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 flex flex-col md:row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-40" style={{ font: '700 10px/15px Lato, sans-serif' }}>
+        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-12 text-[10px] uppercase tracking-[0.4em] opacity-40" style={{ font: '700 10px/15px Lato, sans-serif' }}>
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
               <Globe size={12} className="text-accent" />

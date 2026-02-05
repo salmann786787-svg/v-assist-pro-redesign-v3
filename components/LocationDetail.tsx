@@ -10,6 +10,10 @@ interface LocationDetailProps {
 }
 
 const LocationDetail: React.FC<LocationDetailProps> = ({ location, onBack, onOpenProtocol }) => {
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
