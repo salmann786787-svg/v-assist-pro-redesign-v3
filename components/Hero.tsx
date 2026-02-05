@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Activity, Sparkles, ShieldCheck, Download } from 'lucide-react';
+import { ArrowRight, Lock, Activity, Sparkles, ShieldCheck, Download } from 'lucide-react';
 import LeadMagnetGuide from './LeadMagnetGuide';
 
 const heroStyles = `
