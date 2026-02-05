@@ -89,7 +89,7 @@ const Integrations: React.FC = () => {
           <div className="mb-12">
             <h4 className="text-xs uppercase tracking-[0.3em] mb-6 font-bold" style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-sans)' }}>Command Infrastructure</h4>
             <h3 className="text-5xl md:text-7xl text-dark dark:text-cream leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
-              The <span className="italic text-gray-900 dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>Engine Room.</span>
+              The <span className="italic text-gray-900 dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>Operations Hub.</span>
             </h3>
             <p className="mt-8 text-lg text-gray-900 dark:text-cream/90 font-light leading-relaxed max-w-2xl" style={{ fontFamily: 'Lato, sans-serif', lineHeight: '22px' }}>
               Our Ghost Engine doesn't work in isolation. We bridge the gap between your specialized industry tools and institutional automation.
