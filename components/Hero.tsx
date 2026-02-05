@@ -92,7 +92,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
             backgroundSize: '40px 40px, 40px 40px',
             backgroundPosition: '0 0, 0 0',
           }}
-          className="absolute inset-0"
         />
 
         {/* ===== GRADIENT ORBS - Soft depth elements ===== */}
