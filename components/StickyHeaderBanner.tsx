@@ -25,6 +25,7 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
             src={isDarkMode ? logoDark : logoLight}
             alt="V-Assist Pro"
             className="h-8 md:h-10 w-auto object-contain"
+            style={{ marginRight: 'auto' }}
           />
         </div>
 
@@ -32,7 +33,7 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
         <div className="hidden md:flex items-center gap-6">
           <div className="flex items-center gap-2">
             <Lock size={12} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-[0.15em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
+            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-[0.15em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400', margin: '0 auto' }}>
               Exclusive Onboarding
             </span>
           </div>
@@ -41,7 +42,7 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
         </div>
 
         {/* Right side - Waitlist status with Join Now button */}
-        <div className="hidden md:flex items-center gap-4 text-gray-700 dark:text-white/70 text-xs" style={{ fontFamily: 'Lato, sans-serif' }}>
+        <div className="hidden md:flex items-center gap-4 text-gray-700 dark:text-white/70 text-xs" style={{ fontFamily: 'Lato, sans-serif', marginLeft: 'auto' }}>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
             <span className="uppercase tracking-wider">Waitlist Active</span>
