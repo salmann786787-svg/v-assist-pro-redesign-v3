@@ -152,65 +152,6 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             </ul>
           </div>
 
-          <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Command</h4>
-            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {[
-                { name: 'Home', id: 'home' },
-                { name: 'How It Works', id: 'methodology' },
-                { name: 'Operations Hub', id: 'integrations' },
-                { name: 'Private Evidence', id: 'evidence' },
-                { name: 'Principal Support', id: 'faq' }
-              ].map((link) => (
-                <li key={link.name} className="h-4 flex items-baseline">
-                  <button onClick={() => handleScroll(link.id)} className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] py-0">
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span className="text-[14px]">{link.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Regional</h4>
-            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {[
-                { name: 'Florida Operations', id: 'florida' },
-                { name: 'Miami Luxury market', id: 'miami' },
-                { name: 'US National Support', id: 'us' }
-              ].map((loc) => (
-                <li key={loc.id} className="h-4 flex items-baseline">
-                  <button
-                    onClick={() => {
-                      if (onSelectLocation) onSelectLocation(loc.id);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
-                  >
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    <span className="text-[14px]">{loc.name}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-8">
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
-                <ShieldCheck size={12} className="text-accent/50" />
-                <span>US-Based • 100% Confidential</span>
-              </div>
-
-              <div className="hidden md:block">
-                <div className="flex items-center gap-2 text-white/30 text-[9px] uppercase tracking-widest">
-                  <Globe size={10} />
-                  <span>Global Presence Active</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Footer Bottom */}
