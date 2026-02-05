@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             className="mb-10"
           >
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1]" style={{ fontFamily: '"Playfair Display", serif' }}>
-              Stop managing <span className="italic text-white/50">the noise.</span>
+              Stop managing <span className="italic text-white">the noise.</span>
             </h2>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight leading-[1.1] italic text-accent mt-1" style={{ fontFamily: '"Playfair Display", serif' }}>
               Claim Focus.
@@ -92,21 +92,21 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
           <div className="lg:col-span-2 space-y-8">
             <div className="space-y-6">
               <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
-              <p className="text-gray-600 dark:text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <p className="text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
                 We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
               </p>
             </div>
 
             <div className="space-y-4 pt-4">
               <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Private Comms</h4>
-              <a href="tel:+19416234590" className="text-gray-700 dark:text-white text-xl font-light block hover:text-accent transition-colors">(941) 623-4590</a>
-              <a href="mailto:info@vassistproinc.com" className="text-gray-600 dark:text-white hover:text-accent transition-colors block text-xs underline underline-offset-4">info@vassistproinc.com</a>
+              <a href="tel:+19416234590" className="text-white text-xl font-light block hover:text-accent transition-colors">(941) 623-4590</a>
+              <a href="mailto:info@vassistproinc.com" className="text-white hover:text-accent transition-colors block text-xs underline underline-offset-4">info@vassistproinc.com</a>
             </div>
           </div>
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Sectors</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
+            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {SECTORS.map((sector) => (
                 <li key={sector.id} className="h-4 flex items-baseline">
                   <button
@@ -126,7 +126,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Command</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
+            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {[
                 { name: 'Home', id: 'home' },
                 { name: 'How It Works', id: 'methodology' },
@@ -146,7 +146,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Regional</h4>
-            <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
+            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {[
                 { name: 'Florida Operations', id: 'florida' },
                 { name: 'Miami Luxury market', id: 'miami' },
