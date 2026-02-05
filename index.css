@@ -223,6 +223,33 @@
   color: #374151 !important;
 }
 
+/* Comprehensive light mode text color override */
+.light span:not(.dark\:text-white):not(.dark\:text-cream) {
+  color: inherit;
+}
+
+/* Override any remaining white text in light mode */
+.light {
+  --tw-text-opacity: 1;
+}
+
+.light .text-white {
+  color: #111827 !important;
+}
+
+.light .text-cream {
+  color: #111827 !important;
+}
+
+/* Additional light mode opacity fixes */
+.light [style*="color: rgba(25"] {
+  color: #111827 !important;
+}
+
+.light [style*="color: rgb(25"] {
+  color: #111827 !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
