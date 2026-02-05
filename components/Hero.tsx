@@ -60,6 +60,19 @@ const heroStyles = `
       color: inherit;
     }
   }
+
+  /* Light mode fixes */
+  .light .hero-title {
+    color: #111827 !important;
+  }
+
+  .light .hero-uninterrupted {
+    color: #19abe4 !important;
+  }
+
+  .light .hero-description {
+    color: #111827 !important;
+  }
 `;
 
 interface HeroProps {
