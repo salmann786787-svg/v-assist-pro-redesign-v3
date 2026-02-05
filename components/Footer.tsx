@@ -2,10 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   ArrowRight,
-  Linkedin,
-  Twitter,
-  ShieldCheck,
-  Lock,
   Globe,
   Sparkles
 } from 'lucide-react';
