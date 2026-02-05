@@ -41,7 +41,7 @@ const ProcessHorizontal: React.FC = () => {
 
         <div className="absolute top-12 left-6 md:left-24 z-10 pointer-events-none">
           <h2 className="text-4xl md:text-6xl font-serif text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>
-            The <span className="italic text-gray-900/50 dark:text-cream/60">Methodology</span>
+            <span className="italic text-gray-900/50 dark:text-cream/60">How It Works</span>
           </h2>
         </div>
 
