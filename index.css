@@ -223,34 +223,7 @@
   color: #374151 !important;
 }
 
-/* Comprehensive light mode text color override */
-.light span:not(.dark\:text-white):not(.dark\:text-cream) {
-  color: inherit;
-}
-
-/* Override any remaining white text in light mode */
-.light {
-  --tw-text-opacity: 1;
-}
-
-.light .text-white {
-  color: #111827 !important;
-}
-
-.light .text-cream {
-  color: #111827 !important;
-}
-
-/* Additional light mode opacity fixes */
-.light [style*="color: rgba(25"] {
-  color: #111827 !important;
-}
-
-.light [style*="color: rgb(25"] {
-  color: #111827 !important;
-}
-
-/* Critical fix for white text with opacity in light mode */
+/* CRITICAL FIX: Only target white text with opacity in light mode (these are the problem elements) */
 .light .text-white\/10,
 .light .text-white\/20,
 .light .text-white\/30,
