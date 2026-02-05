@@ -169,13 +169,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
           </div>
 
           <div className="space-y-8">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Readout</h4>
             <div className="flex flex-col gap-6">
-              <div className="inline-flex items-center gap-4 px-4 py-2 bg-accent/10 border border-accent/20 rounded-sm w-fit">
-                <Activity className="w-4 h-4 text-accent animate-pulse" />
-                <span className="text-[10px] uppercase tracking-widest text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Boutique Capacity: Stable</span>
-              </div>
-
               <div className="flex items-center gap-2 text-[10px] uppercase tracking-wider text-white/40 font-bold">
                 <ShieldCheck size={12} className="text-accent/50" />
                 <span>US-Based • 100% Confidential</span>
