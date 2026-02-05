@@ -11,10 +11,9 @@ import { SECTORS } from '../constants';
 interface FooterProps {
   onOpenProtocol?: () => void;
   onSelectSector?: (id: number) => void;
-  onSelectLocation?: (id: string) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelectLocation }) => {
+const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector }) => {
   const handleScroll = (id: string) => {
     if (onSelectSector) {
       onSelectSector(null as any); // Type cast if necessary or use 0/null
