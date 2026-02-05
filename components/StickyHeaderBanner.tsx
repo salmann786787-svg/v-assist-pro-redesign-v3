@@ -31,9 +31,9 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
 
         {/* Center - Exclusive Onboarding */}
         <div className="hidden md:flex items-center gap-6">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" style={{ margin: '0 auto' }}>
             <Lock size={12} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-[0.15em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400', margin: '0 auto' }}>
+            <span className="text-gray-900 dark:text-white text-xs uppercase tracking-[0.15em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
               Exclusive Onboarding
             </span>
           </div>
@@ -45,11 +45,12 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
         <div className="hidden md:flex items-center gap-4 text-gray-700 dark:text-white/70 text-xs" style={{ fontFamily: 'Lato, sans-serif', marginLeft: 'auto' }}>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            <span className="uppercase tracking-wider">Waitlist Active</span>
+            <span className="uppercase tracking-wider" style={{ marginLeft: 'auto' }}>Waitlist Active</span>
           </div>
           <button
             onClick={onOpenProtocol}
             className="px-4 py-2 bg-accent/20 hover:bg-accent/30 text-accent uppercase tracking-wider text-xs font-semibold rounded-lg transition-all duration-300 border border-accent/50 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+            style={{ marginLeft: 'auto' }}
           >
             Join Now
           </button>
