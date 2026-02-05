@@ -250,6 +250,25 @@
   color: #111827 !important;
 }
 
+/* Critical fix for white text with opacity in light mode */
+.light .text-white\/10,
+.light .text-white\/20,
+.light .text-white\/30,
+.light .text-white\/40,
+.light .text-white\/50,
+.light .text-white\/60,
+.light .text-white\/70 {
+  color: rgba(17, 24, 39, 0.85) !important;
+}
+
+/* Fix border-white opacity in light mode */
+.light .border-white\/10,
+.light .border-white\/20,
+.light .border-white\/30,
+.light .border-white\/5 {
+  border-color: rgba(17, 24, 39, 0.15) !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
