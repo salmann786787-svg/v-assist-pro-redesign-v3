@@ -112,11 +112,11 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
         {/* ===== BREATHING DOT GRID ===== */}
         <motion.div
-          animate={{ opacity: [0.2, 0.35, 0.2] }}
+          animate={{ opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute inset-0"
+          className="absolute inset-0 light:opacity-100"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.25) 1px, transparent 1px), radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.35) 1px, transparent 1px), radial-gradient(circle, rgba(0, 0, 0, 0.12) 1px, transparent 1px)`,
             backgroundSize: '32px 32px, 32px 32px',
             backgroundPosition: '0 0, 0 0',
           }}
