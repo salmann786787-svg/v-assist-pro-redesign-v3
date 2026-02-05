@@ -18,7 +18,15 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-[60] bg-cream/95 dark:bg-dark/95 backdrop-blur-md border-b border-dark/5 dark:border-white/10 py-3 transition-colors duration-500"
     >
-      <div className="w-full px-8 flex items-center justify-between gap-4">
+      <div className="w-full px-8 flex items-center justify-between gap-4 relative">
+        {/* Inner Corner Fillet (Concave rounding) */}
+        <div className="hidden md:block absolute top-[calc(100%+0px)] left-[80px] w-8 h-8 pointer-events-none overflow-hidden">
+          <div className="w-full h-full rounded-tl-[24px] shadow-[-16px_-16px_0_0_rgba(253,251,247,0.95)] dark:shadow-[-16px_-16px_0_0_rgba(15,15,15,0.95)]" />
+        </div>
+        <div className="md:hidden absolute top-[calc(100%+0px)] left-[64px] w-6 h-6 pointer-events-none overflow-hidden">
+          <div className="w-full h-full rounded-tl-[16px] shadow-[-12px_-12px_0_0_rgba(253,251,247,0.95)] dark:shadow-[-12px_-12px_0_0_rgba(15,15,15,0.95)]" />
+        </div>
+
         {/* Left - Logo & Est */}
         <div className="flex flex-col items-start gap-0.5 flex-shrink-0 relative">
           <img
