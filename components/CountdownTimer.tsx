@@ -59,11 +59,12 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       className={`flex items-center ${compact ? 'gap-2' : 'gap-4'} text-gray-900 dark:text-cream`}
+      style={{ margin: '0 auto' }}
     >
       {!compact && (
         <>
           {/* Limited Slots Label */}
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0" style={{ margin: '0 auto' }}>
             <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
             <span className="text-xs uppercase tracking-widest font-bold whitespace-nowrap" style={{ color: 'rgba(208, 2, 27, 1)', fontFamily: 'Lato, sans-serif' }}>
               Limited Slots
@@ -76,7 +77,7 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
       )}
 
       {/* Countdown Display */}
-      <div className={`flex items-center ${compact ? 'gap-1' : 'gap-1 md:gap-2'}`}>
+      <div className={`flex items-center ${compact ? 'gap-1' : 'gap-1 md:gap-2'}`} style={{ margin: '0 auto' }}>
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.days).padStart(2, '0')}
