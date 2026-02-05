@@ -73,6 +73,21 @@ const heroStyles = `
   .light .hero-description {
     color: #111827 !important;
   }
+
+  /* Light mode fixes for the floating onboarding card */
+  .light {
+    --tw-text-opacity: 1;
+  }
+
+  .light .text-white\/30,
+  .light .text-white\/40,
+  .light .text-white\/50 {
+    color: rgba(17, 24, 39, 0.85) !important;
+  }
+
+  .light .border-white\/10 {
+    border-color: rgba(17, 24, 39, 0.15) !important;
+  }
 `;
 
 interface HeroProps {
