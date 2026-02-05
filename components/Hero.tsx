@@ -1,9 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Lock, Activity, Sparkles, ShieldCheck, Download } from 'lucide-react';
-import logoDark from '../logo-dark.png';
-import logoLight from '../logo-light.png';
-import CountdownTimer from './CountdownTimer';
+import { ArrowRight, Activity, Sparkles, ShieldCheck, Download } from 'lucide-react';
 import LeadMagnetGuide from './LeadMagnetGuide';
 
 const heroStyles = `
