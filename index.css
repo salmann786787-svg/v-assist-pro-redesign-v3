@@ -85,10 +85,12 @@
 .light {
   --text-primary: #111827;
   --text-secondary: #374151;
+  --text-tertiary: #6b7280;
   --bg-primary: #faf9f6;
   --bg-secondary: #f3f0e8;
   --bg-surface: #ffffff;
   --border-light: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.15);
   --shadow-elevation: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -4px rgba(0, 0, 0, 0.05);
 }
 
@@ -116,6 +118,45 @@
 .light .dark\:border-white\/5,
 .light .dark\:border-white\/10 {
   border-color: var(--border-light);
+}
+
+/* Light mode text color fixes for proper contrast */
+.light .text-dark {
+  color: var(--text-primary) !important;
+}
+
+.light .text-dark\/50 {
+  color: rgba(17, 24, 39, 0.6) !important;
+}
+
+.light .text-dark\/60 {
+  color: rgba(17, 24, 39, 0.7) !important;
+}
+
+.light .text-dark\/80 {
+  color: rgba(17, 24, 39, 0.85) !important;
+}
+
+.light .text-dark\/90 {
+  color: rgba(17, 24, 39, 0.95) !important;
+}
+
+/* Light mode background color fixes */
+.light .bg-dark\/5 {
+  background-color: rgba(17, 24, 39, 0.08) !important;
+}
+
+.light .bg-dark\/10 {
+  background-color: rgba(17, 24, 39, 0.12) !important;
+}
+
+.light .bg-dark\/20 {
+  background-color: rgba(17, 24, 39, 0.2) !important;
+}
+
+/* Light mode border color fixes */
+.light .border-dark\/5 {
+  border-color: rgba(17, 24, 39, 0.08) !important;
 }
 
 .no-scrollbar::-webkit-scrollbar {
