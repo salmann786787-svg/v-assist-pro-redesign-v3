@@ -178,6 +178,16 @@
   border-color: rgba(17, 24, 39, 0.15) !important;
 }
 
+/* Light mode - Make Hero breathing dot grid visible */
+.light #home > div > div:first-child {
+  opacity: 1 !important;
+}
+
+/* Ensure background dot grid is visible with higher opacity in light mode */
+.light [style*="radial-gradient(circle, rgba(25, 171, 228"] {
+  background-image: radial-gradient(circle, rgba(25, 171, 228, 0.4) 1px, transparent 1px), radial-gradient(circle, rgba(17, 24, 39, 0.2) 1px, transparent 1px) !important;
+}
+
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
