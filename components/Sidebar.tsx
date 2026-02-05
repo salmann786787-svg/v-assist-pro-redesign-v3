@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode
       <aside className="fixed left-0 top-0 h-screen w-16 md:w-20 flex flex-col justify-between items-center py-8 transition-all duration-500 overflow-hidden" style={{ zIndex: 'var(--z-modal)' }}>
 
         {/* Liquid Glass Background Layer - Enhanced for Light Mode Visibility */}
-        <div className="absolute inset-0 bg-white/80 dark:bg-black/60 backdrop-blur-3xl border-r border-dark/[0.08] dark:border-white/10 z-0 shadow-[4px_0_24px_rgba(0,0,0,0.03)] dark:shadow-2xl" />
+        <div className="absolute inset-0 bg-white/95 dark:bg-black/80 backdrop-blur-3xl border-r border-dark/[0.12] dark:border-white/10 z-0 shadow-[8px_0_40px_rgba(0,0,0,0.06)] dark:shadow-2xl" />
 
         {/* Animated Liquid Core - Optimized for Dark Mode Glow & Light Mode Presence */}
         <motion.div
@@ -44,10 +44,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode
             aria-label="Toggle menu"
           >
             {/* Burger Menu Icon - Three Lines */}
-            <div className="flex flex-col font-medium" style={{ gap: 'var(--sp-sm)' }}>
-              <span className="block w-5 h-0.5 bg-accent dark:bg-accent-light transition-colors"></span>
-              <span className="block w-5 h-0.5 bg-accent dark:bg-accent-light transition-colors"></span>
-              <span className="block w-5 h-0.5 bg-accent dark:bg-accent-light transition-colors"></span>
+            <div className="flex flex-col gap-1.5">
+              <span className="block w-6 h-[2.5px] bg-accent dark:bg-accent-light transition-colors rounded-full shadow-sm"></span>
+              <span className="block w-6 h-[2.5px] bg-accent dark:bg-accent-light transition-colors rounded-full shadow-sm"></span>
+              <span className="block w-6 h-[2.5px] bg-accent dark:bg-accent-light transition-colors rounded-full shadow-sm"></span>
             </div>
             <span className="writing-vertical-lr text-[11px] font-medium tracking-[0.5em] uppercase text-accent dark:text-accent-light transition-colors">
               Menu

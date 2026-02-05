@@ -44,7 +44,7 @@ const MobileProcessHorizontal: React.FC = () => {
           className="mb-8"
         >
           <h2 className="text-4xl font-serif text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>
-            The <span className="text-white" style={{ color: 'rgba(255, 255, 255, 1)' }}>Methodology</span>
+            The <span className="text-accent">Methodology</span>
           </h2>
         </motion.div>
 
@@ -60,12 +60,12 @@ const MobileProcessHorizontal: React.FC = () => {
               <CircleDot size={18} className="animate-pulse" />
             </div>
             <div>
-              <p className="text-base md:text-lg font-light leading-relaxed" style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}>
-                <span style={{ color: 'rgba(255, 255, 255, 1)' }}>Talent is a variable. </span>
-                <span className="text-dark dark:text-white italic font-medium" style={{ color: 'rgba(25, 171, 228, 1)' }}>Infrastructure is a constant.</span>
+              <p className="text-base md:text-lg font-light leading-relaxed text-dark/70 dark:text-cream/70" style={{ fontFamily: 'Lato, sans-serif' }}>
+                <span className="text-dark dark:text-cream">Talent is a variable. </span>
+                <span className="text-accent italic font-medium">Infrastructure is a constant.</span>
               </p>
-              <p className="text-base font-light leading-relaxed mt-2" style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}>
-                We replace hero-dependency with the <span className="text-dark dark:text-white font-medium">Ghost Engine</span>—a custom-engineered system of elite personnel and human-led protocols.
+              <p className="text-base font-light leading-relaxed mt-2 text-dark/60 dark:text-cream/60" style={{ fontFamily: 'Lato, sans-serif' }}>
+                We replace hero-dependency with the <span className="text-dark dark:text-cream font-medium">Ghost Engine</span>—a custom-engineered system of elite personnel and human-led protocols.
               </p>
             </div>
           </div>
@@ -133,8 +133,8 @@ const MobileProcessHorizontal: React.FC = () => {
                     {step.title}
                   </h3>
                   <p
-                    className="text-sm md:text-base font-light leading-relaxed"
-                    style={{ fontFamily: 'Lato, sans-serif', color: 'rgba(255, 255, 255, 1)' }}
+                    className="text-sm md:text-base font-light leading-relaxed text-dark/70 dark:text-cream/70"
+                    style={{ fontFamily: 'Lato, sans-serif' }}
                   >
                     {step.description}
                   </p>

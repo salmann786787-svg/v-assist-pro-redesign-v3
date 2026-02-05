@@ -8,7 +8,11 @@ interface TimeLeft {
   seconds: number;
 }
 
-const CountdownTimer: React.FC = () => {
+interface CountdownTimerProps {
+  compact?: boolean;
+}
+
+const CountdownTimer: React.FC<CountdownTimerProps> = ({ compact = false }) => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -54,53 +58,57 @@ const CountdownTimer: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="flex items-center gap-4 text-white"
+      className={`flex items-center ${compact ? 'gap-2' : 'gap-4'} text-dark dark:text-cream`}
     >
-      {/* Limited Slots Label */}
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-        <span className="text-xs uppercase tracking-widest font-bold whitespace-nowrap" style={{ color: 'rgba(208, 2, 27, 1)', fontFamily: 'Lato, sans-serif' }}>
-          Limited Slots
-        </span>
-      </div>
+      {!compact && (
+        <>
+          {/* Limited Slots Label */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+            <span className="text-xs uppercase tracking-widest font-bold whitespace-nowrap" style={{ color: 'rgba(208, 2, 27, 1)', fontFamily: 'Lato, sans-serif' }}>
+              Limited Slots
+            </span>
+          </div>
 
-      {/* Divider */}
-      <div className="w-px h-6 bg-white/20" />
+          {/* Divider */}
+          <div className="w-px h-6 bg-dark/20 dark:bg-white/20" />
+        </>
+      )}
 
       {/* Countdown Display */}
-      <div className="flex items-center gap-1 md:gap-2">
+      <div className={`flex items-center ${compact ? 'gap-1' : 'gap-1 md:gap-2'}`}>
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.days).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider opacity-70">Days</div>
+          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Days</div>
         </div>
 
-        <span className="font-serif opacity-50 text-sm">:</span>
+        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.hours).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider opacity-70">Hrs</div>
+          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Hrs</div>
         </div>
 
-        <span className="font-serif opacity-50 text-sm">:</span>
+        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.minutes).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider opacity-70">Min</div>
+          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Min</div>
         </div>
 
-        <span className="font-serif opacity-50 text-sm">:</span>
+        <span className="font-serif text-dark/30 dark:text-white/30 text-sm">:</span>
 
         <div className="text-center">
           <div className="font-bold text-base md:text-xl font-serif leading-tight" style={{ color: 'rgba(25, 171, 228, 1)' }}>
             {String(timeLeft.seconds).padStart(2, '0')}
           </div>
-          <div className="text-[10px] uppercase tracking-wider opacity-70">Sec</div>
+          <div className="text-[10px] uppercase tracking-wider text-dark/60 dark:text-cream/60">Sec</div>
         </div>
       </div>
     </motion.div>

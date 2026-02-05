@@ -23,7 +23,7 @@ const IndustrySelector: React.FC<IndustrySelectorProps> = ({ onSelectSector }) =
           <h3 className="font-serif text-6xl md:text-8xl text-dark dark:text-cream leading-[0.9] tracking-tighter" style={{ fontFamily: '"Playfair Display", serif' }}>
             <div className="font-serif">Built for <span className="italic font-light" style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-serif)' }}>Your Industry.</span></div>
           </h3>
-          <p className="mt-12 text-xl md:text-2xl font-light max-w-2xl leading-relaxed text-gray-700 dark:text-white/90">
+          <p className="mt-12 text-xl md:text-2xl font-light max-w-2xl leading-relaxed text-gray-900 dark:text-cream/90">
             From customer communication outsourcing to executive operations management, we provide specialized support tailored to high-velocity sectors where operational noise is the primary bottleneck.
           </p>
         </div>
@@ -47,7 +47,7 @@ const IndustrySelector: React.FC<IndustrySelectorProps> = ({ onSelectSector }) =
               >
                 <button
                   onClick={() => onSelectSector(sector.id)}
-                  className="w-full text-left bg-white dark:bg-charcoal border border-dark/10 dark:border-white/5 shadow-[0_50px_100px_rgba(0,0,0,0.06)] dark:shadow-[0_50px_100px_rgba(0,0,0,0.5)] p-10 md:p-20 flex flex-col md:flex-row gap-16 items-center transition-all duration-700 hover:border-accent hover:scale-[1.01] relative overflow-hidden group/card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                  className="w-full text-left bg-white/98 dark:bg-charcoal border border-dark/15 dark:border-white/5 shadow-[0_30px_60px_rgba(0,0,0,0.05)] dark:shadow-[0_50px_100px_rgba(0,0,0,0.5)] p-10 md:p-20 flex flex-col md:flex-row gap-16 items-center transition-all duration-700 hover:border-accent hover:scale-[1.01] relative overflow-hidden group/card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
                 >
                   <div className="absolute inset-0 bg-white dark:bg-charcoal opacity-100 z-0" />
 
@@ -67,7 +67,7 @@ const IndustrySelector: React.FC<IndustrySelectorProps> = ({ onSelectSector }) =
                       <span style={{ transition: 'color var(--transition-normal) ease' }} className="group-hover/card:text-accent">{sector.title}</span>
                     </h4>
 
-                    <p className="text-lg md:text-xl font-light text-gray-600 dark:text-gray-300 max-w-xl leading-relaxed italic" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <p className="text-lg md:text-xl font-light text-gray-900 dark:text-cream/70 max-w-xl leading-relaxed italic" style={{ fontFamily: 'Lato, sans-serif' }}>
                       "{sector.subtitle}"
                     </p>
                   </div>

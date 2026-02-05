@@ -41,7 +41,7 @@ const ProcessHorizontal: React.FC = () => {
 
         <div className="absolute top-12 left-6 md:left-24 z-10 pointer-events-none">
           <h2 className="text-4xl md:text-6xl font-serif text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>
-            The <span className="italic text-gray-500 dark:text-white/60">Methodology</span>
+            The <span className="italic text-gray-900/50 dark:text-cream/60">Methodology</span>
           </h2>
         </div>
 
@@ -61,14 +61,14 @@ const ProcessHorizontal: React.FC = () => {
               <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center text-accent mb-12 border border-accent/30 shadow-2xl">
                 <CircleDot className="animate-pulse" size={32} />
               </div>
-              <div className="text-xl md:text-4xl font-light leading-relaxed mb-6">
+              <div className="text-xl md:text-4xl font-light leading-relaxed mb-6 text-dark dark:text-cream">
                 <span style={{ fontFamily: 'Lato, sans-serif' }}>Talent is a variable. </span>
                 <br />
                 <span className="italic" style={{ color: 'rgba(25, 171, 228, 1)', fontFamily: 'Lato, sans-serif' }}>Infrastructure is a constant.</span>
               </div>
-              <div className="text-lg text-gray-700 dark:text-white/80 font-light leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
+              <div className="text-lg text-gray-900 dark:text-cream/80 font-light leading-relaxed" style={{ fontFamily: 'Lato, sans-serif' }}>
                 <span>We replace hero-dependency with the </span>
-                <span className="text-dark dark:text-white font-medium">Ghost Engine</span>
+                <span className="text-dark dark:text-cream font-medium">Ghost Engine</span>
                 <span>—a custom-engineered system of elite personnel and human-led protocols that converts administrative friction into scalable assets.</span>
               </div>
               <div className="mt-12 flex items-center gap-4 text-[10px] font-mono tracking-[0.4em] text-accent font-bold">
@@ -126,7 +126,7 @@ const ProcessHorizontal: React.FC = () => {
                       <div className="h-[1px] w-12 bg-accent/30"></div>
                     </div>
                     <h3 className="text-5xl md:text-8xl font-serif mb-8 tracking-tight group-hover:text-accent transition-colors duration-500 text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>{step.title}</h3>
-                    <p className="text-xl md:text-2xl font-light text-gray-700 dark:text-white leading-relaxed border-l border-accent/30 pl-8 max-w-lg" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <p className="text-xl md:text-2xl font-light text-gray-900 dark:text-cream leading-relaxed border-l border-accent/30 pl-8 max-w-lg" style={{ fontFamily: 'Lato, sans-serif' }}>
                       {step.description}
                     </p>
 

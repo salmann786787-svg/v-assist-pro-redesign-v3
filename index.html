@@ -242,32 +242,41 @@
         }
       }
 
-      /* Light Mode Enhancements */
+      /* Light Mode Enhancements - Improved Depth & Contrast */
       .light {
-        --text-primary: #0f0f0f;
-        --text-secondary: #4b5563;
-        --bg-secondary: #f3f0ed;
-        --border-light: rgba(0, 0, 0, 0.12);
+        --text-primary: #111827;
+        --text-secondary: #374151;
+        --bg-primary: #faf9f6;
+        --bg-secondary: #f3f0e8;
+        --bg-surface: #ffffff;
+        --border-light: rgba(0, 0, 0, 0.08);
+        --shadow-elevation: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 10px -4px rgba(0, 0, 0, 0.05);
+      }
+
+      .light .bg-cream {
+        background-color: var(--bg-primary);
       }
 
       .light .dark\:text-cream {
-        color: var(--text-primary);
+        color: var(--text-primary) !important;
       }
 
       .light .dark\:text-white {
-        color: var(--text-secondary);
+        color: var(--text-secondary) !important;
       }
 
       .light .dark\:bg-dark {
-        background-color: var(--bg-secondary);
-      }
-
-      .light .dark\:border-white\/10 {
-        border-color: var(--border-light);
+        background-color: var(--bg-primary);
       }
 
       .light .dark\:bg-charcoal {
-        background-color: var(--bg-secondary);
+        background-color: var(--bg-surface);
+        box-shadow: var(--shadow-elevation);
+      }
+
+      .light .dark\:border-white\/5,
+      .light .dark\:border-white\/10 {
+        border-color: var(--border-light);
       }
 
       .no-scrollbar::-webkit-scrollbar {

@@ -16,7 +16,7 @@ const FAQ: React.FC = () => {
         <div className="text-left mb-20">
           <h4 className="text-xs uppercase tracking-[0.3em] mb-4 text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Operational Intelligence</h4>
           <h2 className="text-5xl md:text-7xl font-serif text-dark dark:text-cream leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
-            Institutional <span style={{ color: 'rgba(255, 255, 255, 1)' }}>clarity.</span>
+            Institutional <span className="text-accent">clarity.</span>
           </h2>
           <p className="mt-6 text-lg text-gray-900 dark:text-white max-w-2xl" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '300', lineHeight: '22px' }}>
             We operate with radical transparency. If your question isn't addressed here, our principals are available for direct inquiry.
@@ -50,7 +50,7 @@ const FAQ: React.FC = () => {
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-12 pr-12 text-gray-950 dark:text-white leading-relaxed text-lg font-medium max-w-3xl" style={{ fontFamily: 'Lato, sans-serif' }}>
+                    <div className="pb-8 text-gray-900 dark:text-cream/80 leading-relaxed font-light" style={{ fontFamily: 'Lato, sans-serif' }}>
                       {faq.answer}
                     </div>
                   </motion.div>

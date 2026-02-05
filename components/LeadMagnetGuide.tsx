@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Download, Mail, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface LeadMagnetGuideProps {
   isOpen: boolean;
@@ -18,23 +19,43 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
     setIsSubmitting(true);
 
     try {
-      // Simulate API call to send email/store lead
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        guide_name: 'Family Office Operations Excellence',
+        to_email: 'info@vassistproinc.com',
+        reply_to: email,
+      };
 
-      // In production, this would send to your email service
-      console.log('Lead captured:', { name, email });
+      console.log('Lead Magnet Submitted to EmailJS:', templateParams);
+
+      /* 
+      // REAL IMPLEMENTATION:
+      await emailjs.send(
+        'YOUR_SERVICE_ID', 
+        'YOUR_TEMPLATE_ID', 
+        templateParams,
+        'YOUR_PUBLIC_KEY'
+      );
+      */
+
+      // Simulating network delay
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       setIsSuccess(true);
 
-      // Reset form after 2 seconds
+      // Reset form after 5 seconds
       setTimeout(() => {
+        setIsSuccess(false);
         setEmail('');
         setName('');
-        setIsSuccess(false);
         onClose();
-      }, 2000);
+      }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
+      alert('There was an error requesting your guide. Please try again.');
+    } finally {
       setIsSubmitting(false);
     }
   };
@@ -60,7 +81,7 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             className="fixed inset-0 z-[70] flex items-center justify-center p-4"
           >
-            <div className="bg-white dark:bg-charcoal rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
+            <div className="bg-white dark:bg-charcoal rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative">
               {/* Close Button */}
               <button
                 onClick={onClose}
@@ -79,11 +100,7 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
                     className="mb-6"
                   >
                     <div className="flex items-center gap-2 mb-3">
-                      <Download
-                        size={24}
-                        className="text-accent"
-                        style={{ color: 'rgba(25, 171, 228, 1)' }}
-                      />
+                      <Download size={24} className="text-accent" />
                       <h2 className="text-2xl font-serif text-dark dark:text-cream">
                         Free Guide
                       </h2>
@@ -121,12 +138,6 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
                         Proven frameworks to eliminate operational bottlenecks
                       </span>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle size={18} className="text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-gray-700 dark:text-gray-300">
-                        Implementation checklists and templates
-                      </span>
-                    </div>
                   </motion.div>
 
                   {/* Form */}
@@ -138,38 +149,32 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
                     className="space-y-4"
                   >
                     <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-dark dark:text-cream mb-2"
-                      >
+                      <label htmlFor="name" className="block text-sm font-medium text-dark dark:text-cream mb-2">
                         Full Name
                       </label>
                       <input
                         id="name"
+                        required
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Your name"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
                       />
                     </div>
 
                     <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-dark dark:text-cream mb-2"
-                      >
+                      <label htmlFor="email" className="block text-sm font-medium text-dark dark:text-cream mb-2">
                         Email Address
                       </label>
                       <input
                         id="email"
+                        required
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="your@email.com"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-dark/10 dark:border-white/10 bg-white dark:bg-dark/50 text-dark dark:text-cream placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent transition-all"
                       />
                     </div>
 
@@ -177,7 +182,6 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
                       type="submit"
                       disabled={isSubmitting}
                       className="w-full py-3 px-4 bg-accent hover:bg-accent/90 text-white font-semibold rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                      style={{ backgroundColor: 'rgba(25, 171, 228, 1)' }}
                     >
                       {isSubmitting ? (
                         <>
@@ -213,18 +217,11 @@ const LeadMagnetGuide: React.FC<LeadMagnetGuideProps> = ({ isOpen, onClose }) =>
                     transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                     className="mb-4"
                   >
-                    <CheckCircle
-                      size={56}
-                      className="text-green-500 mx-auto"
-                    />
+                    <CheckCircle size={56} className="text-green-500 mx-auto" />
                   </motion.div>
 
-                  <h3 className="text-2xl font-serif text-dark dark:text-cream mb-2">
-                    Success!
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-2">
-                    Check your email for your free guide
-                  </p>
+                  <h3 className="text-2xl font-serif text-dark dark:text-cream mb-2">Success!</h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-2">Check your email for your free guide</p>
                   <p className="text-sm text-gray-500 dark:text-gray-500">
                     We've sent the Family Office Operations Excellence guide to {email}
                   </p>

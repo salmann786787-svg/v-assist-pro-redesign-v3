@@ -20,7 +20,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
 }) => {
   return (
     <>
-      <nav className="fixed bottom-0 left-0 right-0 h-20 flex items-center justify-between px-6 bg-white/80 dark:bg-black/60 backdrop-blur-3xl border-t border-dark/[0.08] dark:border-white/10 z-40 md:hidden">
+      <nav className="fixed bottom-0 left-0 right-0 h-20 flex items-center justify-between px-6 bg-white/95 dark:bg-black/60 backdrop-blur-3xl border-t border-dark/[0.12] dark:border-white/10 z-40 md:hidden shadow-[0_-8px_30px_rgba(0,0,0,0.04)]">
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
@@ -36,7 +36,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
 
         {/* Center - Waitlist section */}
         <div className="flex flex-col items-center gap-1">
-          <div className="flex items-center justify-center gap-2 text-dark/70 dark:text-white/70 text-[8px]" style={{ fontFamily: 'Lato, sans-serif' }}>
+          <div className="flex items-center justify-center gap-2 text-dark/90 dark:text-cream/70 text-[8px]" style={{ fontFamily: 'Lato, sans-serif' }}>
             <div className="w-1 h-1 bg-cyan-400 rounded-full animate-pulse" />
             <span className="uppercase tracking-wider">Waitlist Active</span>
           </div>

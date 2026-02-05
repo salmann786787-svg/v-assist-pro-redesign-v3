@@ -85,7 +85,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
                     onClick={() => handleScroll(link.id)}
                     className="group cursor-pointer flex items-baseline border-b border-dark/5 dark:border-white/5 pb-3 md:pb-4 hover:border-accent/40 transition-colors"
                   >
-                    <span className="text-[10px] md:text-xs mr-6 md:mr-10 opacity-30 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest" style={{ fontFamily: 'Lato, sans-serif' }}>{link.number}</span>
+                    <span className="text-[10px] md:text-xs mr-6 md:mr-10 opacity-50 dark:opacity-30 group-hover:text-accent group-hover:opacity-100 transition-all font-bold tracking-widest text-dark dark:text-cream" style={{ fontFamily: 'Lato, sans-serif' }}>{link.number}</span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif italic tracking-tight leading-none group-hover:translate-x-3 transition-transform duration-700 group-hover:text-accent" style={{ fontFamily: '"Playfair Display", serif' }}>
                       {link.name}
                     </h2>
@@ -102,7 +102,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
               >
                 <div style={{ fontFamily: 'Lato, sans-serif' }} className="space-y-1">
                   <p className="text-lg md:text-xl font-medium">(941) 623-4590</p>
-                  <div className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors" style={{ color: 'rgba(255, 255, 255, 1)', fontWeight: '500' }}>
+                  <div className="text-lg md:text-xl hover:text-accent cursor-pointer transition-colors text-dark/80 dark:text-cream/80" style={{ fontWeight: '500' }}>
                     <p>info@vassistproinc.com</p>
                   </div>
                 </div>

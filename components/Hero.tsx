@@ -60,7 +60,7 @@ const heroStyles = `
       color: #1c90be;
     }
     .hero-description {
-      color: rgba(255, 255, 255, 1);
+      color: inherit;
     }
   }
 `;
@@ -79,7 +79,27 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0">
+    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden">
+      {/* Premium Background - Breathing Dot Grid & Gradient Orbs (Covering entire section) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Base gradient layer */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-cream dark:from-dark dark:via-charcoal dark:to-dark" />
+
+        {/* ===== BREATHING DOT GRID ===== */}
+        <motion.div
+          animate={{ opacity: [0.15, 0.25, 0.15] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.4) 1.5px, transparent 1.5px)`,
+            backgroundSize: '40px 40px',
+          }}
+        />
+
+        {/* ===== GRADIENT ORBS - Soft depth elements ===== */}
+        <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] dark:bg-cyan-500/5 animate-pulse" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] dark:bg-blue-500/5" />
+      </div>
 
       {/* Dark Premium Banner - Fixed & Glassmorphic */}
       <motion.div
@@ -135,91 +155,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
       </motion.div>
 
       {/* Spacer for Fixed Banner */}
-      <div className="h-14 md:h-16" />
+      <div className="h-28 md:h-36" />
 
-      {/* Main Hero Content & Background Elements */}
-      <div className="flex-1 flex items-center relative">
-        {/* Premium Background - Breathing Dot Grid & Gradient Orbs */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Base gradient layer */}
-          <div className="absolute inset-0 bg-gradient-to-br from-cream via-white to-cream dark:from-dark dark:via-charcoal dark:to-dark" />
-
-          {/* ===== BREATHING DOT GRID ===== */}
-          {/* Unified grid - visible in both light and dark modes */}
-          <motion.div
-            animate={{ opacity: [0.2, 0.35, 0.2] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.5) 2px, transparent 2px)`,
-              backgroundSize: '60px 60px',
-            }}
-          />
-
-          {/* ===== GRADIENT ORBS - Soft depth elements ===== */}
-          {/* Large orb - top right */}
-          <motion.div
-            animate={{
-              x: [0, 40, -20, 0],
-              y: [0, -30, 20, 0],
-              scale: [1, 1.08, 0.95, 1],
-            }}
-            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-[15%] -right-[5%] w-[700px] h-[700px] rounded-full opacity-50 blur-[130px] pointer-events-none hidden lg:block"
-            style={{
-              background: 'radial-gradient(circle, rgba(25, 171, 228, 0.5) 0%, rgba(6, 182, 212, 0.2) 35%, transparent 60%)',
-            }}
-          />
-
-          {/* Secondary orb - bottom left */}
-          <motion.div
-            animate={{
-              x: [0, -30, 25, 0],
-              y: [0, 25, -20, 0],
-              scale: [1, 0.95, 1.05, 1],
-            }}
-            transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-            className="absolute -bottom-[10%] -left-[8%] w-[550px] h-[550px] rounded-full opacity-40 blur-[110px] pointer-events-none hidden lg:block"
-            style={{
-              background: 'radial-gradient(circle, rgba(14, 165, 233, 0.45) 0%, rgba(8, 145, 178, 0.15) 35%, transparent 55%)',
-            }}
-          />
-
-          {/* Accent orb - center area */}
-          <motion.div
-            animate={{
-              opacity: [0.15, 0.3, 0.15],
-              scale: [1, 1.15, 1],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 8 }}
-            className="absolute top-[35%] left-[35%] w-[450px] h-[450px] rounded-full blur-[100px] pointer-events-none hidden lg:block"
-            style={{
-              background: 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 45%)',
-            }}
-          />
-
-          {/* Small floating highlight orb */}
-          <motion.div
-            animate={{
-              x: [0, 50, -40, 0],
-              y: [0, -40, 50, 0],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 12 }}
-            className="absolute top-[20%] right-[30%] w-[250px] h-[250px] rounded-full blur-[70px] pointer-events-none"
-            style={{
-              background: 'radial-gradient(circle, rgba(34, 211, 238, 0.4) 0%, transparent 50%)',
-            }}
-          />
-        </div>
-
-        {/* Subtle noise texture for premium feel */}
-        <div
-          className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03] pointer-events-none mix-blend-overlay"
-          style={{
-            backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23n)\'/%3E%3C/svg%3E")',
-          }}
-        />
+      {/* Main Hero Content */}
+      <div className="flex-1 flex flex-col items-center justify-center relative pt-16 pb-40">
 
         {/* Animated SVG Wave Paths */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
@@ -343,104 +282,66 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-start gap-6">
-                  {/* Primary CTA */}
-                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-                    <div className="flex flex-col gap-4">
-                      <button
-                        onClick={onOpenProtocol}
-                        className="group relative px-10 py-4 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-xl transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-                        style={{
-                          backgroundColor: 'rgba(var(--color-accent-rgb), 0.7)',
-                          boxShadow: 'hover:shadow-[0_20px_40px_rgba(0,180,216,0.25)]'
-                        }}
-                      >
-                        {/* Glow background on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                <div className="flex flex-col lg:flex-row items-start lg:items-stretch gap-8 mt-12">
+                  {/* Primary Path */}
+                  <div className="flex flex-col gap-4">
+                    <button
+                      onClick={onOpenProtocol}
+                      className="group relative h-16 px-10 flex items-center gap-4 overflow-hidden rounded-lg border-2 border-accent/40 backdrop-blur-sm shadow-xl transition-all duration-500 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                      style={{
+                        backgroundColor: 'rgba(var(--color-accent-rgb), 0.8)',
+                      }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/20 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+                      <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold text-white">Secure Your Slot</span>
+                      <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
+                    </button>
 
-                        <span className="relative z-20 uppercase tracking-[0.2em] text-xs font-bold transition-colors duration-300 text-white">Secure Your Slot</span>
-                        <ArrowRight className="relative z-20 w-4 h-4 group-hover:translate-x-2 transition-all duration-500 text-white" />
-                      </button>
-
-                      {/* Trust Indicators */}
-                      <div className="flex items-center gap-4 px-2 opacity-60">
-                        <div className="flex items-center gap-1.5">
-                          <ShieldCheck size={12} className="text-accent" />
-                          <span className="text-[10px] uppercase tracking-wider font-bold">100% Confidential</span>
-                        </div>
-                        <div className="w-1 h-1 bg-dark/20 dark:bg-white/20 rounded-full" />
-                        <div className="flex items-center gap-1.5">
-                          <Lock size={12} className="text-accent" />
-                          <span className="text-[10px] uppercase tracking-wider font-bold">30-Day Guarantee</span>
-                        </div>
+                    {/* Trust Indicators */}
+                    <div className="flex items-center gap-4 px-2 text-dark/50 dark:text-cream/50">
+                      <div className="flex items-center gap-1.5">
+                        <ShieldCheck size={12} className="text-accent" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold">100% Confidential</span>
                       </div>
-                    </div>
-
-                    <div className="flex flex-col gap-4">
-                      {/* Secondary CTA - Free Guide */}
-                      <button
-                        onClick={() => setIsGuideOpen(true)}
-                        className="group relative px-8 py-4 flex items-center gap-3 rounded-lg border-2 border-accent/40 hover:border-accent transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-                        style={{
-                          backgroundColor: 'transparent',
-                          color: 'var(--color-accent)'
-                        }}
-                      >
-                        <Download size={16} className="group-hover:scale-110 transition-transform" />
-                        <span className="uppercase tracking-[0.15em] text-xs font-bold transition-colors duration-300">Get Free Guide</span>
-                      </button>
-
-                      {/* Consultation Link */}
-                      <button
-                        onClick={() => window.open('https://calendly.com', '_blank')}
-                        className="flex flex-col items-start group px-2"
-                      >
-                        <span className="text-[9px] uppercase tracking-[0.2em] text-accent/70 font-bold mb-1 group-hover:text-accent transition-colors">Low Commitment</span>
-                        <span className="text-[11px] font-medium border-b border-dark/10 dark:border-white/10 group-hover:border-accent transition-colors">Schedule Consultation</span>
-                      </button>
-                    </div>
-
-                    {/* Conversion Path Indicator - Integrated Layout */}
-                    <div className="mt-16 flex flex-col gap-6">
-                      <div className="flex items-center gap-4">
-                        <div className="h-[1px] w-8 bg-accent/20" />
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-accent/60 font-bold">The Onboarding Protocol</span>
-                      </div>
-
-                      <div className="flex items-center gap-6">
-                        {[
-                          { label: 'Secure Slot', status: 'Current' },
-                          { label: 'Qualification Call', status: 'Pending' },
-                          { label: 'Onboarding', status: 'Pending' }
-                        ].map((step, i) => (
-                          <React.Fragment key={step.label}>
-                            <div className="flex flex-col items-start gap-2">
-                              <div className={`flex items-center gap-3`}>
-                                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[9px] font-bold border transition-colors ${i === 0 ? 'bg-accent border-accent text-white shadow-[0_0_15px_rgba(25,171,228,0.3)]' : 'border-dark/10 dark:border-white/10 text-dark/40 dark:text-white/40'}`}>
-                                  {i + 1}
-                                </div>
-                                <span className={`text-[10px] uppercase tracking-widest font-bold ${i === 0 ? 'text-dark dark:text-cream' : 'text-dark/40 dark:text-white/40'}`}>
-                                  {step.label}
-                                </span>
-                              </div>
-                            </div>
-                            {i < 2 && <ArrowRight size={12} className="text-dark/10 dark:text-white/10" />}
-                          </React.Fragment>
-                        ))}
+                      <div className="w-1 h-1 bg-dark/20 dark:bg-white/20 rounded-full" />
+                      <div className="flex items-center gap-1.5">
+                        <Lock size={12} className="text-accent" />
+                        <span className="text-[10px] uppercase tracking-wider font-bold">30-Day Guarantee</span>
                       </div>
                     </div>
                   </div>
+
+                  {/* Secondary Path */}
+                  <div className="flex flex-col gap-4">
+                    <button
+                      onClick={() => setIsGuideOpen(true)}
+                      className="group relative h-16 px-8 flex items-center gap-3 rounded-lg border-2 border-accent/40 hover:border-accent transition-all duration-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent bg-transparent"
+                    >
+                      <Download size={16} className="text-accent group-hover:scale-110 transition-transform" />
+                      <span className="uppercase tracking-[0.15em] text-xs font-bold text-accent">Get Free Guide</span>
+                    </button>
+
+                    {/* Consultation Link */}
+                    <button
+                      onClick={() => window.open('https://calendly.com', '_blank')}
+                      className="flex flex-col items-start group px-2"
+                    >
+                      <span className="text-[9px] uppercase tracking-[0.2em] text-accent/70 font-bold mb-1 group-hover:text-accent transition-colors">Private Advisory</span>
+                      <span className="text-[11px] font-medium border-b border-dark/20 dark:border-white/20 text-dark/80 dark:text-cream/80 group-hover:border-accent transition-colors">Schedule Consultation</span>
+                    </button>
+                  </div>
+                </div>
+
               </motion.div>
             </div>
 
             <div className="lg:col-span-4 flex flex-col justify-center lg:justify-start relative" style={{ gap: "16px" }}>
-
               {/* Human Intelligence Card */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.6 }}
-                className="bg-white/80 dark:bg-charcoal/80 backdrop-blur-3xl border border-dark/5 dark:border-white/5 shadow-[0_40px_80px_rgba(0,0,0,0.15)] relative z-10 group rounded-xl"
+                className="bg-white/95 dark:bg-charcoal/80 backdrop-blur-3xl border border-dark/10 dark:border-white/5 shadow-[0_20px_40px_rgba(0,0,0,0.06)] dark:shadow-[0_40px_80px_rgba(0,0,0,0.15)] relative z-10 group rounded-xl"
                 style={{ padding: "30px 40px", marginTop: "7px" }}
               >
                 <div className="absolute -top-6 -right-6 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform" style={{ backgroundColor: 'var(--color-accent)' }}>
@@ -465,12 +366,39 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
           </div>
         </div>
+      </div>
 
+      {/* Floating Onboarding Protocol - Restored Premium Design */}
+      < div className="absolute bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 z-30 hidden md:flex" >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex items-center gap-12 px-12 py-6 rounded-3xl bg-white/5 dark:bg-dark/10 border border-white/10 dark:border-white/5 backdrop-blur-2xl shadow-[0_30px_60px_rgba(0,0,0,0.3)]"
+        >
+          {[
+            { label: 'Secure Slot', status: 'Current' },
+            { label: 'Qualification Call', status: 'Pending' },
+            { label: 'Onboarding', status: 'Pending' }
+          ].map((step, i) => (
+            <React.Fragment key={step.label}>
+              <div className="flex items-center gap-4 group cursor-pointer">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold border transition-all duration-500 ${i === 0 ? 'bg-accent border-accent text-white shadow-[0_0_25px_rgba(25,171,228,0.5)] scale-110' : 'border-white/10 text-white/40 group-hover:border-white/30 group-hover:text-white/60'}`}>
+                  {i + 1}
+                </div>
+                <div className="flex flex-col">
+                  <span className={`text-[10px] uppercase tracking-[0.2em] font-bold transition-colors ${i === 0 ? 'text-white' : 'text-white/30 group-hover:text-white/50'}`}>
+                    {step.label}
+                  </span>
+                  {i === 0 && <span className="text-[8px] text-accent font-bold uppercase tracking-tighter animate-pulse">Action Required</span>}
+                </div>
+              </div>
+              {i < 2 && <ArrowRight size={14} className="text-white/10" />}
+            </React.Fragment>
+          ))}
+        </motion.div>
       </div >
-    </div >
-
-  {/* Lead Magnet Modal */ }
-  < LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
+      <LeadMagnetGuide isOpen={isGuideOpen} onClose={() => setIsGuideOpen(false)} />
     </section >
   );
 };
