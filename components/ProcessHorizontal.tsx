@@ -132,7 +132,6 @@ const ProcessHorizontal: React.FC = () => {
 
                     <div className="mt-12 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                       {[1, 2, 3].map(i => <div key={i} className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-accent ml-2">Engine Synchronizing...</span>
                     </div>
                   </div>
                 </div>
