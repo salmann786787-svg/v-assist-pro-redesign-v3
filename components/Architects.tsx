@@ -69,8 +69,7 @@ const Architects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:border-l border-dark/10 dark:border-white/10"
-            style={{ paddingLeft: 'var(--sp-3xl)' }}
+            style={{ paddingLeft: 'var(--sp-3xl)', borderLeft: '0.25px solid rgba(25, 171, 228, 0.8)' }}
           >
             <p className="text-dark dark:text-white" style={{ fontFamily: 'Lato, sans-serif', fontSize: '17px', fontWeight: '400', lineHeight: '22px', marginBottom: 'var(--sp-2xl)' }}>
               For years, V Assist Pro Inc. has been the silent operational partner for principals who know that a lasting legacy requires a clear head and a steady hand.
