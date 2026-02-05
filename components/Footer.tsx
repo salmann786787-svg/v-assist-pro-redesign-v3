@@ -89,7 +89,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
 
         {/* Navigation Readout */}
         <div className="grid grid-cols-3 gap-5 pb-24 border-b border-white/5">
-          <div className="lg:col-span-2 space-y-8">
+          <div className="space-y-8">
             <div className="space-y-6">
               <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
               <p className="text-white leading-relaxed font-light text-sm" style={{ fontFamily: 'Lato, sans-serif' }}>
@@ -106,21 +106,49 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
 
           <div className="space-y-8">
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold" style={{ font: '700 12px/16px Lato, sans-serif' }}>Sectors</h4>
-            <ul className="space-y-4 font-light text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
-              {SECTORS.map((sector) => (
-                <li key={sector.id} className="h-4 flex items-baseline">
-                  <button
-                    onClick={() => {
-                      if (onSelectSector) onSelectSector(sector.id);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
-                  >
-                    <div className="w-1 h-1 bg-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                    <span className="text-[14px]">{sector.title.split(' & ')[0].split(' - ')[0]}</span>
-                  </button>
-                </li>
-              ))}
+            <ul className="font-light text-white" style={{ fontFamily: 'Lato, sans-serif', marginTop: '22px', gap: '11px', display: 'flex', flexDirection: 'column' }}>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(1);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '21px', listStyle: 'none', marginRight: '10px', padding: '0 15px 15px 0' }}>
+                    <p>Luxury Ground Transport / Limo Services </p>
+                  </div>
+                </button>
+              </li>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none', marginTop: '16px' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(2);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '10px', listStyle: 'none' }}>
+                    High-Discretion Real Estate
+                  </div>
+                </button>
+              </li>
+              <li className="flex items-baseline" style={{ display: 'flex', alignItems: 'baseline', fontWeight: '300', height: '16px', listStyle: 'none', marginTop: '16px' }}>
+                <button
+                  onClick={() => {
+                    if (onSelectSector) onSelectSector(3);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="hover:text-white transition-all duration-300 flex items-center gap-3 group focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] text-left py-0"
+                  style={{ display: 'flex', alignItems: 'center', fontWeight: '300', gap: '12px', backgroundColor: 'transparent', borderColor: 'transparent' }}
+                >
+                  <div style={{ display: 'block', fontSize: '14px', fontWeight: '300', lineHeight: '10px', listStyle: 'none', marginTop: '-4px' }}>
+                    <p>Private &amp; Family Offices</p>
+                  </div>
+                </button>
+              </li>
             </ul>
           </div>
 
