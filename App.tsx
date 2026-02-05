@@ -57,6 +57,11 @@ const App: React.FC = () => {
   };
 
   const handleOpenProtocol = () => setIsProtocolOpen(true);
+  const resetView = () => {
+    setSelectedSectorId(null);
+    setSelectedLocationId(null);
+    window.history.pushState({}, '', '/');
+  };
 
   const selectedSector = SECTORS.find(s => s.id === selectedSectorId);
   const selectedLocation = LOCATIONS.find(l => l.id === selectedLocationId);
@@ -72,6 +77,7 @@ const App: React.FC = () => {
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}
           onOpenProtocol={handleOpenProtocol}
+          onHomeClick={resetView}
         />
       ) : (
         <Sidebar
@@ -80,6 +86,7 @@ const App: React.FC = () => {
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}
           onOpenProtocol={handleOpenProtocol}
+          onHomeClick={resetView}
         />
       )}
 

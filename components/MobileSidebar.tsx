@@ -9,6 +9,7 @@ interface MobileSidebarProps {
   isDarkMode: boolean;
   toggleTheme: () => void;
   onOpenProtocol: () => void;
+  onHomeClick: () => void;
 }
 
 const MobileSidebar: React.FC<MobileSidebarProps> = ({
@@ -17,6 +18,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
   isDarkMode,
   toggleTheme,
   onOpenProtocol,
+  onHomeClick,
 }) => {
   return (
     <>
@@ -64,6 +66,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({
         onClose={() => setIsMenuOpen(false)}
         isDarkMode={isDarkMode}
         onOpenProtocol={onOpenProtocol}
+        onHomeClick={onHomeClick}
       />
     </>
   );

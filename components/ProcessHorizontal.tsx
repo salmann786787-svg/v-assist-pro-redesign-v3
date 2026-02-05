@@ -29,7 +29,7 @@ const ProcessHorizontal: React.FC = () => {
   const lineWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[500vh] bg-cream dark:bg-dark text-dark dark:text-cream">
+    <section ref={targetRef} id="methodology" className="relative h-[500vh] bg-cream dark:bg-dark text-dark dark:text-cream">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
 
         {/* Connection Line (The Ghost Flow) */}

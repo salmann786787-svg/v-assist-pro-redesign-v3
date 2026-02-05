@@ -9,9 +9,10 @@ interface SidebarProps {
   isDarkMode: boolean;
   toggleTheme: () => void;
   onOpenProtocol: () => void;
+  onHomeClick: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode, toggleTheme, onOpenProtocol }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode, toggleTheme, onOpenProtocol, onHomeClick }) => {
   return (
     <>
       <aside className="fixed left-0 top-0 h-screen w-16 md:w-20 flex flex-col justify-between items-center py-8 transition-all duration-500 overflow-hidden" style={{ zIndex: 'var(--z-modal)' }}>
@@ -86,6 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isMenuOpen, setIsMenuOpen, isDarkMode
         onClose={() => setIsMenuOpen(false)}
         isDarkMode={isDarkMode}
         onOpenProtocol={onOpenProtocol}
+        onHomeClick={onHomeClick}
       />
     </>
   );

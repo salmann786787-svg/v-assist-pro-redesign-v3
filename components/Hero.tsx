@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden min-h-[100vh]" id="hero">
+    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden min-h-[100vh]" id="home">
       {/* Premium Background - Breathing Dot Grid & Gradient Orbs (Covering entire section) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Base gradient layer */}
