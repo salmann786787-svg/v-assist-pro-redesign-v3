@@ -1,9 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Lock, Activity, Sparkles, ShieldCheck, Download } from 'lucide-react';
-import logoDark from '../logo-dark.png';
-import logoLight from '../logo-light.png';
-import CountdownTimer from './CountdownTimer';
 import LeadMagnetGuide from './LeadMagnetGuide';
 
 const heroStyles = `
@@ -79,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col bg-cream dark:bg-dark transition-colors duration-500 pb-20 md:pb-0 overflow-hidden min-h-[100vh]" id="hero">
       {/* Premium Background - Breathing Dot Grid & Gradient Orbs (Covering entire section) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Base gradient layer */}
@@ -87,12 +84,13 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
 
         {/* ===== BREATHING DOT GRID ===== */}
         <motion.div
-          animate={{ opacity: [0.15, 0.25, 0.15] }}
+          animate={{ opacity: [0.08, 0.15, 0.08] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.4) 1.5px, transparent 1.5px)`,
-            backgroundSize: '40px 40px',
+            backgroundImage: `radial-gradient(circle, rgba(25, 171, 228, 0.6) 1.5px, transparent 1.5px), radial-gradient(circle, rgba(0, 0, 0, 0.15) 1.5px, transparent 1.5px)`,
+            backgroundSize: '40px 40px, 40px 40px',
+            backgroundPosition: '0 0, 0 0',
           }}
         />
 
@@ -101,61 +99,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenProtocol }) => {
         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] dark:bg-blue-500/5" />
       </div>
 
-      {/* Dark Premium Banner - Fixed & Glassmorphic */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="fixed top-0 left-16 md:left-20 right-0 z-40 py-3 px-6 flex items-center cursor-pointer group overflow-hidden backdrop-blur-md border-b border-dark/5 dark:border-white/5 bg-cream/70 dark:bg-dark/80"
-      >
-        {/* Left - Logo */}
-        <div className="flex flex-col items-center">
-          <img
-            src={logoLight}
-            alt="VAssist Pro"
-            className="h-8 w-auto object-contain dark:hidden"
-            style={{ marginTop: '3px' }}
-          />
-          <img
-            src={logoDark}
-            alt="VAssist Pro"
-            className="h-8 w-auto object-contain hidden dark:block"
-            style={{ marginTop: '3px' }}
-          />
-          <span className="text-dark/60 dark:text-white/60 text-xs tracking-widest font-light" style={{ fontFamily: 'Lato, sans-serif', fontSize: '9px', marginTop: '2px', letterSpacing: '0.1em' }}>EST. 2008</span>
-        </div>
-
-        {/* Center content */}
-        <div className="flex-1 flex items-center justify-center gap-8">
-          {/* Exclusive Onboarding */}
-          <div className="flex items-center gap-2">
-            <Lock size={12} style={{ color: 'rgba(208, 2, 27, 1)' }} />
-            <span className="text-dark dark:text-white text-xs uppercase tracking-[0.15em]" style={{ fontFamily: 'Lato, sans-serif', fontWeight: '400' }}>
-              Exclusive Onboarding
-            </span>
-          </div>
-
-          {/* Countdown Timer */}
-          <CountdownTimer />
-        </div>
-
-        {/* Right side - Waitlist status with Join Now button */}
-        <div className="hidden md:flex items-center gap-4 text-dark/70 dark:text-white/70 text-xs" style={{ fontFamily: 'Lato, sans-serif' }}>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            <span className="uppercase tracking-wider">Waitlist Active</span>
-          </div>
-          <button
-            onClick={onOpenProtocol}
-            className="px-4 py-2 bg-accent/20 hover:bg-accent/30 text-accent uppercase tracking-wider text-xs font-semibold rounded-lg transition-all duration-300 border border-accent/50 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-          >
-            Join Now
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Spacer for Fixed Banner */}
-      <div className="h-28 md:h-36" />
 
       {/* Main Hero Content */}
       <div className="flex-1 flex flex-col items-center justify-center relative pt-16 pb-40">

@@ -41,7 +41,7 @@ const ProcessHorizontal: React.FC = () => {
 
         <div className="absolute top-12 left-6 md:left-24 z-10 pointer-events-none">
           <h2 className="text-4xl md:text-6xl font-serif text-dark dark:text-cream" style={{ fontFamily: '"Playfair Display", serif' }}>
-            The <span className="italic text-gray-900/50 dark:text-cream/60">Methodology</span>
+            <span className="italic text-gray-900/50 dark:text-cream/60">How It Works</span>
           </h2>
         </div>
 
@@ -132,7 +132,6 @@ const ProcessHorizontal: React.FC = () => {
 
                     <div className="mt-12 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                       {[1, 2, 3].map(i => <div key={i} className="w-1 h-1 bg-accent rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />)}
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-accent ml-2">Engine Synchronizing...</span>
                     </div>
                   </div>
                 </div>

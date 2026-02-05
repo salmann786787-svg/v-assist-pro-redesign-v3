@@ -92,9 +92,7 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
           <div className="space-y-8">
             <img src="https://cdn.builder.io/api/v1/image/assets%2F5197203d26324a14a7c754f2f94e8a71%2F9089607cf9e440629092c9b67d4b2b1c" alt="VAssist Pro" className="h-10 w-auto object-contain" />
             <p className="text-gray-600 dark:text-white leading-relaxed max-w-xs font-light" style={{ fontFamily: 'Lato, sans-serif' }}>
-              <p>
-                We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
-              </p>
+              We handle your customer communications and operational coordination so you can stay focused on growth and strategy.
             </p>
           </div>
 
@@ -123,8 +121,8 @@ const Footer: React.FC<FooterProps> = ({ onOpenProtocol, onSelectSector, onSelec
             <ul className="space-y-4 font-light text-gray-600 dark:text-white" style={{ fontFamily: 'Lato, sans-serif' }}>
               {[
                 { name: 'Home', id: 'home' },
-                { name: 'The Methodology', id: 'methodology' },
-                { name: 'The Engine Room', id: 'integrations' },
+                { name: 'How It Works', id: 'methodology' },
+                { name: 'Operations Hub', id: 'integrations' },
                 { name: 'Private Evidence', id: 'evidence' },
                 { name: 'Principal Support', id: 'faq' }
               ].map((link) => (

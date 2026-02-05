@@ -16,6 +16,7 @@ import ProtocolOverlay from './components/ProtocolOverlay';
 import ExitIntentPopup from './components/ExitIntentPopup';
 import LogoCarousel from './components/LogoCarousel';
 import LocationDetail from './components/LocationDetail';
+import StickyHeaderBanner from './components/StickyHeaderBanner';
 import { AnimatePresence } from 'framer-motion';
 import { useDeviceDetection } from './hooks/useDeviceDetection';
 import { SECTORS, LOCATIONS } from './constants';
@@ -62,6 +63,7 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-cream dark:bg-dark min-h-screen transition-colors duration-500 relative">
+      <StickyHeaderBanner isDarkMode={isDarkMode} onOpenProtocol={handleOpenProtocol} />
 
       {isMobile ? (
         <MobileSidebar

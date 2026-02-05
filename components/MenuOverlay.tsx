@@ -12,8 +12,8 @@ interface MenuOverlayProps {
 const links = [
   { name: "Home", number: "00", id: "home" },
   { name: "Verticals", number: "01", id: "verticals" },
-  { name: "Methodology", number: "02", id: "methodology" },
-  { name: "Integrations", number: "03", id: "integrations" },
+  { name: "How It Works", number: "02", id: "methodology" },
+  { name: "Operations Hub", number: "03", id: "integrations" },
   { name: "Evidence", number: "04", id: "evidence" },
 ];
 
@@ -54,7 +54,7 @@ const MenuOverlay: React.FC<MenuOverlayProps> = ({ isOpen, onClose, isDarkMode, 
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 left-0 bottom-0 w-full md:w-1/2 min-w-[320px] z-[60] flex flex-col bg-white/80 dark:bg-black/60 backdrop-blur-3xl shadow-[20px_0_100px_rgba(0,0,0,0.2)] dark:shadow-[80px_0_120px_rgba(0,0,0,0.6)] border-r border-white/20 dark:border-white/10 overflow-hidden"
+            className="fixed top-0 left-0 bottom-0 w-[65%] md:w-[45%] min-w-[320px] z-[60] flex flex-col bg-white/80 dark:bg-black/60 backdrop-blur-3xl shadow-[20px_0_100px_rgba(0,0,0,0.2)] dark:shadow-[80px_0_120px_rgba(0,0,0,0.6)] border-r border-white/20 dark:border-white/10 overflow-hidden"
           >
             {/* Liquid Background Accents */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/5 pointer-events-none" />
