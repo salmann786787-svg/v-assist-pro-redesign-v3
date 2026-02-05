@@ -12,8 +12,8 @@ interface MenuOverlayProps {
 const links = [
   { name: "Home", number: "00", id: "home" },
   { name: "Verticals", number: "01", id: "verticals" },
-  { name: "Methodology", number: "02", id: "methodology" },
-  { name: "Integrations", number: "03", id: "integrations" },
+  { name: "How It Works", number: "02", id: "methodology" },
+  { name: "Operations Hub", number: "03", id: "integrations" },
   { name: "Evidence", number: "04", id: "evidence" },
 ];
 
