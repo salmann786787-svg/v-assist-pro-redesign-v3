@@ -90,12 +90,16 @@ const heroStyles = `
   }
 
   /* Light mode breathing dot grid visibility fix */
-  .light motion div[style*="radial-gradient"] {
+  .light {
+    --dot-grid-opacity: 0.5;
+  }
+
+  .light #home > div > div:nth-child(2) {
     opacity: 1 !important;
   }
 
-  .light div[style*="radial-gradient(circle, rgba(25, 171, 228"] {
-    background-image: radial-gradient(circle, rgba(25, 171, 228, 0.4) 1px, transparent 1px), radial-gradient(circle, rgba(17, 24, 39, 0.15) 1px, transparent 1px) !important;
+  .light #home > div > div:nth-child(2) div[style*="radial-gradient"] {
+    opacity: 1 !important;
   }
 `;
 
