@@ -18,9 +18,9 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-[60] bg-cream/95 dark:bg-dark/95 backdrop-blur-md transition-colors duration-500"
     >
-      <div className="w-full h-16 md:h-20 flex items-center relative">
-        {/* Left - Logo & Est (Sidebar width match) */}
-        <div className="flex flex-col items-center justify-center w-16 md:w-20 flex-shrink-0 relative h-full border-r border-dark/10 dark:border-white/10">
+      <div className="w-full h-16 md:h-20 flex items-center relative px-4 md:px-6">
+        {/* Left - Logo & Est */}
+        <div className="flex flex-col items-start justify-center w-16 md:w-20 lg:w-28 flex-shrink-0 relative h-full">
           <img
             src={isDarkMode ? logoDark : logoLight}
             alt="V-Assist Pro"
@@ -57,7 +57,7 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
         </div>
 
         {/* Right side content with border-b that starts AFTER the sidebar */}
-        <div className="flex-1 flex items-center justify-end h-full border-b border-dark/10 dark:border-white/10 px-6 md:px-10">
+        <div className="flex-1 flex items-center justify-end h-full border-b border-dark/10 dark:border-white/10 px-0">
           {/* Right Area - Waitlist & Join */}
           <div className="flex items-center gap-4 xl:gap-8 text-gray-700 dark:text-white/70 text-sm flex-shrink-0" style={{ fontFamily: 'Lato, sans-serif' }}>
             <div className="hidden md:flex items-center gap-2">
