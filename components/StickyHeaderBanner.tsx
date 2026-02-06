@@ -18,9 +18,9 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 right-0 z-[60] bg-cream/95 dark:bg-dark/95 backdrop-blur-md transition-colors duration-500"
     >
-      <div className="w-full flex items-center h-16 md:h-20">
+      <div className="w-full h-16 md:h-20 flex items-center relative">
         {/* Left - Logo & Est (Sidebar width match) */}
-        <div className="flex flex-col items-center justify-center w-16 md:w-20 flex-shrink-0 relative h-full">
+        <div className="flex flex-col items-center justify-center w-16 md:w-20 flex-shrink-0 relative h-full border-r border-dark/10 dark:border-white/10">
           <img
             src={isDarkMode ? logoDark : logoLight}
             alt="V-Assist Pro"
@@ -31,34 +31,33 @@ const StickyHeaderBanner: React.FC<StickyHeaderBannerProps> = ({ isDarkMode, onO
           </span>
         </div>
 
-        {/* Right side content with border-b that starts AFTER the sidebar */}
-        <div className="flex-1 flex items-center justify-between h-full border-b border-dark/10 dark:border-white/10 px-6 md:px-10">
-
-          {/* Center - Status Pill */}
-          <div className="hidden lg:flex items-center gap-4 bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 rounded-full px-6 py-2 shadow-inner">
-            <div className="flex items-center gap-2 pr-4 border-r border-dark/10 dark:border-white/10">
-              <Lock size={12} className="text-accent" />
-              <span className="text-dark dark:text-white text-[10px] xl:text-[11px] uppercase tracking-[0.2em] font-bold whitespace-nowrap" style={{ fontFamily: 'Lato, sans-serif' }}>
-                Exclusive Onboarding
-              </span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <span className="text-[9px] xl:text-[10px] uppercase tracking-[0.2em] font-black text-accent/80 whitespace-nowrap">Q1 CLOSES SOON</span>
-              <div className="w-px h-3 bg-dark/20 dark:bg-white/20" />
-              <div className="flex items-center gap-1.5 shrink-0">
-                <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
-                <span className="text-[10px] xl:text-[11px] uppercase tracking-widest font-black text-red-500" style={{ fontFamily: 'Lato, sans-serif' }}>
-                  Limited Slots
-                </span>
-              </div>
-              <div className="w-px h-3 bg-dark/10 dark:border-white/10" />
-              <div className="shrink-0 scale-90">
-                <CountdownTimer compact={true} />
-              </div>
-            </div>
+        {/* Center - Status Pill (Absolutley positioned for perfect horizontal centering) */}
+        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 items-center gap-4 bg-dark/5 dark:bg-white/5 border border-dark/10 dark:border-white/10 rounded-full px-6 py-2 shadow-inner z-10 transition-all duration-300 backdrop-blur-sm">
+          <div className="flex items-center gap-2 pr-4 border-r border-dark/10 dark:border-white/10">
+            <Lock size={12} className="text-accent" />
+            <span className="text-dark dark:text-white text-[10px] xl:text-[11px] uppercase tracking-[0.2em] font-bold whitespace-nowrap" style={{ fontFamily: 'Lato, sans-serif' }}>
+              Exclusive Onboarding
+            </span>
           </div>
 
+          <div className="flex items-center gap-4">
+            <span className="text-[9px] xl:text-[10px] uppercase tracking-[0.2em] font-black text-accent/80 whitespace-nowrap">Q1 CLOSES SOON</span>
+            <div className="w-px h-3 bg-dark/20 dark:bg-white/20" />
+            <div className="flex items-center gap-1.5 shrink-0">
+              <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+              <span className="text-[10px] xl:text-[11px] uppercase tracking-widest font-black text-red-500" style={{ fontFamily: 'Lato, sans-serif' }}>
+                Limited Slots
+              </span>
+            </div>
+            <div className="w-px h-3 bg-dark/10 dark:border-white/10" />
+            <div className="shrink-0">
+              <CountdownTimer compact={true} />
+            </div>
+          </div>
+        </div>
+
+        {/* Right side content with border-b that starts AFTER the sidebar */}
+        <div className="flex-1 flex items-center justify-end h-full border-b border-dark/10 dark:border-white/10 px-6 md:px-10">
           {/* Right Area - Waitlist & Join */}
           <div className="flex items-center gap-4 xl:gap-8 text-gray-700 dark:text-white/70 text-sm flex-shrink-0" style={{ fontFamily: 'Lato, sans-serif' }}>
             <div className="hidden md:flex items-center gap-2">
